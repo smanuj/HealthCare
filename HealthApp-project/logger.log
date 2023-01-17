@@ -1,0 +1,52 @@
+2023-01-16 12:06:33.735  INFO 23120 --- [main] c.v.h.app.HealthAppApplicationTests      : Starting HealthAppApplicationTests using Java 17.0.4 on VDC01LTC2208 with PID 23120 (started by Anuj.SM in E:\Project work\HealthApp-project)
+2023-01-16 12:06:33.736 DEBUG 23120 --- [main] c.v.h.app.HealthAppApplicationTests      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2023-01-16 12:06:33.737  INFO 23120 --- [main] c.v.h.app.HealthAppApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2023-01-16 12:06:36.663  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-01-16 12:06:36.666  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-01-16 12:06:36.713  INFO 23120 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.valtech.health.app.repostitory.AvailabilityRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-01-16 12:06:36.715  INFO 23120 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.valtech.health.app.repostitory.DoctorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-01-16 12:06:36.717  INFO 23120 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.valtech.health.app.repostitory.HospitalRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-01-16 12:06:36.721  INFO 23120 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.valtech.health.app.repostitory.PatientDetailsRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-01-16 12:06:36.725  INFO 23120 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.valtech.health.app.repostitory.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-01-16 12:06:36.737  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 0 JDBC repository interfaces.
+2023-01-16 12:06:36.788  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-01-16 12:06:36.790  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-16 12:06:36.912  INFO 23120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 5 JPA repository interfaces.
+2023-01-16 12:06:39.702  INFO 23120 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-16 12:06:39.883  INFO 23120 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2023-01-16 12:06:39.965  INFO 23120 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-16 12:06:40.314  INFO 23120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-16 12:06:40.351  WARN 23120 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-16 12:06:41.177  INFO 23120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-16 12:06:41.294  INFO 23120 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-16 12:07:16.969  INFO 23120 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-16 12:07:17.002  INFO 23120 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-16 12:07:18.472  INFO 23120 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76d220eb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@276eafad, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a233d33, org.springframework.security.web.header.HeaderWriterFilter@43fdef43, org.springframework.security.web.authentication.logout.LogoutFilter@4ccf1d3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47a90d2a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b8c9729, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29dcad7e, org.springframework.security.web.session.SessionManagementFilter@1d82d35c, org.springframework.security.web.access.ExceptionTranslationFilter@7d50b4c4]
+2023-01-16 12:07:19.122  WARN 23120 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-16 12:07:20.512  INFO 23120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-01-16 12:07:20.513  INFO 23120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-01-16 12:07:20.515  INFO 23120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-01-16 12:07:20.560  INFO 23120 --- [main] c.v.h.app.HealthAppApplicationTests      : Started HealthAppApplicationTests in 47.683 seconds (JVM running for 50.588)
+2023-01-16 12:07:20.758  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : get hospital details
+2023-01-16 12:07:20.940  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : moving to about us page
+2023-01-16 12:07:20.955  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   :  getting admin details
+2023-01-16 12:07:21.285 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : admin details added [Availability [id=26, hospitalName=Jayadev, location=jayadev, doctorsAvailability=Yes, bedAvailability=Yes, hospital=Hospital [id=13, hospitalname=Jayadev, contactnumber=9633699632]], Availability [id=27, hospitalName=Fortis, location=fortis, doctorsAvailability=Yes, bedAvailability=Yes, hospital=Hospital [id=14, hospitalname=Fortis, contactnumber=7411478556]]]
+2023-01-16 12:07:21.301  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : moving to register page
+2023-01-16 12:07:21.302 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : Successfully moved to register page with user User [id=0, name=null, pnumber=null, email=null, username=null, password=null, role=null]
+2023-01-16 12:07:21.332 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : comment is []
+2023-01-16 12:07:21.340  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : to get details
+2023-01-16 12:07:21.346 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : hospital details added []
+2023-01-16 12:07:21.378  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : moving to login page
+2023-01-16 12:07:21.398  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : Moving to patientdetails
+2023-01-16 12:07:21.399 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : Moved to patient details User [id=0, name=null, pnumber=null, email=null, username=null, password=null, role=null]
+2023-01-16 12:07:21.410  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : login to admin dashboard
+2023-01-16 12:07:21.424  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : redirects to Home
+2023-01-16 12:07:21.542  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : Showing commentlist
+2023-01-16 12:07:21.552 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : Successfully displayed []
+2023-01-16 12:07:21.568  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : Changing password
+2023-01-16 12:07:21.577  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : admin has logged checking for availability
+2023-01-16 12:07:21.578 DEBUG 23120 --- [main] c.v.h.a.controller.HealthAppController   : updated successful []
+2023-01-16 12:07:21.585  INFO 23120 --- [main] c.v.h.a.controller.HealthAppController   : Sending OTP
+2023-01-16 12:07:21.637  INFO 23120 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-16 12:07:21.640  INFO 23120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-16 12:07:21.691  INFO 23120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
