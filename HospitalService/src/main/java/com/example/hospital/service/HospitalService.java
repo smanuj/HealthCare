@@ -1,6 +1,7 @@
 package com.example.hospital.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.example.hospital.entity.Hospital;
 
@@ -10,6 +11,7 @@ public interface HospitalService {
 
 	Hospital save(Hospital hospital);
 
-	
+	Optional<Hospital> findById(int id);
 
+	
 }

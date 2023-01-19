@@ -22,8 +22,8 @@ import com.example.hospital.repository.HospitalRepository;
 import com.example.hospital.service.HospitalService;
 
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/v1/")
 @RestController
+@RequestMapping("/api/v1/")
 public class HospitalController {
 	@Autowired
 	private HospitalRepository hospitalRepository;
@@ -37,7 +37,6 @@ public class HospitalController {
 		return hospitalService.findAll();
 	}		
 	
-	
 	@PostMapping("/hospitals")
 	public Hospital createHospital(@RequestBody Hospital hospital) {
 		return hospitalService.save(hospital);
@@ -45,24 +44,21 @@ public class HospitalController {
 	
 	@GetMapping("/hospitals/{id}")
 	public ResponseEntity<Hospital> getHospitalById(@PathVariable int id) {
-		Hospital hospital = hospitalRepository.findById(id)
+		Hospital hospital = hospitalService.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Hospital not exist with id :" + id));
 		return ResponseEntity.ok(hospital);
 	}
-	
-	
 	
 	@PutMapping("/hospitals/{id}")
 	public ResponseEntity<Hospital> updateHospital(@PathVariable int id, @RequestBody Hospital hospitaldetails){
 		Hospital hospital = hospitalRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Hospital not exist with id :" + id));
-		
 		hospital.setName(hospitaldetails.getName());
-		hospital.setContact_number(hospitaldetails.getContact_number());
+		hospital.setNumber(hospitaldetails.getNumber());
 		hospital.setLocation(hospitaldetails.getLocation());
 		hospital.setPincode(hospitaldetails.getPincode());
 	
-		Hospital updatedHospital = hospitalRepository.save(hospital);
+		Hospital updatedHospital = hospitalService.save(hospital);
 		return ResponseEntity.ok(updatedHospital);
 	}
 	
