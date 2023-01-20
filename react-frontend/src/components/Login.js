@@ -131,9 +131,9 @@ class Login extends React.Component{
           </div>
            
             <p className="link1">
-            <a href="#">Forgot password ?</a> <br></br>
-            <Link to="reg">Sing Up as Doctor</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="re">Sing Up as Nurse</Link>
+            <a href="/reset/forgotPass">Forgot password ?</a> <br></br>
+            <Link to="/doctorReg">Sing Up as Doctor</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link to="/nurseReg">Sing Up as Nurse</Link>
              
             </p>
             
