@@ -1,10 +1,9 @@
 package com.example.hospital.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,15 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.exception.ResourceNotFoundException;
-import com.example.hospital.repository.HospitalRepository;
 import com.example.hospital.service.HospitalService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
 public class HospitalController {
-	@Autowired
-	private HospitalRepository hospitalRepository;
+
 	
 	@Autowired
 	private HospitalService hospitalService;
@@ -41,36 +38,23 @@ public class HospitalController {
 	public Hospital createHospital(@RequestBody Hospital hospital) {
 		return hospitalService.save(hospital);
 	}
-	
-	@GetMapping("/hospitals/{id}")
-	public ResponseEntity<Hospital> getHospitalById(@PathVariable int id) {
-		Hospital hospital = hospitalService.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Hospital not exist with id :" + id));
-		return ResponseEntity.ok(hospital);
-	}
-	
-	@PutMapping("/hospitals/{id}")
-	public ResponseEntity<Hospital> updateHospital(@PathVariable int id, @RequestBody Hospital hospitaldetails){
-		Hospital hospital = hospitalRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Hospital not exist with id :" + id));
-		hospital.setName(hospitaldetails.getName());
-		hospital.setNumber(hospitaldetails.getNumber());
-		hospital.setLocation(hospitaldetails.getLocation());
-		hospital.setPincode(hospitaldetails.getPincode());
-	
-		Hospital updatedHospital = hospitalService.save(hospital);
-		return ResponseEntity.ok(updatedHospital);
-	}
-	
-
-	@DeleteMapping("/hospitals/{id}")
-	public ResponseEntity<Map<String, Boolean>> deleteHospital(@PathVariable int id){
-		Hospital hospital= hospitalRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Hospital not exist with id :" + id));
-		
-		hospitalRepository.delete(hospital);
-		Map<String, Boolean> response = new HashMap<>();
-		response.put("deleted", Boolean.TRUE);
-		return ResponseEntity.ok(response);
-	}	
+ 
+	 @GetMapping("/hospitals/{id}")
+	  public ResponseEntity<Hospital> getHospitalById(@PathVariable("id") int id) throws ResourceNotFoundException{
+	    return new ResponseEntity<Hospital>(hospitalService.findHospitalById(id),HttpStatus.OK);
+	  }
+	  
+	  
+	  @PutMapping("/hospitals/{id}")
+	  public ResponseEntity<Hospital> updateHospital(@RequestBody Hospital h,@PathVariable("id") int id) throws ResourceNotFoundException{
+	    return new ResponseEntity<Hospital>(hospitalService.updateHospital(h, id), HttpStatus.OK);
+	    
+	  }
+	  
+	  @DeleteMapping("/hospitals/{id}")
+	  public ResponseEntity<String> deleteHospital(@PathVariable("id") int id){
+	    hospitalService.deleteHospital(id);
+	    return new ResponseEntity<String>("Deleted",HttpStatus.OK);
+	  }
+	  
 }
