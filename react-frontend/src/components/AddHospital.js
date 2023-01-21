@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 import { Form } from "react-bootstrap";
 import styles from './Login.css'
 import axios from "axios";
@@ -18,6 +17,7 @@ class AddHospital extends React.Component{
         number:"",
         location:"",
         pincode:"",
+        bedavailability:""
        
 
     };
@@ -28,7 +28,8 @@ class AddHospital extends React.Component{
             name:this.state.name,
             number:this.state.number,
             location:this.state.location,
-            pincode:this.state.pincode
+            pincode:this.state.pincode,
+            bedavailability:this.state.bedavailability
            
         }
        
@@ -54,7 +55,7 @@ class AddHospital extends React.Component{
                   <h1>ADD HOSPITAL</h1>
                   <div className="second-input">
                     
-                    <input type="text" placeholder="Hospital Name" className="name" pattern="[A-Za-z]{5,10}" name="name" value={this.state.name} onChange={this.hospitalChange} required/>
+                    <input type="text" placeholder="Hospital Name" className="name" pattern="[A-Za-z]{5,20}" name="name" value={this.state.name} onChange={this.hospitalChange} required/>
                   </div>
                   <div className="second-input">
                   
@@ -69,14 +70,20 @@ class AddHospital extends React.Component{
                   
                     <input type="text" placeholder="Pincode" className="name" pattern="[0-9]{6}" name="pincode"  value={this.state.pincode} onChange={this.hospitalChange} required/>
                   </div>
-                  
+                  <br></br>
+                 <select   name="bedavailability"  value={this.state.bedavailability} onChange={this.hospitalChange} >
+                <option value="" disabled selected>Select Bed Availability</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    
+                 </select>
                
                 
                  
                  <div className="login-button">
-                 <button  >submit</button><br></br>
+                 <button  >Submit</button><br></br>
                  <br></br>
-                 <button ><Link to={"/list"}>List</Link></button>
+                 
                  </div>
                 
                  </div>

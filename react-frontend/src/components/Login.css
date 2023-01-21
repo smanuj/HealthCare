@@ -6,6 +6,15 @@
     padding-bottom: 90px;
     
   }
+  .admin-main{
+    text-align: center;
+    justify-content: center;
+    display: flex; 
+    padding-bottom: 90px;
+    flex-direction: column;
+    padding-top: 250px;
+    padding-left: 450px; 
+  }
   .sub-main {
     display: flex;
     justify-content: center;
