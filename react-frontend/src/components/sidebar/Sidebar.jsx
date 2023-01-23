@@ -16,23 +16,36 @@ export default function Sidebar() {
                                                                         pathname:'/hospital',
                                                                         state: {title:'Jayadeva'}  
                                                                         }}>Jayadeva</Link>
+                                                                        
+
+                                                                        
+                                                                        
                       
 
                 </li>
-                  <li className="sidebarListItem ">
+                  <li className="sidebarListItem active ">
                       <LocalHospital className="sidebarIcon"/>
-                      Apollo 
+                      <Link style={{ textDecoration:"none" }} to={{
+                                                                        pathname:'/hospital',
+                                                                        state: {title:'Apollo'}  
+                                                                        }}>Apollo</Link>
 
                 </li>
                     
-                    <li className="sidebarListItem">
+                    <li className="sidebarListItem active">
                       <LocalHospital className="sidebarIcon" />
-                      Fortis 
-
+                      <Link style={{ textDecoration:"none" }} to={{
+                                                                        pathname:'/hospital',
+                                                                        state: {title:'Forts'}  
+                                                                        }}>Fortis</Link>
                 </li>
                 <li className="sidebarListItem">
                       <LocalHospital  className="sidebarIcon"/>
-                      Re-Live 
+                      <Link style={{ textDecoration:"none" }} to={{
+                                                                        pathname:'/hospital',
+                                                                        state: {title:'Re-Live'}  
+                                                                        }}>Re-Live</Link>
+                     
 
                 </li>
                 <li className="sidebarListItem">

@@ -18,6 +18,11 @@ import ListHospital from './components/ListHospital';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import Nurse from './components/Nurse';
+import PatientForm from "./components/PatientForm/PatientForm";
+
+
+
+
 
 
 function App() {
@@ -32,6 +37,7 @@ function App() {
         <Route exact path ="/doctorReg" element={< Registration/> } />
         <Route exact path ="/nurseReg" element={< Nurse/> } />
         <Route path="/index" element={<Index/>}/>
+        <Route path="/info" element={<PatientForm/>}/>
         <Route path="/hospital" element={<Hospital/>}/>
         <Route exact path ="/admin/addHospital" element={<AddHospital/>}></Route>
         <Route exact path ="/admin/getHospitals" element={<ListHospital/>}></Route>
