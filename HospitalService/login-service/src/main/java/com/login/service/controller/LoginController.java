@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.login.service.entity.Doctor_details;
-import com.login.service.entity.Hospital;
 import com.login.service.entity.Nurse_details;
 import com.login.service.entity.user_details;
 import com.login.service.repo.DoctorRepository;
@@ -38,23 +37,13 @@ public class LoginController {
 	@Autowired
 	private NurseService nurseservice;
 	
-	@Autowired
-	private DoctorRepository doctor;
-	
 
 	
 	@PostMapping("/api/savedoctor")
-	public String user_det(@RequestBody user_details user) throws Exception {
+	public String user_det(@RequestBody user_details user) {
 		String savedoctor = userservice.savedoctor(user);
 		 
 		return savedoctor;
-		
-		
-	}
-	@PostMapping("/api/doctor")
-	public Doctor_details user(@RequestBody Doctor_details doctor1) {
-		return doctor.save(doctor1);
-		
 		
 		
 	}
@@ -71,16 +60,9 @@ public class LoginController {
 
 	
 	@PostMapping("/api/login")
-	public String loginuser(@RequestBody user_details user) throws Exception{
+	public String loginuser(@RequestBody user_details user) {
 		String loginuser = userservice.loginuser(user);
 		return loginuser;
-	}
-	
-
-	
-	@GetMapping("/doctors")
-	public List<Doctor_details> getalldoctors(){
-		return doctor.findAll();
 	}
 	
 

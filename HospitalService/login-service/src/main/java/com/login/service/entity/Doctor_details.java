@@ -1,17 +1,11 @@
 package com.login.service.entity;
 
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 
 @Entity
 public class Doctor_details {
@@ -29,10 +23,6 @@ public class Doctor_details {
 	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")
 	private user_details userdetails;
 	
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-	@JoinTable(name = "doctorHospitalMap", joinColumns =@JoinColumn (name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
-	private Set<Hospital> hospitals;
-	
 	
 //	public user_details getUserdetails() {
 //		return userdetails;
@@ -45,14 +35,6 @@ public class Doctor_details {
 		super();
 	}
 	
-	public Set<Hospital> getHospitals() {
-		return hospitals;
-	}
-
-	public void setHospitals(Set<Hospital> hospitals) {
-		this.hospitals = hospitals;
-	}
-
 	public boolean isApproval() {
 		return approval;
 	}
@@ -110,11 +92,8 @@ public class Doctor_details {
 	@Override
 	public String toString() {
 		return "Doctor_details [id=" + id + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
-				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitals="
-				+ hospitals + "]";
+				+ specialization + ", avaliability=" + avaliability + "]";
 	}
-
-	
 	
 	
 	

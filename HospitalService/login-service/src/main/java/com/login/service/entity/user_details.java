@@ -39,24 +39,12 @@ public class user_details {
 		this.password = password;
 		this.nursedetails = nursedetails;
 	}
-	public user_details(String email, Nurse_details nursedetails) {
-		super();
-		this.email = email;
-		this.nursedetails = nursedetails;
-	}
 	public user_details(String email, String password, Doctor_details doctordetails) {
 		super();
 		this.email = email;
 		this.password = password;
 		this.doctordetails = doctordetails;
 	}
-	public user_details(String email, Doctor_details doctordetails) {
-		super();
-		this.email = email;
-		this.doctordetails = doctordetails;
-	}
-	
-	
 	public Doctor_details getDoctordetails() {
 		return doctordetails;
 	}

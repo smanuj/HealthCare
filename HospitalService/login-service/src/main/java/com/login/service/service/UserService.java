@@ -10,11 +10,11 @@ public interface UserService {
 
 	user_details saveuser(user_details user);
 	
-	String savedoctor(user_details user) throws Exception;
+	String savedoctor(user_details user);
 	
 	String savenurse(user_details user);
 	
-	String  loginuser(user_details user) throws Exception;
+	String  loginuser(user_details user);
 	
 	List<user_details> getalluser();
 
