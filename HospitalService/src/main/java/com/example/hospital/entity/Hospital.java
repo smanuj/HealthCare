@@ -21,27 +21,35 @@ public class Hospital {
 	private String location;
 	@Column(nullable = false)
 	private String pincode;
+	private Boolean bedavailability;
+	
 
 	public Hospital() {
 		super();
 	}
 
-	public Hospital(String name, String number, String location, String pincode) {
-		super();
-		this.name = name;
-		this.number = number;
-		this.location = location;
-		this.pincode = pincode;
-	}
 
-	public Hospital(int id, String name, String number, String location, String pincode) {
+	public Hospital(int id, String name, String number, String location, String pincode, Boolean bedavailability) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.number = number;
 		this.location = location;
 		this.pincode = pincode;
+		this.bedavailability = bedavailability;
 	}
+
+
+	public Hospital(String name, String number, String location, String pincode, Boolean bedavailability) {
+		super();
+		this.name = name;
+		this.number = number;
+		this.location = location;
+		this.pincode = pincode;
+		this.bedavailability = bedavailability;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -83,13 +91,23 @@ public class Hospital {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
+	
+
+	public Boolean getBedavailability() {
+		return bedavailability;
+	}
+
+
+	public void setBedavailability(Boolean bedavailability) {
+		this.bedavailability = bedavailability;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Hospital [id=" + id + ", name=" + name + ", number=" + number + ", location=" + location + ", pincode="
-				+ pincode + "]";
+				+ pincode + ", bedavailability=" + bedavailability + "]";
 	}
-
 
 	}
 
