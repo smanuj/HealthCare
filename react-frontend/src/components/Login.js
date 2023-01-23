@@ -30,12 +30,12 @@ class Login extends React.Component{
         
     }
     handlesubmit= (event) => {
-        
+       event.preventDefault()
         const user={
             email:this.state.email,
             password:this.state.password
         }
-            
+        this.state=this.initiaLSTATE    
         
         axios.post("http://localhost:8080/api/login",user).then(Response => {
             if(Response.data=="successfully"){
@@ -49,15 +49,15 @@ class Login extends React.Component{
             alert("password invalid")  
         }
         else{
-            alert("log in failed")
+            alert("Please Register")
         }
        
     
     }
             )
-       
+            
         
-        // this.state=this.initiaLSTATE
+       
     }
     bookChange = (event) => {
         this.setState({
@@ -74,32 +74,7 @@ class Login extends React.Component{
 
        
         return(
-        //      <div  className="border d-flex align-items-center justify-content-center">
-        //      <div class="wrapper" > 
-        //      <div class="title">LOGIN FORM</div>
-        //      <div className = "form-box">
-        //      <Form >
-                
-        //   <div class="field">
-		//   				<input name="username" type="text" pattern="[A-Za-z]{3,10}"
-		//  					required title="User name must be between 3-10 characters !!" />
-		//  				<label>Username</label>
-	 	//  		</div> 
-
-	 	// 		<div class="field">
-		//   				<input name="password" type="password" required
-		//   					title="Password must be between 3-10 characters !!" /> <label>Password</label>
-		//   			</div>
-        //               <div class="field">
-		//  				<input type="submit" value="LOGIN" name="submit" />
-		//   			</div>
-        //     </Form>
-        //     <a href="/register">NOT YET REGISTERED</a>
-        //     <br></br>
-		//  			<a href="/sendotp">FORGOT PASSWORD</a>
-        //     </div>
-        //     </div>
-        //     </div>
+      
         
         
  <Form onSubmit={this.handlesubmit}>
@@ -120,11 +95,11 @@ class Login extends React.Component{
            <h1>Login Page</h1>
            <div>
              <img src={email} alt="email" className="email"/>
-             <input type="text" placeholder="email" className="name" name="email" value={this.state.email} onChange={this.bookChange}/>
+             <input type="text" placeholder="email" className="name" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required value={this.state.email} onChange={this.bookChange}/>
            </div>
            <div className="second-input">
              <img src={pass} alt="pass" className="email"/>
-             <input type="password" placeholder="Password" className="name" name="password" value={this.state.password} onChange={this.bookChange}/>
+             <input type="password" placeholder="Password" className="name" name="password" pattern="[A-Za-z0-9#@$&]{3,10}" required  value={this.state.password} onChange={this.bookChange}/>
            </div>
           <div className="login-button">
           <button>Login</button>

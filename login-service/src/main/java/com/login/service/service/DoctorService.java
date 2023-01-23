@@ -1,9 +1,13 @@
 package com.login.service.service;
 
-import com.login.service.entity.Doctor_details;
+import java.util.List;
+
+import com.login.service.entity.DoctorDetails;
+import com.login.service.entity.Hospital;
 
 public interface DoctorService {
 	
-	Doctor_details savedoctor(Doctor_details doctor);
+	DoctorDetails savedoctor(DoctorDetails doctor);
+	
 
 }

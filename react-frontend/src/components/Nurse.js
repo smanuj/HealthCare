@@ -31,7 +31,7 @@ class Nurse extends React.Component{
     handlesubmit= (event) => {
        
 
-        
+      event.preventDefault()
 
         const user ={
             email:this.state.email,

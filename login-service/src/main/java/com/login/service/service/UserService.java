@@ -2,20 +2,20 @@ package com.login.service.service;
 
 import java.util.List;
 
-import com.login.service.entity.user_details;
+import com.login.service.entity.UserDetails;
 
 public interface UserService {
 
-	user_details getbyemail(String email);
+	UserDetails getbyemail(String email);
 
-	user_details saveuser(user_details user);
+	UserDetails saveuser(UserDetails user);
 	
-	String savedoctor(user_details user);
+	String savedoctor(UserDetails user) throws Exception;
 	
-	String savenurse(user_details user);
+	String savenurse(UserDetails user);
 	
-	String  loginuser(user_details user);
+	String  loginuser(UserDetails user) throws Exception;
 	
-	List<user_details> getalluser();
+	List<UserDetails> getalluser();
 
 }
