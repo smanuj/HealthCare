@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mail.microservice.entity.UserDetails;
+
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)
 public class MailMessageImpl implements MailMessage{
@@ -18,6 +20,9 @@ public class MailMessageImpl implements MailMessage{
 
 	@Autowired
 	SendMail sendMail;
+	
+	@Autowired
+	MailData mailData;
 
 	@Override
 	public void sendAlert(String email, String name) {
@@ -28,13 +33,14 @@ public class MailMessageImpl implements MailMessage{
 	}
 
 	@Override
-	public void registeredSuccessfully(String email, String role, String name) {
+	public void registeredSuccessfully(UserDetails user) {
 		logger.debug(
-				"Successfully registered User with email: " + email + " under role: " + role + " by name: " + name);
-		String subject = "Congratulations! " + name;
-		String body = "Hello, You have successfully registered as " + role
-				+ " at Health Care App, you can now log in to your account through the website using your registered email id and password. Thank you for choosing us :) -admin";
-		sendMail.sendMail(email, subject, body);
+				"Successfully registered User with email: " + user.getEmail());
+		String subject = "Congratulations! ";
+//		String role = 
+		String body = "Hello, You have successfully registered as " + //role
+				 " at Health Care App, you can now log in to your account through the website using your registered email id and password. Thank you for choosing us :) -admin";
+		sendMail.sendMail(user.getEmail(), subject, body);
 	}
 
 	@Override
@@ -48,12 +54,18 @@ public class MailMessageImpl implements MailMessage{
 	}
 
 	@Override
-	public void sendOTP(String email, String pass, String role, String name) {
-		logger.debug("Sending OTP to " + email + " registered under role: " + role + " by name: " + name);
-		String subject = "Reset Password for " + name;
-		String body = "Hello, Please use this OTP to reset your " + role + " account password: " + pass
+	public void sendOTP(String email, String pass) {
+		logger.debug("Sending OTP to " + email);
+		String subject = "OTP to reset password ";
+		String body = "Hello, Please use this OTP to reset your account password: " + pass
 				+ " DO NOT SHARE THIS OTP WITH ANYONE!!. -admin";
-		sendMail.sendMail(email, subject, body);
+		try {
+			sendMail.sendMail(email, subject, body);
+			mailData.saveMail(email,subject,body,true);
+		} catch (Exception e) {
+			mailData.saveMail(email,subject,body,false);
+			e.printStackTrace();
+		}
 	}
 
 	@Override

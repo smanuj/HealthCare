@@ -81,7 +81,7 @@ public class SendMailImpl implements SendMail {
 			Transport.send(message);
 			logger.debug("Mail Sent Successfully!");
 		} catch (MessagingException e) {
-			logger.error("Error Occurred while Sending Mail at Line 87 in ServiceMailImpl");
+			logger.error("Error Occurred while Sending Mail at Line 87 in SendMailImpl");
 		}
 	}
 }
