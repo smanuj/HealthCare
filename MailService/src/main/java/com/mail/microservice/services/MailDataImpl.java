@@ -1,5 +1,7 @@
 package com.mail.microservice.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,8 @@ public class MailDataImpl implements MailData {
 		mailRepo.save(mt);
 	}
 
-	
+	@Override
+	public List<MailTable> getAllUnsentMails() {
+		return mailRepo.findAllBySentFalse();
+	}
 }

@@ -22,8 +22,7 @@ class ForgotPass extends React.Component{
     }
 
     initiaLSTATE={
-        email:"",
-        role:""
+        email:""
 
     };
     handlesubmit= (event) => {
