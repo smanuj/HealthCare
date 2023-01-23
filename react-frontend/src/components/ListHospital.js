@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import axios from "axios";
 import HospitalService from '../services/HospitalService';
 
 
@@ -19,17 +19,16 @@ export default class ListHospital extends Component{
             this.setState({hospitals: this.state.hospitals.filter(hospital => hospital.id !== id)});
         });
     }
-    
-    
+  
 
     componentDidMount(){
-        HospitalService.getHospitals().then((res) => {
-        this.setState({hospitals:res.data});
-        });
+        axios.get("http://localhost:8080/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
+      
     }
    
     render(){
         return(
+            
             
             <div>
                 
@@ -45,6 +44,7 @@ export default class ListHospital extends Component{
         <th> Name</th>
         <th> Location</th>
         <th> Pincode</th>
+        <th> Bed Availability</th>
         <th> Actions</th>
     </tr>
 </thead>
@@ -57,6 +57,7 @@ export default class ListHospital extends Component{
                                              <td> {hospital.name} </td>   
                                              <td> {hospital.location}</td>
                                              <td> {hospital.pincode}</td>
+                                             <td> {hospital.bedavailability}</td>
                                              <td>
                                            
      <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.id)} className="btn-list">Delete </button>
@@ -68,10 +69,7 @@ export default class ListHospital extends Component{
                                 }
                             </tbody>
                         </table>
-                        <div className="login-button">
-                
-                 <button ><Link to={"/"}>Add Hospital</Link></button>
-                 </div>
+                      
 
                  </div>
                  </div>

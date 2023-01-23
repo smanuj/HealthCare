@@ -22,13 +22,14 @@ class ForgotPass extends React.Component{
     }
 
     initiaLSTATE={
-        email:"",
-        role:""
+        email:""
 
     };
     handlesubmit= (event) => {
        
-
+            const email = {
+              email: this.state.email
+            }
         // const doctor = {
         //     name: this.state.name,
         //     pnumber: this.state.pnumber,
@@ -51,7 +52,18 @@ class ForgotPass extends React.Component{
         // const password = this.state.password;
         
         
-       
+       axios.post("http://localhost:8008/api/s1/reset/forgotPass",email).then(response => {
+                if(response.data=="sent"){
+                    this.setState(this.initiaLSTATE);
+                    alert("OTP sent")
+        ;
+                  
+    
+                }
+                else{
+                    alert("fail")
+                }
+              } )
         //  axios.post("http://localhost:8080/api/save",doctor,email,password).then(response => alert(response.data))
         
         //  if(confirmpassword==password) {
@@ -99,11 +111,6 @@ class ForgotPass extends React.Component{
                     <input type="email" placeholder="Email" className="name" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" value={this.state.email}  name="email" onChange={this.bookChange} required/>
                   </div>
                   <br></br>
-                 <select   name="role"  value={this.state.role} onChange={this.bookChange} >
-                <option value="" disabled selected>Select Your Role</option>
-                    <option value="Doctor">Doctor</option>
-                    <option value="Nurse">Nurse</option>
-                 </select>
                  
                  <div className="login-button">
                  <button  >submit</button><br></br>

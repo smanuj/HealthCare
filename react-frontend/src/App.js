@@ -14,6 +14,9 @@ import NewPass from "./components/new-pass/NewPass";
 
 import AddHospital from './components/AddHospital';
 import ListHospital from './components/ListHospital';
+import Admin from "./components/Admin";
+import ApproveDoctor from "./components/ApproveDoctor";
+import ApproveNurse from "./components/ApproveNurse";
 
 import Login from './components/Login';
 import Registration from './components/Registration';
@@ -39,8 +42,11 @@ function App() {
         <Route path="/index" element={<Index/>}/>
         <Route path="/info" element={<PatientForm/>}/>
         <Route path="/hospital" element={<Hospital/>}/>
+        <Route exact path ="/admin/dashboard" element={<Admin/>}></Route>
         <Route exact path ="/admin/addHospital" element={<AddHospital/>}></Route>
         <Route exact path ="/admin/getHospitals" element={<ListHospital/>}></Route>
+        <Route exact path ="/admin/approvedoctor" element={<ApproveDoctor/>}></Route>
+        <Route exact path ="/adminapprovenurse" element={<ApproveNurse/>}></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass" element={<NewPass/>}/>
       </Routes>       
