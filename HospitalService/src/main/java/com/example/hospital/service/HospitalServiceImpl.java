@@ -1,5 +1,6 @@
 package com.example.hospital.service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,12 +19,14 @@ public class HospitalServiceImpl implements HospitalService {
 	@Override
 	public List<Hospital> findAll() {
 		// TODO Auto-generated method stub
+		
 		return hospitalRepository.findAll();
 	}
 	
 	@Override
 	public Hospital save(Hospital hospital) {
 		// TODO Auto-generated method stub
+		System.out.println(hospital.getBedavailability());
 		return hospitalRepository.save(hospital);
 	}
 	
@@ -48,6 +51,7 @@ public class HospitalServiceImpl implements HospitalService {
 		      hospital.setNumber(h.getNumber());
 		      hospital.setLocation(h.getLocation());
 		      hospital.setPincode(h.getPincode());
+		      hospital.setBedavailability(h.getBedavailability());
 		    }
 		    else
 		    {

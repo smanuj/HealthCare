@@ -1,17 +1,20 @@
 package com.mail.microservice.services;
 
+import com.mail.microservice.entity.PatientDetails;
+import com.mail.microservice.entity.UserDetails;
+
 public interface MailMessage {
 
-	void sendAlert(String email, String name);
+	void sendAlert(int id, PatientDetails pd);
 
-	void registeredSuccessfully(String email, String role, String name);
+	void sendOTP(String email, String pass);
 
-	void registerationFailure(String email, String role, String name);
+	void registeredSuccessfully(UserDetails user);
 
-	void sendOTP(String email, String pass, String role, String name);
+	void registerationFailure(UserDetails user);
 
-	void successfulPasswordChange(String email, String role, String name);
+	void successfulPasswordChange(UserDetails user);
 
-	void notifyRegisteration(String email, String role, String name);
+	void notifyRegisteration(UserDetails user);
 
 }
