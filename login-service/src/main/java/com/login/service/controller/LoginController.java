@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.login.service.entity.Doctor_details;
+import com.login.service.entity.DoctorDetails;
 import com.login.service.entity.Hospital;
-import com.login.service.entity.Nurse_details;
-import com.login.service.entity.user_details;
+import com.login.service.entity.NurseDetails;
+import com.login.service.entity.UserDetails;
 import com.login.service.repo.DoctorRepository;
+import com.login.service.repo.HospitalRepository;
 import com.login.service.repo.NurseRepository;
 import com.login.service.repo.Userrepository;
 import com.login.service.service.DoctorService;
@@ -41,10 +42,13 @@ public class LoginController {
 	@Autowired
 	private DoctorRepository doctor;
 	
+	@Autowired
+	private HospitalRepository hospital;
+	
 
 	
 	@PostMapping("/api/savedoctor")
-	public String user_det(@RequestBody user_details user) throws Exception {
+	public String user_det(@RequestBody UserDetails user) throws Exception {
 		String savedoctor = userservice.savedoctor(user);
 		 
 		return savedoctor;
@@ -52,14 +56,14 @@ public class LoginController {
 		
 	}
 	@PostMapping("/api/doctor")
-	public Doctor_details user(@RequestBody Doctor_details doctor1) {
+	public DoctorDetails user(@RequestBody DoctorDetails doctor1) {
 		return doctor.save(doctor1);
 		
 		
 		
 	}
 	@PostMapping("/api/savenurse")
-	public String user_nurse(@RequestBody user_details user) {
+	public String user_nurse(@RequestBody UserDetails user) {
 		
 		 String savenurse = userservice.savenurse(user);
 		 return savenurse;
@@ -71,7 +75,7 @@ public class LoginController {
 
 	
 	@PostMapping("/api/login")
-	public String loginuser(@RequestBody user_details user) throws Exception{
+	public String loginuser(@RequestBody UserDetails user) throws Exception{
 		String loginuser = userservice.loginuser(user);
 		return loginuser;
 	}
@@ -79,8 +83,13 @@ public class LoginController {
 
 	
 	@GetMapping("/doctors")
-	public List<Doctor_details> getalldoctors(){
+	public List<DoctorDetails> getalldoctors(){
 		return doctor.findAll();
+	}
+	
+	@GetMapping("/hospitals")
+	public List<Hospital> getallhospital(){
+		return hospital.findAll() ;
 	}
 	
 

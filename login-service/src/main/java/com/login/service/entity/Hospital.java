@@ -11,44 +11,42 @@ import javax.persistence.Table;
 @Table(name = "hospitals")
 public class Hospital {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;
-	@Column(nullable = false)
+	@Column(name = "hospitalId")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int hospitalId;
 	private String name;
-	@Column(nullable = false)
-	private String number;
-	@Column(nullable = false)
 	private String location;
-	@Column(nullable = false)
 	private String pincode;
+	private boolean bedAvailabilty;
 
 	public Hospital() {
 		super();
 	}
 
-	public Hospital(String name, String number, String location, String pincode) {
+	public Hospital(String name, String location, String pincode, boolean bedAvailabilty) {
 		super();
 		this.name = name;
-		this.number = number;
 		this.location = location;
 		this.pincode = pincode;
+		this.bedAvailabilty = bedAvailabilty;
+
 	}
 
-	public Hospital(int id, String name, String number, String location, String pincode) {
+	public Hospital(int hospitalId, String name, String location, String pincode, boolean bedAvailabilty) {
 		super();
-		this.id = id;
+		this.hospitalId = hospitalId;
 		this.name = name;
-		this.number = number;
 		this.location = location;
 		this.pincode = pincode;
+		this.bedAvailabilty = bedAvailabilty;
 	}
 
-	public int getId() {
-		return id;
+	public int getHospitalId() {
+		return hospitalId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setHospitalId(int hospitalId) {
+		this.hospitalId = hospitalId;
 	}
 
 	public String getName() {
@@ -57,15 +55,6 @@ public class Hospital {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
 	}
 
 	public String getLocation() {
@@ -84,13 +73,23 @@ public class Hospital {
 		this.pincode = pincode;
 	}
 
+	public boolean isBedAvailabilty() {
+		return bedAvailabilty;
+	}
+
+	public void setBedAvailabilty(boolean bedAvailabilty) {
+		this.bedAvailabilty = bedAvailabilty;
+	}
+
 	@Override
 	public String toString() {
-		return "Hospital [id=" + id + ", name=" + name + ", number=" + number + ", location=" + location + ", pincode="
-				+ pincode + "]";
+		return "Hospital [hospitalId=" + hospitalId + ", name=" + name + ", location=" + location + ", pincode="
+				+ pincode + ", bedAvailabilty=" + bedAvailabilty + "]";
 	}
+	
+	
 
 
-	}
+}
 
 
