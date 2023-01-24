@@ -22,8 +22,9 @@ class NewPass extends React.Component{
     }
 
     initiaLSTATE={
-        email:"",
-        role:""
+        otp:"",
+        pass:"",
+        confpass:""
 
     };
     handlesubmit= (event) => {
@@ -37,40 +38,35 @@ class NewPass extends React.Component{
            
         //   };
 
-        // const user ={
-        //     email:this.state.email,
-        //     password:this.state.password,
-        //     doctordetails:{
-        //         name: this.state.name,
-        //     pnumber: this.state.pnumber,
-        //     specialization: this.state.specialization
-            
-        //     }
-        // }
-        // const confirmpassword= this.state.confirmpassword;
-        // const password = this.state.password;
+        const user ={
+            email:this.state.otp,
+            password:this.state.pass
+        }
+
+
+
+
+        const confirmpassword= this.state.confpass;
+        const password = this.state.pass;
         
         
        
-        //  axios.post("http://localhost:8080/api/save",doctor,email,password).then(response => alert(response.data))
+        //  axios.post("http://localhost:8081/api/save",doctor,email,password).then(response => alert(response.data))
         
-        //  if(confirmpassword==password) {
-        //     axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
-        //         if(response.data=="not"){
-        //             this.setState(this.initiaLSTATE);
-        //             alert("user not saved")
-        // ;
-                  
-    
-        //         }
-        //         else{
-        //             alert("user saved")
-        //         }
-        //       } )
-        //  }
-        //  else{
-        //     alert("password");
-        //  }
+         if(confirmpassword==password) {
+            axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
+                if(response.data=="not"){
+                    this.setState(this.initiaLSTATE);
+                    alert("user not saved");
+                }
+                else{
+                    alert("user saved")
+                }
+              } )
+         }
+         else{
+            alert("password");
+         }
           
 
 
@@ -100,11 +96,11 @@ class NewPass extends React.Component{
                   </div>
                   <div className="second-input">
                   
-                    <input type="text" placeholder="New Password" className="name" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" value={this.state.pass}  name="pass" onChange={this.bookChange} required/>
+                    <input type="text" placeholder="New Password" className="name" value={this.state.pass}  name="pass" onChange={this.bookChange} required/>
                   </div>
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Confirm Password" className="name" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" value={this.state.confpass}  name="confpass" onChange={this.bookChange} required/>
+                    <input type="text" placeholder="Confirm Password" className="name" value={this.state.confpass}  name="confpass" onChange={this.bookChange} required/>
                   </div>
                   <br></br>
                  <div className="login-button">

@@ -27,7 +27,7 @@ const PatientForm = () => {
     return (
         <div className="app">
         <form className="patient-form" onSubmit={handleSubmit}>
-            <h2>Patient Registration</h2>
+            <h2>Patient Details</h2>
             <label>
                 Aadhar number:
                 <input type="text" name="aId" value={patient.aId} onChange={handleChange} required />
@@ -63,8 +63,7 @@ const PatientForm = () => {
                 Pincode :
                 <input type="text" name="pincode" value={patient.pincode} onChange={handleChange} required />
             </label>
-
-            <button type="submit">Register</button>
+            <button type="submit" className='button'>Register</button>
         </form>
         </div>
     );

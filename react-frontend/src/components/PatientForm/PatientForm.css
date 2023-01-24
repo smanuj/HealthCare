@@ -20,7 +20,7 @@
 .patient-form h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: rgb(2, 183, 255);
+    color: rgb(0, 0, 0);
 }
 
 .patient-form label {
@@ -45,7 +45,12 @@
     border: 1px solid #555;
 }
 
-.patient-form button[type="submit"] {
+/* .patient-form button[type="submit"] {
     width: 100%;
     background-color: #ccc;
+} */
+
+.button{
+    width: 100%;
+    background-color: darkred;
 }
