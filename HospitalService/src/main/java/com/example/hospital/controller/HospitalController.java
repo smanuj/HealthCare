@@ -15,9 +15,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.hospital.entity.Doctor_details;
 import com.example.hospital.entity.Hospital;
+import com.example.hospital.entity.Nurse_details;
 import com.example.hospital.exception.ResourceNotFoundException;
+import com.example.hospital.repository.Doctor_detailsRepository;
+import com.example.hospital.repository.Nurse_detailsRepository;
+import com.example.hospital.service.DoctorService;
 import com.example.hospital.service.HospitalService;
+import com.example.hospital.service.NurseService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -27,6 +33,15 @@ public class HospitalController {
 	
 	@Autowired
 	private HospitalService hospitalService;
+	@Autowired
+	private Doctor_detailsRepository doctor_detailsRepository;
+	@Autowired
+	private Nurse_detailsRepository nurse_detailsRepository;
+	@Autowired 
+	private DoctorService doctorService;
+	@Autowired
+	private NurseService nurseService;
+	
 	
 	
 	@GetMapping("/hospitals")
@@ -57,4 +72,47 @@ public class HospitalController {
 	    return new ResponseEntity<String>("Deleted",HttpStatus.OK);
 	  }
 	  
+		@GetMapping("/hospitalNames")
+		public List<String> getHospital () {
+			return hospitalService.findHospitalNames();
+		}
+		
+		@GetMapping("/admin/doctorApproval")
+		public List<Doctor_details> doctor() {
+			List<Doctor_details> user = doctor_detailsRepository.findAllByApprovalFalseAndIdNotNull();
+			return user;
+		}
+		
+		@PostMapping("/admin/doctorApproval/{id}")
+		public String doctorApproval(@PathVariable("id") int id) {
+			 doctorService.approvingDoctor(id);
+			 return "Approved";
+		}
+		
+		@DeleteMapping("/admin/doctorDisapproval/{id}")
+		public String doctorDisapproval(@PathVariable("id") int id) {
+			doctorService.deleteDoctor(id);
+			return "Disapproved";
+			
+		}
+
+		
+		@GetMapping("/admin/nurseApproval")
+		public List<Nurse_details> nurse() {
+			List<Nurse_details> user = nurse_detailsRepository.findAllByApprovalFalseAndIdNotNull();
+			return user;
+		}
+	
+		@PostMapping("/admin/nurseApproval/{id}")
+		public String nurseApproval(@PathVariable("id") int id) {
+			 nurseService.approvingNurse(id);
+			 return "Approved";
+		}
+		
+		@DeleteMapping("/admin/nurseDisapproval/{id}")
+		public String nurseDisapproval(@PathVariable("id") int id) {
+			nurseService.deleteNurse(id);
+			return "Disapproved";
+			
+		}
 }

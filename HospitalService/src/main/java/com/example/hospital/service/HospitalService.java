@@ -17,5 +17,9 @@ public interface HospitalService {
 
 	void deleteHospital(int id);
 
+	List<String> findHospitalNames();
+
+	
+
 	
 }

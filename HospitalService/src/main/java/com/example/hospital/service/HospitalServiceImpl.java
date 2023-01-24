@@ -1,6 +1,6 @@
 package com.example.hospital.service;
 
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -13,8 +13,9 @@ import com.example.hospital.exception.ResourceNotFoundException;
 @Service
 public class HospitalServiceImpl implements HospitalService {
 
+	
 	@Autowired
-	HospitalRepository hospitalRepository;
+	private HospitalRepository hospitalRepository;
 	
 	@Override
 	public List<Hospital> findAll() {
@@ -67,4 +68,11 @@ public class HospitalServiceImpl implements HospitalService {
 		// TODO Auto-generated method stub
 		 hospitalRepository.deleteById(id);
 	}
+
+	@Override
+	public List<String> findHospitalNames() {
+		// TODO Auto-generated method stub
+		return hospitalRepository.findHospitalNames();
+	}
+
 	}
