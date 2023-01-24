@@ -37,8 +37,14 @@ public class MailMessageImpl implements MailMessage {
 		UserDetails user = userRepo.findById(id).get();
 		String subject = "Alert!! ";
 		String condition = pd.getDisease();
-		String body = "Hello Doctor, A patient with immediate need of your attention is headed your way with the medical condition: "
-				+ condition + " Please prepare and update the nurse on-board accordingly -admin";
+		String doctor = pd.getDoctorId().getName();
+		String pr = pd.getPulse_rate();
+		String oxy = pd.getOxygenlevel();
+		String temp = pd.getTemperature();
+		String body = "Hello " + doctor
+				+ ", A patient with immediate need of your attention is headed your way with the medical condition: "
+				+ condition + "\n Current pulse rate is : " + pr + "\n Oxygen level: " + oxy + "\n Temperature: " + temp
+				+ " Please prepare and update the nurse on-board accordingly -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
 

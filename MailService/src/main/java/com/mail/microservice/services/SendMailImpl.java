@@ -63,8 +63,6 @@ public class SendMailImpl implements SendMail {
 				logger.debug("Successfully Authenticated Password!"); 
 				String username = prop.getProperty("mail.username");
 				String password = prop.getProperty("mail.password");
-				System.out.println(username);
-				System.out.println(password);
 				return new PasswordAuthentication(username, password);
 			}
 		});
