@@ -2,6 +2,7 @@ package com.patient.microservice.entity;
 
 import javax.persistence.Entity;
 
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,6 +25,9 @@ public class PatientDetails {
 	private String disease;
 	private String pincode;
 	private boolean status;
+	@OneToOne(targetEntity = Hospital.class)
+	@JoinColumn(name = "hospitalId", referencedColumnName = "hospitalId")
+	private Hospital hospitalId;
 	@OneToOne(targetEntity = NurseDetails.class)
 	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
 	private NurseDetails nurseId;
@@ -33,6 +37,24 @@ public class PatientDetails {
 	@OneToOne(targetEntity = Comments.class)
 	@JoinColumn(name = "commentId", referencedColumnName = "commentId")
 	private Comments commentId;
+	
+	
+
+	public AadharDetails getaId() {
+		return aId;
+	}
+
+	public void setaId(AadharDetails aId) {
+		this.aId = aId;
+	}
+
+	public Hospital getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(Hospital hospitalId) {
+		this.hospitalId = hospitalId;
+	}
 
 	public int getId() {
 		return id;
@@ -42,12 +64,41 @@ public class PatientDetails {
 		this.id = id;
 	}
 
-	public AadharDetails getAadharno() {
-		return aId;
+	public PatientDetails(int id, AadharDetails aId, String bloodgroup, String pulse_rate, String oxygenlevel,
+			String temperature, String disease, String pincode, boolean status, Hospital hospitalId,
+			NurseDetails nurseId, DoctorDetails doctorId, Comments commentId) {
+		super();
+		this.id = id;
+		this.aId = aId;
+		this.bloodgroup = bloodgroup;
+		this.pulse_rate = pulse_rate;
+		this.oxygenlevel = oxygenlevel;
+		this.temperature = temperature;
+		this.disease = disease;
+		this.pincode = pincode;
+		this.status = status;
+		this.hospitalId = hospitalId;
+		this.nurseId = nurseId;
+		this.doctorId = doctorId;
+		this.commentId = commentId;
 	}
 
-	public void setAadharno(AadharDetails aadharno) {
-		this.aId = aadharno;
+	public PatientDetails(AadharDetails aId, String bloodgroup, String pulse_rate, String oxygenlevel,
+			String temperature, String disease, String pincode, boolean status, Hospital hospitalId,
+			NurseDetails nurseId, DoctorDetails doctorId, Comments commentId) {
+		super();
+		this.aId = aId;
+		this.bloodgroup = bloodgroup;
+		this.pulse_rate = pulse_rate;
+		this.oxygenlevel = oxygenlevel;
+		this.temperature = temperature;
+		this.disease = disease;
+		this.pincode = pincode;
+		this.status = status;
+		this.hospitalId = hospitalId;
+		this.nurseId = nurseId;
+		this.doctorId = doctorId;
+		this.commentId = commentId;
 	}
 
 	public String getBloodgroup() {
@@ -134,39 +185,10 @@ public class PatientDetails {
 		super();
 	}
 
-	public PatientDetails(int id, AadharDetails aadharno, String bloodgroup, String pulse_rate, String oxygenlevel,
-			String temperature, String disease, String pincode, NurseDetails nurseId, DoctorDetails doctorId,
-			Comments commentId) {
-		super();
-		this.id = id;
-		this.aId = aadharno;
-		this.bloodgroup = bloodgroup;
-		this.pulse_rate = pulse_rate;
-		this.oxygenlevel = oxygenlevel;
-		this.temperature = temperature;
-		this.disease = disease;
-		this.pincode = pincode;
-		this.status = false;
-		this.nurseId = nurseId;
-		this.doctorId = doctorId;
-		this.commentId = commentId;
+	public AadharDetails getAadharno() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public PatientDetails(AadharDetails aadharno, String bloodgroup, String pulse_rate, String oxygenlevel,
-			String temperature, String disease, String pincode, NurseDetails nurseId, DoctorDetails doctorId,
-			Comments commentId) {
-		super();
-		this.aId = aadharno;
-		this.bloodgroup = bloodgroup;
-		this.pulse_rate = pulse_rate;
-		this.oxygenlevel = oxygenlevel;
-		this.temperature = temperature;
-		this.disease = disease;
-		this.pincode = pincode;
-		this.status = false;
-		this.nurseId = nurseId;
-		this.doctorId = doctorId;
-		this.commentId = commentId;
-	}
 
 }

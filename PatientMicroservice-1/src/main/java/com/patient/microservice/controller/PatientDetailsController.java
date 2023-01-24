@@ -1,6 +1,7 @@
 package com.patient.microservice.controller;
 
 import java.util.Iterator;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.patient.microservice.entity.Comments;
 import com.patient.microservice.entity.DoctorDetails;
 import com.patient.microservice.entity.Hospital;
 import com.patient.microservice.entity.PatientDetails;
+import com.patient.microservice.service.CommentsService;
 import com.patient.microservice.service.DoctorDetailsService;
 import com.patient.microservice.service.HospitalService;
 import com.patient.microservice.service.PatientDetailsService;
@@ -27,6 +30,8 @@ public class PatientDetailsController {
 	private HospitalService hospitalService;
 	@Autowired
 	private DoctorDetailsService doctorDetailsService;
+	@Autowired
+	private CommentsService commentsService;
 
 	@PostMapping("/create")
 	public PatientDetails createPatientDetails(@RequestBody PatientDetails patient) {
@@ -45,10 +50,62 @@ public class PatientDetailsController {
 
 	@PostMapping("/doctors/{specialization}")
 	    public List<DoctorDetails> getDoctors(@PathVariable("specialization") String specialization) {
-	    	return doctorDetailsService.getDoctors(specialization);
+	    	return doctorDetailsService.getDoctorSpec(specialization);
 	         }
+	
+    @GetMapping("/comments/doctor/{doctorId}/nurse/{nurseId}")
+    public List<Comments> getComments(@PathVariable int doctorId , @PathVariable int nurseId)
+    {
+    	return commentsService.getCommentsForDoctorIdandNurseId(doctorId, nurseId);
+    }
+    
+   
+  }
 
-}
+//@RestController
+//@RequestMapping("/patient")
+//public class PatientController {
+//    @Autowired
+//    private GeolocationAPI geolocationAPI;
+//    @Autowired
+//    private HospitalService hospitalService;
+//
+//    @GetMapping("/hospitals/{pincode}")
+//    public List<Hospital> getHospitalsByPincode(@PathVariable String pincode) {
+//        double[] latlong = geolocationAPI.getLatitudeLongitude(pincode);
+//        return hospitalService.getHospitalsByLatitudeLongitude(latlong[0], latlong[1]);
+//    }
+//}
+
+
+//@Service
+//public class HospitalService {
+//    @Autowired
+//    private HospitalRepository hospitalRepository;
+//
+//    public List<Hospital> getHospitalsByLatitudeLongitude(double latitude, double longitude) {
+//        return hospitalRepository.findByLatitudeAndLongitude(latitude, longitude);
+//    }
+//}
+
+//public interface HospitalRepository extends JpaRepository<Hospital, Long> {
+//    @Query("SELECT h FROM Hospital h WHERE h.latitude = :latitude AND h.longitude = :longitude")
+//    List<Hospital> findByLatitudeAndLongitude(@Param("latitude") double latitude, @Param("longitude") double longitude);
+//}
+
+
+
+
+
+
+
+//        return commentsService.getCommentsForDoctorNurse(doctorId, nurseId}
+//	
+//	@GetMapping("/comment/{id}")
+//	public Comments getComments(@PathVariable ("id") int id){
+//		return Comments.getCommentsById(id);
+//	}
+
 //	 @GetMapping("/hospitals/{pincode}")
 //	 public List<Hospital> getHospitalsByPincode(@PathVariable int pincode) {
 //	     return HospitalRepository.findByPincode(pincode);
@@ -84,3 +141,19 @@ public class PatientDetailsController {
 //        return ResponseEntity.ok(patients);
 //    }
 //}
+
+
+
+//
+//    public Patient updatePatientDetails(Patient patient, Long id) {
+//        Patient existingPatient = patientRepository.findById(id).orElse(null);
+//        if (existingPatient == null) {
+//            throw new ResourceNotFoundException("Patient with id " + id + " not found.");
+//        }
+//        existingPatient.setName(patient.getName());
+//        existingPatient.setAddress(patient.getAddress());
+//        existingPatient.setPhone(patient.getPhone());
+//        return patientRepository.save(existingPatient);
+//    }
+//}
+
