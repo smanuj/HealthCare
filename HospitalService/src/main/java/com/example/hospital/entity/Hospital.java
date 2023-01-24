@@ -1,62 +1,53 @@
 package com.example.hospital.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "hospitals")
 public class Hospital {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;
-	@Column(nullable = false)
+	@Column(name = "hospitalId")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int hospitalId;
 	private String name;
-	@Column(nullable = false)
-	private String number;
-	@Column(nullable = false)
 	private String location;
-	@Column(nullable = false)
 	private String pincode;
-	private Boolean bedavailability;
-	
+	private boolean bedAvailabilty;
+//	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+//	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
 
 	public Hospital() {
 		super();
 	}
 
-
-	public Hospital(int id, String name, String number, String location, String pincode, Boolean bedavailability) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.number = number;
-		this.location = location;
-		this.pincode = pincode;
-		this.bedavailability = bedavailability;
-	}
-
-
-	public Hospital(String name, String number, String location, String pincode, Boolean bedavailability) {
+	public Hospital(String name, String location, String pincode, boolean bedAvailabilty) {
 		super();
 		this.name = name;
-		this.number = number;
 		this.location = location;
 		this.pincode = pincode;
-		this.bedavailability = bedavailability;
+		this.bedAvailabilty = bedAvailabilty;
+
 	}
 
-
-
-	public int getId() {
-		return id;
+	public Hospital(int hospitalId, String name, String location, String pincode, boolean bedAvailabilty) {
+		super();
+		this.hospitalId = hospitalId;
+		this.name = name;
+		this.location = location;
+		this.pincode = pincode;
+		this.bedAvailabilty = bedAvailabilty;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public int getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(int hospitalId) {
+		this.hospitalId = hospitalId;
 	}
 
 	public String getName() {
@@ -65,15 +56,6 @@ public class Hospital {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
 	}
 
 	public String getLocation() {
@@ -91,24 +73,13 @@ public class Hospital {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
-	
 
-	public Boolean getBedavailability() {
-		return bedavailability;
+	public boolean isBedAvailabilty() {
+		return bedAvailabilty;
 	}
 
-
-	public void setBedavailability(Boolean bedavailability) {
-		this.bedavailability = bedavailability;
+	public void setBedAvailabilty(boolean bedAvailabilty) {
+		this.bedAvailabilty = bedAvailabilty;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Hospital [id=" + id + ", name=" + name + ", number=" + number + ", location=" + location + ", pincode="
-				+ pincode + ", bedavailability=" + bedavailability + "]";
-	}
-
-	}
-
-
+}

@@ -17,5 +17,7 @@ public interface UserService {
 	String  loginuser(UserDetails user) throws Exception;
 	
 	List<UserDetails> getalluser();
+	
+	void deletuser(int id);
 
 }

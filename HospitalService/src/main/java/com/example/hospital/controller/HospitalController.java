@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.hospital.entity.Doctor_details;
+import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
-import com.example.hospital.entity.Nurse_details;
+import com.example.hospital.entity.NurseDetails;
 import com.example.hospital.exception.ResourceNotFoundException;
-import com.example.hospital.repository.Doctor_detailsRepository;
-import com.example.hospital.repository.Nurse_detailsRepository;
+import com.example.hospital.repository.DoctorDetailsRepository;
+import com.example.hospital.repository.NurseDetailsRepository;
 import com.example.hospital.service.DoctorService;
 import com.example.hospital.service.HospitalService;
 import com.example.hospital.service.NurseService;
@@ -34,9 +34,9 @@ public class HospitalController {
 	@Autowired
 	private HospitalService hospitalService;
 	@Autowired
-	private Doctor_detailsRepository doctor_detailsRepository;
+	private DoctorDetailsRepository doctor_detailsRepository;
 	@Autowired
-	private Nurse_detailsRepository nurse_detailsRepository;
+	private NurseDetailsRepository nurse_detailsRepository;
 	@Autowired 
 	private DoctorService doctorService;
 	@Autowired
@@ -78,8 +78,8 @@ public class HospitalController {
 		}
 		
 		@GetMapping("/admin/doctorApproval")
-		public List<Doctor_details> doctor() {
-			List<Doctor_details> user = doctor_detailsRepository.findAllByApprovalFalseAndIdNotNull();
+		public List<DoctorDetails> doctor() {
+			List<DoctorDetails> user = doctor_detailsRepository.findAllByApprovalFalseAndIdNotNull();
 			return user;
 		}
 		
@@ -98,8 +98,8 @@ public class HospitalController {
 
 		
 		@GetMapping("/admin/nurseApproval")
-		public List<Nurse_details> nurse() {
-			List<Nurse_details> user = nurse_detailsRepository.findAllByApprovalFalseAndIdNotNull();
+		public List<NurseDetails> nurse() {
+			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndIdNotNull();
 			return user;
 		}
 	

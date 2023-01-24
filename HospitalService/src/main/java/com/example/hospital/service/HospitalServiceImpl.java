@@ -27,7 +27,6 @@ public class HospitalServiceImpl implements HospitalService {
 	@Override
 	public Hospital save(Hospital hospital) {
 		// TODO Auto-generated method stub
-		System.out.println(hospital.getBedavailability());
 		return hospitalRepository.save(hospital);
 	}
 	
@@ -47,12 +46,11 @@ public class HospitalServiceImpl implements HospitalService {
 	public Hospital updateHospital(Hospital h, int id) {
 		// TODO Auto-generated method stub
 		 Hospital hospital = hospitalRepository.findById(id).get();
-		    if(hospital.getId()!=0) {
+		    if(hospital.getHospitalId()!=0) {
 		      hospital.setName(h.getName());
-		      hospital.setNumber(h.getNumber());
 		      hospital.setLocation(h.getLocation());
 		      hospital.setPincode(h.getPincode());
-		      hospital.setBedavailability(h.getBedavailability());
+		      hospital.setBedAvailabilty(h.isBedAvailabilty());
 		    }
 		    else
 		    {

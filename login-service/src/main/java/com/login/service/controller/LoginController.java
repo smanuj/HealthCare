@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,7 +51,7 @@ public class LoginController {
 	@PostMapping("/api/savedoctor")
 	public String user_det(@RequestBody UserDetails user) throws Exception {
 		String savedoctor = userservice.savedoctor(user);
-		 
+		 System.out.println("pppppppppppppppppppppppppppppp");
 		return savedoctor;
 		
 		
@@ -89,7 +90,39 @@ public class LoginController {
 	
 	@GetMapping("/hospitals")
 	public List<Hospital> getallhospital(){
+		System.out.println(hospital.findAll());
 		return hospital.findAll() ;
+	}
+	
+	@GetMapping("/hospitals/{id}")
+	public Optional<Hospital> getallhospitalbyid(@PathVariable("id") int hospitalId){
+		
+		return hospital.findById(hospitalId) ;
+	}
+	
+	@GetMapping("/nurse")
+	public List<NurseDetails> getnursedetailsapprovalfalse(){
+		return nurseservice.getByapprovefalse();
+	}
+	
+	@GetMapping("/doctor")
+	public List<DoctorDetails> getdoctordetailsapprovalfalse(){
+		return doctorservice.getByapprovefalse();
+	}
+	
+	@DeleteMapping("/user/{id}")
+	public void deleteuser(@PathVariable("id") int userId) {
+		userservice.deletuser(userId);
+	}
+	
+	@DeleteMapping("/nurse/{id}")
+	public void deletenurse(@PathVariable("id") int id) {
+		nurseservice.deletenurse(id);
+	}
+	
+	@DeleteMapping("/doctor/{id}")
+	public void deletedoctor(@PathVariable("id") int id) {
+		doctorservice.deletedoctor(id);
 	}
 	
 

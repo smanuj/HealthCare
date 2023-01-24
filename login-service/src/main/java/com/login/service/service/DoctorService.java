@@ -9,5 +9,10 @@ public interface DoctorService {
 	
 	DoctorDetails savedoctor(DoctorDetails doctor);
 	
+	List<DoctorDetails>  getByapprovefalse();
+	
+	
+	void deletedoctor(int id);
+	
 
 }
