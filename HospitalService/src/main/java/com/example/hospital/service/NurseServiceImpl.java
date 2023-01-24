@@ -6,25 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.hospital.dao.UserDao;
-import com.example.hospital.entity.Nurse_details;
-import com.example.hospital.entity.User_details;
-import com.example.hospital.repository.Nurse_detailsRepository;
+import com.example.hospital.entity.NurseDetails;
+import com.example.hospital.entity.UserDetails;
+import com.example.hospital.repository.NurseDetailsRepository;
 import com.example.hospital.repository.UserRepository;
 
 @Service
 public class NurseServiceImpl implements NurseService{
 
 	@Autowired
-	private Nurse_detailsRepository nurseRepository;
+	private NurseDetailsRepository nurseRepository;
 	@Autowired
 	private UserDao userDao;
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Override
-	public Nurse_details approvingNurse(int id) {
+	public NurseDetails approvingNurse(int id) {
 		// TODO Auto-generated method stub
-		Nurse_details nurse = nurseRepository.findById(id).get();
+		NurseDetails nurse = nurseRepository.findById(id).get();
 		nurse.setApproval(true);
 	
 		return nurseRepository.save(nurse);
@@ -32,12 +32,11 @@ public class NurseServiceImpl implements NurseService{
 
 	@Override
 	public void deleteNurse(int id) {
-		// TODO Auto-generated method stub
-		Nurse_details nurse = nurseRepository.findById(id).get();
+		NurseDetails nurse = nurseRepository.findById(id).get();
 
-		List<User_details> users = userRepository.findAll();
+		List<UserDetails> users = userRepository.findAll();
 	
-		for(User_details  u: users) {
+		for(UserDetails  u: users) {
 			if(u.getNursedetails()!=null && u.getNursedetails().getId()==id) {
 			
 				userDao.deleteUser(u.getId());

@@ -9,5 +9,14 @@ public interface DoctorService {
 	
 	DoctorDetails savedoctor(DoctorDetails doctor);
 	
+	List<DoctorDetails>  getByapprovefalse();
+	
+	
+	void deletedoctor(int id);
+	
+	DoctorDetails approvingDoctor(int id);
+	
+	List<Hospital> gethospitallist();
+	
 
 }

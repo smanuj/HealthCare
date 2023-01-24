@@ -80,5 +80,4 @@ public class AadharDetails {
 		this.gender = gender;
 		this.address = address;
 	}
-
 }

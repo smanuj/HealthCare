@@ -26,9 +26,13 @@ public class DoctorDetails {
 	private String specialization;
 	private boolean avaliability;
 	private boolean approval;
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
-	private Set<Hospital> hospitals;
+//	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+//	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
+//	private Set<Hospital> hospitals;
+	
+	@OneToOne(targetEntity = Hospital.class)
+	@JoinColumn(name = "hospitalId", referencedColumnName = "hospitalId")
+	private Hospital hospitalId;
 
 	public int getDoctorId() {
 		return doctorId;
@@ -78,21 +82,17 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Set<Hospital> getHospitals() {
-		return hospitals;
-	}
 
-	public void setHospitals(Set<Hospital> hospitals) {
-		this.hospitals = hospitals;
-	}
 
 	public DoctorDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public DoctorDetails(int doctorId, String name, String pnumber, String specialization, boolean avaliability,
-			boolean approval, Set<Hospital> hospitals) {
+			boolean approval) {
 		super();
 		this.doctorId = doctorId;
 		this.name = name;
@@ -100,26 +100,36 @@ public class DoctorDetails {
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitals = hospitals;
+		
 	}
 
-	public DoctorDetails(String name, String pnumber, String specialization, boolean avaliability, boolean approval,
-			Set<Hospital> hospitals) {
+	public DoctorDetails(String name, String pnumber, String specialization, boolean avaliability, boolean approval
+			) {
 		super();
 		this.name = name;
 		this.pnumber = pnumber;
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitals = hospitals;
+		
+	}
+
+	public Hospital getHospital() {
+		return hospitalId;
+	}
+
+	public void setHospital(Hospital hospital) {
+		this.hospitalId = hospital;
 	}
 
 	@Override
 	public String toString() {
 		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
-				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitals="
-				+ hospitals + "]";
+				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospital="
+				+ hospitalId + "]";
 	}
+
+	
 	
 	
 	

@@ -58,11 +58,13 @@ class Nurse extends React.Component{
     
                 }
                 else{
+                  this.setState(this.initiaLSTATE);
                     alert("user saved")
                 }
               } )
          }
          else{
+          this.setState(this.initiaLSTATE);
             alert("password");
          }
 

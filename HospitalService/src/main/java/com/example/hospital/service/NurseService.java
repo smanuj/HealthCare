@@ -1,10 +1,10 @@
 package com.example.hospital.service;
 
-import com.example.hospital.entity.Nurse_details;
+import com.example.hospital.entity.NurseDetails;
 
 public interface NurseService {
 
-	Nurse_details approvingNurse(int id);
+	NurseDetails approvingNurse(int id);
 
 	void deleteNurse(int id);
 
