@@ -185,10 +185,7 @@ public class PatientDetails {
 		super();
 	}
 
-	public AadharDetails getAadharno() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 
 }

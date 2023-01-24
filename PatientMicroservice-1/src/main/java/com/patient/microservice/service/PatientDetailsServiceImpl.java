@@ -11,6 +11,7 @@ import com.patient.microservice.entity.Comments;
 import com.patient.microservice.entity.DoctorDetails;
 import com.patient.microservice.entity.PatientDetails;
 import com.patient.microservice.repository.AadharRepository;
+import com.patient.microservice.repository.CommentsRepository;
 import com.patient.microservice.repository.DoctorDetailsRepository;
 import com.patient.microservice.repository.PatientDetailsRepository;
 
@@ -25,18 +26,25 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     
     @Autowired
     private DoctorDetailsRepository doctorDetailsRepository;
+    
+    @Autowired
+    private CommentsRepository commentsRepository;
      
     @Override
     public PatientDetails createPatientDetails(PatientDetails patient) {
-    	int aadharNo= patient.getAadharno().getAadharNo();
+    	int aadharNo= patient.getaId().getAadharNo();
     	AadharDetails a = aadharRepository.findByAadharNo(aadharNo);
     	patient.setaId(a);
     	patient.setStatus(false);
     	String spec = patient.getDisease();
+    	System.out.println(spec);
     	DoctorDetails d = doctorDetailsRepository.findBySpecializationAndAvaliabilityTrue(spec);
+    	System.out.println("d is : "+d);
     	patient.setDoctorId(d);
     	patient.setHospitalId(d.getHospitals());
     	Comments comm = new Comments();
+    	comm.setDoctorId(d);
+    	commentsRepository.save(comm);
     	patient.setCommentId(comm);
         return patientRepository.save(patient);
     }
