@@ -1,6 +1,7 @@
 package com.login.service.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.websocket.server.ServerEndpoint;
@@ -8,6 +9,7 @@ import javax.websocket.server.ServerEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.login.service.HospitalFacade;
 import com.login.service.config.WebSecurityConfig;
 import com.login.service.dao.UserDao;
 import com.login.service.entity.DoctorDetails;
@@ -15,7 +17,6 @@ import com.login.service.entity.Hospital;
 import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 import com.login.service.repo.DoctorRepository;
-import com.login.service.repo.HospitalRepository;
 import com.login.service.repo.Userrepository;
 
 @Service
@@ -31,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	private NurseService nurseservice;
 	
 	@Autowired
-	private HospitalRepository hr;
+	private HospitalFacade hospitalFacade;
 	
 	@Autowired
 	private WebSecurityConfig websecurity;
@@ -73,7 +74,8 @@ public class UserServiceImpl implements UserService {
 		  DoctorDetails d = user.getDoctordetails();
 		  int h = d.getHospital().getHospitalId();
 		  System.out.println(d.getHospital().getHospitalId());
-		  Hospital h1= hr.getById(h);
+		  Hospital h1= hospitalFacade.gethospitalbyid(h);
+		  System.out.println("******************************"+h1);
 		  d.setApproval(false);
 		  d.setAvaliability(true);
 		  d.setHospital(h1);
@@ -87,12 +89,16 @@ public class UserServiceImpl implements UserService {
 		}
 		
 		catch (Exception e) {
-			Hospital h = user.getDoctordetails().getHospital();
-		     System.out.println(h);
-			 DoctorDetails d = user.getDoctordetails();
+//			Hospital h = user.getDoctordetails().getHospital();
+//		     System.out.println(h);
+			DoctorDetails d = user.getDoctordetails();
+			  int h = d.getHospital().getHospitalId();
+			  System.out.println(d.getHospital().getHospitalId());
+			  Hospital h1= hospitalFacade.gethospitalbyid(h);
+			  System.out.println("******************************"+h1);
 			  d.setApproval(false);
 			  d.setAvaliability(true);
-			  d.setHospital(h);
+			  d.setHospital(h1);
 			  DoctorDetails d1 = doctorservice.savedoctor(d);
 			  String  dd=websecurity.passwordEncoder().encode(user.getPassword());
 			  System.out.println("============================="+dd);
@@ -188,6 +194,10 @@ public class UserServiceImpl implements UserService {
 	public void deletuser(int id) {
 		userdao.deleteUser(id);
 		
+	}
+	
+	public Hospital getbyid(int id) {
+		return hospitalFacade.gethospitalbyid(id);
 	}
 	
 	

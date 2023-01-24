@@ -14,7 +14,7 @@ public class UserDaoImpl implements UserDao  {
 	@Override
 	public void deleteUser(int id) {
 		
-		String sql = "delete user_details where id = ?";
+		String sql = "delete user_details where user_id= ?";
 		jdbcTemplate.update(sql, id);
 	}
 }

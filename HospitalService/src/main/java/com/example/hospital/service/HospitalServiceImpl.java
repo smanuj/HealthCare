@@ -2,13 +2,20 @@ package com.example.hospital.service;
 
 
 import java.util.List;
+
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
-import com.example.hospital.repository.HospitalRepository;
 import com.example.hospital.exception.ResourceNotFoundException;
+import com.example.hospital.repository.HospitalRepository;
+
+import com.example.hospital.facade.UserDetailsFacade;
+
 
 @Service
 public class HospitalServiceImpl implements HospitalService {
@@ -16,6 +23,9 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Autowired
 	private HospitalRepository hospitalRepository;
+	
+	@Autowired
+	private UserDetailsFacade userDetailsFacade;
 	
 	@Override
 	public List<Hospital> findAll() {
@@ -72,5 +82,12 @@ public class HospitalServiceImpl implements HospitalService {
 		// TODO Auto-generated method stub
 		return hospitalRepository.findHospitalNames();
 	}
-
+	
+	@Override
+	public List<DoctorDetails> getdoctorlist(){
+		return userDetailsFacade.getdoctors();
 	}
+	
+	
+
+}

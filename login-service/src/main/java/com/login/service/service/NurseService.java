@@ -11,5 +11,7 @@ public interface NurseService {
 	List<NurseDetails>  getByapprovefalse();
 	
 	void deletenurse(int id);
+	
+	NurseDetails approvingNurse(int id);
 
 }

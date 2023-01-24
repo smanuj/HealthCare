@@ -32,7 +32,6 @@ public class NurseServiceImpl implements NurseService{
 
 	@Override
 	public void deleteNurse(int id) {
-		// TODO Auto-generated method stub
 		NurseDetails nurse = nurseRepository.findById(id).get();
 
 		List<UserDetails> users = userRepository.findAll();
