@@ -3,9 +3,13 @@ import './PatientForm.css';
 
 const PatientForm = () => {
     const [patient, setPatient] = useState({
-        name: '',
-        age: '',
-        gender: ''
+        aId: '',
+        bg: '',
+        pr: '',
+        oxy:'',
+        temp:'',
+        disease:'',
+        pindoe:''
     });
 
     const handleChange = (event) => {
@@ -21,26 +25,48 @@ const PatientForm = () => {
     }
 
     return (
+        <div className="app">
         <form className="patient-form" onSubmit={handleSubmit}>
             <h2>Patient Registration</h2>
             <label>
-                Name:
-                <input type="text" name="name" value={patient.name} onChange={handleChange} required />
+                Aadhar number:
+                <input type="text" name="aId" value={patient.aId} onChange={handleChange} required />
             </label>
             <label>
-                Age:
-                <input type="number" name="age" value={patient.age} onChange={handleChange} required />
+                Blood Group:
+                <input type="text" name="bg" value={patient.bg} onChange={handleChange} required />
             </label>
             <label>
-                Gender:
-                <select name="gender" value={patient.gender} onChange={handleChange} required>
-                    <option value="" disabled>Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                Pulse Rate:
+                <input type="text" name="pr" value={patient.pr} onChange={handleChange} required />
+            </label>
+            <label>
+                Oxygen Level:
+                <input type="text" name="oxy" value={patient.oxy} onChange={handleChange} required />
+            </label>
+            <label>
+                Body Temperature:
+                <input type="text" name="temp" value={patient.temp} onChange={handleChange} required />
+            </label>
+            <label>
+                Disease:
+                <select name="disease" value={patient.disease} onChange={handleChange} required>
+                    <option value="" disabled selected>Select Medical Condition</option>
+                    <option value="gPhy">General medical issue</option>
+                    <option value="heart">Heart issue</option>
+                    <option value="skin">Skin issue</option>
+                    <option value="ortho">Fracture</option>
+                    <option value="pulmo">Breathing problem</option>
                 </select>
             </label>
+            <label>
+                Pincode :
+                <input type="text" name="pincode" value={patient.pincode} onChange={handleChange} required />
+            </label>
+
             <button type="submit">Register</button>
         </form>
+        </div>
     );
 }
 
