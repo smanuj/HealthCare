@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Dropdown,DropdownButton } from "react-bootstrap";
+import Select from 'react-select';
 
 import axios from "axios";
 class Registration extends React.Component{
@@ -12,12 +13,10 @@ class Registration extends React.Component{
         super(props);
         this.state= this.initiaLSTATE;
         this.state={
-          hospitals:[]
+          hospitals:[],
+          selectedOption:[]
+          
         };
-    }
-
-    login(){
-        return this.props.history.push("/");
     }
 
     initiaLSTATE={
@@ -28,20 +27,22 @@ class Registration extends React.Component{
         password:"",
         confirmpassword:"",
         pnumber:"",
+        hospital:""
 
     };
 
     componentDidMount(){
        
-          axios.get("http://localhost:8080/hospitals").then(Response => console.log(Response.data))
+          axios.get("http://localhost:8080/hospitals").then(Response => (Response.data))
            .then((data)=>{this.setState({hospitals:data})});
+           
          
      
       }
+      
     handlesubmit= (event) => {
-       
-      event.preventDefault()
-
+      
+   
         const doctor = {
             name: this.state.name,
             pnumber: this.state.pnumber,
@@ -50,39 +51,50 @@ class Registration extends React.Component{
            
           };
 
+          
+
         const user ={
             email:this.state.email,
             password:this.state.password,
             doctordetails:{
                 name: this.state.name,
             pnumber: this.state.pnumber,
-            specialization: this.state.specialization
+            specialization: this.state.specialization,
+            hospital:
+              {
+                hospitalId:this.state.hospital
+              }
+            },
+          
             
-            }
+          
+            
         }
         const confirmpassword= this.state.confirmpassword;
         const password = this.state.password;
         
         
        
-        //  axios.post("http://localhost:8080/api/save",doctor,email,password).then(response => alert(response.data))
+      
         
          if(confirmpassword==password) {
             axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
-                    alert("User with this email already Exists")
-        ;
+                    alert("User with this email already Exists")  ;
+                    
                   
     
                 }
                 else{
                     alert("user saved")
+                    window.location("/")
                 }
               } )
          }
          else{
             alert("Password and ConfirmPassword are not same");
+            window.location("/")
          }
           
 
@@ -94,10 +106,25 @@ class Registration extends React.Component{
     bookChange = (event) => {
         this.setState({
           [event.target.name]: event.target.value,
+          
+          
         });
       };
-    render(){
+
+     handleChange = (value) =>{
+      alert(value)
+      this.setState.hospital=value
+      alert(this.setState.hospital)
+    
+     }
+
      
+  
+
+       
+    render(){
+    
+    
         return(
         <Form onSubmit={this.handlesubmit} >
             <div className="main">
@@ -141,16 +168,17 @@ class Registration extends React.Component{
                   </select>
                     <br></br>
                     <br></br>
-                   {/* <select name="hospital"  >
-                    <option value="" disabled selected>Select Your Specialization</option>
-                    {
+                    <select name="hospital"  value={this.state.hosp} onChange={this.bookChange} >
+                    <option value="" disabled selected>Select Your Hospital</option>
+                    
+                     {
                  this.state.hospitals.map((hospital) => (
                       
-                     <option key={hospital.name} value={hospital.name}>{hospital.name}</option>
+                     <option key={hospital.hospitalId}  value ={hospital.hospitalId}>{hospital.name}</option>
                     
                      ) )
-                    }  
-                 </select>     */}
+                    }   
+                 </select>     
 
                 
                  
@@ -166,6 +194,8 @@ class Registration extends React.Component{
             </div>
            </div> 
            </Form>
+
+
            
         );
     }

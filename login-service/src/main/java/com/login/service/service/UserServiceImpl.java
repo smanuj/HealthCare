@@ -1,6 +1,7 @@
 package com.login.service.service;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.websocket.server.ServerEndpoint;
 
@@ -8,10 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.login.service.config.WebSecurityConfig;
+import com.login.service.dao.UserDao;
 import com.login.service.entity.DoctorDetails;
+import com.login.service.entity.Hospital;
 import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 import com.login.service.repo.DoctorRepository;
+import com.login.service.repo.HospitalRepository;
 import com.login.service.repo.Userrepository;
 
 @Service
@@ -26,9 +30,14 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private NurseService nurseservice;
 	
+	@Autowired
+	private HospitalRepository hr;
 	
 	@Autowired
 	private WebSecurityConfig websecurity;
+	
+	@Autowired
+	private UserDao userdao;
 	
 	@Override
 	public UserDetails getbyemail(String email){
@@ -58,9 +67,16 @@ public class UserServiceImpl implements UserService {
 		if(flag==1) {
 			return "not";
 		}
+//	     Hospital h = user.getDoctordetails().getHospital();
+//	     System.out.println("ggggggggggggggggggggggggggggggggg"+h);
+//	     
 		  DoctorDetails d = user.getDoctordetails();
+		  int h = d.getHospital().getHospitalId();
+		  System.out.println(d.getHospital().getHospitalId());
+		  Hospital h1= hr.getById(h);
 		  d.setApproval(false);
 		  d.setAvaliability(true);
+		  d.setHospital(h1);
 		  DoctorDetails d1 = doctorservice.savedoctor(d);
 		  String  dd=websecurity.passwordEncoder().encode(user.getPassword());
 		  System.out.println("============================="+dd);
@@ -71,9 +87,12 @@ public class UserServiceImpl implements UserService {
 		}
 		
 		catch (Exception e) {
+			Hospital h = user.getDoctordetails().getHospital();
+		     System.out.println(h);
 			 DoctorDetails d = user.getDoctordetails();
 			  d.setApproval(false);
 			  d.setAvaliability(true);
+			  d.setHospital(h);
 			  DoctorDetails d1 = doctorservice.savedoctor(d);
 			  String  dd=websecurity.passwordEncoder().encode(user.getPassword());
 			  System.out.println("============================="+dd);
@@ -164,6 +183,14 @@ public class UserServiceImpl implements UserService {
 		
 		
 	}
+	
+	@Override
+	public void deletuser(int id) {
+		userdao.deleteUser(id);
+		
 	}
+	
+	
+}
 
 
