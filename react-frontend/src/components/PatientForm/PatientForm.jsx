@@ -9,7 +9,7 @@ const PatientForm = () => {
         oxy:'',
         temp:'',
         disease:'',
-        pindoe:''
+        pincode:''
     });
 
     const handleChange = (event) => {
