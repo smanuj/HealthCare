@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.patient.microservice.entity.DoctorDetails;
+import com.patient.microservice.entity.Hospital;
 import com.patient.microservice.repository.DoctorDetailsRepository;
 
 @Service
@@ -15,7 +16,13 @@ public class DoctorDetailsServiceImpl implements DoctorDetailsService {
     private DoctorDetailsRepository doctorRepository;
 
 	@Override
-    public List<DoctorDetails> getDoctors(String specialization) {
+    public DoctorDetails getDoctors(String specialization) {
         return doctorRepository.findBySpecializationAndAvaliabilityTrue(specialization);
     }
+	
+	@Override
+	public List<DoctorDetails> getDoctorSpec(String specialization){
+		return doctorRepository.findAllBySpecializationAndAvaliabilityTrue(specialization);
+	}
+	
 }

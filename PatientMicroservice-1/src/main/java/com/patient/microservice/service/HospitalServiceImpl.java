@@ -2,6 +2,7 @@ package com.patient.microservice.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,18 @@ public class HospitalServiceImpl implements HospitalService {
 		
 			 return hospitalRepository.findByPincode(pincode);
 		}
+		
 
 		
 }
+
+//@Service
+//public class HospitalService {
+//    @Autowired
+//    private HospitalRepository hospitalRepository;
+//
+//    public List<Hospital> getHospitalsByLatitudeLongitude(double latitude, double longitude) {
+//        return hospitalRepository.findByLatitudeAndLongitude(latitude, longitude);
+//    }
+//}
+//
