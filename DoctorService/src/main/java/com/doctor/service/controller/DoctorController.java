@@ -1,22 +1,12 @@
 package com.doctor.service.controller;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.InputStreamResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +22,10 @@ import com.doctor.service.service.DoctorDetailsService;
 import com.doctor.service.service.NurseDetailsService;
 import com.doctor.service.service.PatientDetailsService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
@@ -84,79 +78,32 @@ public class DoctorController {
 		return nurseDetailsService.getNurseById(id);
 	}
 	
-	@GetMapping("/download/{id}")
-	public ResponseEntity<byte[]> downloadErrorData(@PathVariable ("id") int id) throws Exception {
-		PatientDetails employees = patientDetailsService.getPatientDetailsById(id);
-		ObjectMapper objectMapper = new ObjectMapper();
-		String json = objectMapper.writeValueAsString(employees);
-		byte[] isr = json.getBytes();
-		String fileName = "employees.pdf";
-		HttpHeaders respHeaders = new HttpHeaders();
-		respHeaders.setContentLength(isr.length);
-		respHeaders.setContentType(new MediaType("text", "json"));
-		respHeaders.setCacheControl("must-revalidate, post-check=0, pre-check=0");
-		respHeaders.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName);
-		return new ResponseEntity<byte[]>(isr, respHeaders, HttpStatus.OK);
-	}
-	
-	@GetMapping("/download-patient-details-json/{id}")
-	public ResponseEntity<Resource> downloadPatientDetailsJSON(@PathVariable ("id") int id) throws IOException {
-		PatientDetails patients = patientDetailsService.getPatientDetailsById(id);
-		ObjectMapper objectMapper = new ObjectMapper();
+	@GetMapping("/download-pdf/{id}")
+    public void downloadPDF(HttpServletResponse response,@PathVariable ("id") int id) throws IOException,DocumentException {
+        // Create a new PDF document
+    	PatientDetails patients = patientDetailsService.getPatientDetailsById(id);
+    	ObjectMapper objectMapper = new ObjectMapper();
 		String json = objectMapper.writeValueAsString(patients);
-		byte[] data = json.getBytes();
-		File file = new File("patient_details.json");
-		FileUtils.writeByteArrayToFile(file, data);
-		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-		HttpHeaders headers = new HttpHeaders();
-		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=patient_details.json");
-		return ResponseEntity.ok()
-				.headers(headers)
-				.contentLength(data.length)
-				.contentType(MediaType.parseMediaType("application/octet-stream"))
-				.body(resource);
-	}
-	
-	@GetMapping("/downloaddetails/{id}")
-	public ResponseEntity<PDDocument> download(@PathVariable ("id") int id) throws Exception {
-		PatientDetails employees = patientDetailsService.getPatientDetailsById(id);
-		ObjectMapper objectMapper = new ObjectMapper();
-		String json = objectMapper.writeValueAsString(employees);
-		
-		String[] strings = json.split(System.lineSeparator());
+		String newLine=json.replace(',','\n');
+		String s=newLine.replaceAll("[{}]", " "); 
+        Document document = new Document();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PdfWriter.getInstance(document, baos);
+        document.open();
 
-        PDDocument document = new PDDocument();
-        PDPage page = new PDPage();
-        document.addPage(page);
+        // Write the JSON data to the PDF
+        document.add(new Paragraph(s));
 
-        PDPageContentStream contentStream = new PDPageContentStream(document, page);
-
-        contentStream.setFont(PDType1Font.COURIER, 12);
-        contentStream.beginText();
-        contentStream.setLeading(14.5f);
-        contentStream.newLineAtOffset(25, 725);
-        for (String string : strings) {
-            contentStream.showText(string);
-            // add line manually
-            contentStream.newLine();
-        }
-        contentStream.endText();
-        contentStream.close();
-
-        document.save("pdfBoxHelloWorld.pdf");
+        // Close the document
         document.close();
-        
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Pragma", "no-cache");
-        headers.add("Expires", "0");
 
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentType(MediaType.parseMediaType("application/octet-stream"))
-                .body(document);
-		
-	}
+        // Set the content type and attachment header.
+        response.addHeader("Content-Disposition", "attachment; filename=my_pdf.pdf");
+        response.setContentType("application/pdf");
+
+        // Write the PDF to the response.
+        response.getOutputStream().write(baos.toByteArray());
+    }
 	
 	
 	
