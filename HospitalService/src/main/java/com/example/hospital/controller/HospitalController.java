@@ -79,8 +79,10 @@ public class HospitalController {
 		
 		@GetMapping("/admin/doctorApproval")
 		public List<DoctorDetails> doctor() {
-			List<DoctorDetails> user = doctor_detailsRepository.findAllByApprovalFalseAndIdNotNull();
-			return user;
+//			List<DoctorDetails> user = doctor_detailsRepository.findAllByApprovalFalseAndDoctorIdNotNull();
+//			return user;
+			
+			return hospitalService.getdoctorlist();
 		}
 		
 		@PostMapping("/admin/doctorApproval/{id}")
@@ -99,7 +101,7 @@ public class HospitalController {
 		
 		@GetMapping("/admin/nurseApproval")
 		public List<NurseDetails> nurse() {
-			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndIdNotNull();
+			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndNurseIdNotNull();
 			return user;
 		}
 	

@@ -10,6 +10,6 @@ import com.example.hospital.entity.NurseDetails;
 
 @Repository
 public interface NurseDetailsRepository extends JpaRepository<NurseDetails, Integer>{
-	List<NurseDetails> findAllByApprovalFalseAndIdNotNull();
+	List<NurseDetails> findAllByApprovalFalseAndNurseIdNotNull();
 }
 

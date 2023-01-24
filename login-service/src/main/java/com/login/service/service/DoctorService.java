@@ -14,5 +14,9 @@ public interface DoctorService {
 	
 	void deletedoctor(int id);
 	
+	DoctorDetails approvingDoctor(int id);
+	
+	List<Hospital> gethospitallist();
+	
 
 }
