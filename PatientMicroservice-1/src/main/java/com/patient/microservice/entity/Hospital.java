@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "hospitals")
 public class Hospital {
 	@Id
 	@Column(name = "hospitalId")
