@@ -18,7 +18,7 @@ public class DoctorDetails {
 
 	@Id
 	@Column(name = "doctorId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int doctorId;
 	private String name;
 	private String pnumber;
