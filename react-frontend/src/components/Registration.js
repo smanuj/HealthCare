@@ -27,7 +27,7 @@ class Registration extends React.Component{
         password:"",
         confirmpassword:"",
         pnumber:"",
-        hospital:""
+        
 
     };
 

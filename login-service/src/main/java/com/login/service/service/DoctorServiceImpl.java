@@ -9,12 +9,12 @@ import javax.websocket.server.ServerEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.login.service.HospitalFacade;
 import com.login.service.dao.UserDao;
 import com.login.service.entity.DoctorDetails;
 import com.login.service.entity.Hospital;
 import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
+import com.login.service.facade.HospitalFacade;
 import com.login.service.repo.DoctorRepository;
 import com.login.service.repo.Userrepository;
 
