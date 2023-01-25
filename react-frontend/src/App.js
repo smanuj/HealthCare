@@ -2,7 +2,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import "./app.css"
 import Patient from "./pages/patient/Patient";
-
+import {Container, Row, Col} from 'react-bootstrap';
 import CaseInfo from "./components/patientInfo/CaseInfo";
 import Chart from "./components/charts/Chart";
 import { BrowserRouter,Route,Routes,useLocation } from "react-router-dom"
@@ -22,19 +22,22 @@ import Login from './components/Login';
 import Registration from './components/Registration';
 import Nurse from './components/Nurse';
 import PatientForm from "./components/PatientForm/PatientForm";
+import NavBar from "./components/NavBar"
 
 
 
-
-
-
-function App() {
-     
-  return( <div>
+  function App() {
+    const marginTop={
+      marginTop:"20px"
+    };
+  return( 
    
     <BrowserRouter>
-    <Topbar />
-    <div >
+    <NavBar />
+    <Container>
+    <Row>
+     <Col lg={12} style={marginTop}></Col>
+    
       <Routes>
         <Route exact path ="/" element={<Login/>}></Route>
         <Route exact path ="/doctorReg" element={< Registration/> } />
@@ -45,15 +48,15 @@ function App() {
         <Route exact path ="/admin/dashboard" element={<Admin/>}></Route>
         <Route exact path ="/admin/addHospital" element={<AddHospital/>}></Route>
         <Route exact path ="/admin/getHospitals" element={<ListHospital/>}></Route>
-        <Route exact path ="/admin/approvedoctor" element={<ApproveDoctor/>}></Route>
-        <Route exact path ="/adminapprovenurse" element={<ApproveNurse/>}></Route>
+        <Route exact path ="/admin/approveDoctor" element={<ApproveDoctor/>}></Route>
+        <Route exact path ="/admin/approveNurse" element={<ApproveNurse/>}></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass" element={<NewPass/>}/>
       </Routes>       
-    </div>
+     </Row></Container>  
     </BrowserRouter>
         
-  </div>     
+     
   );
 }
 

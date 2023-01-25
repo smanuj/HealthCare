@@ -1,6 +1,7 @@
 import React from 'react';
 import {Navbar} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Topbar from './topbar/Topbar';
 
 export default class NavigationBar extends React.Component{
     render(){
@@ -9,7 +10,7 @@ export default class NavigationBar extends React.Component{
             <Link to={""} className="navbar-brand">
                &nbsp;&nbsp; Health Care Express
             </Link>
-          
+            <Topbar/>
         </Navbar>
     );
 }

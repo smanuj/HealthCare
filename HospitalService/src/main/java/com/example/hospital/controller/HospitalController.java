@@ -55,21 +55,21 @@ public class HospitalController {
 	}
  
 	 @GetMapping("/hospitals/{id}")
-	  public ResponseEntity<Hospital> getHospitalById(@PathVariable("id") int id) throws ResourceNotFoundException{
-	    return new ResponseEntity<Hospital>(hospitalService.findHospitalById(id),HttpStatus.OK);
+	  public Hospital getHospitalById(@PathVariable("id") int id) {
+	    return hospitalService.findHospitalById(id);
 	  }
 	  
 	  
 	  @PutMapping("/hospitals/{id}")
-	  public ResponseEntity<Hospital> updateHospital(@RequestBody Hospital h,@PathVariable("id") int id) throws ResourceNotFoundException{
-	    return new ResponseEntity<Hospital>(hospitalService.updateHospital(h, id), HttpStatus.OK);
+	  public Hospital updateHospital(@RequestBody Hospital h,@PathVariable("id") int id) {
+	    return hospitalService.updateHospital(h, id);
 	    
 	  }
 	  
 	  @DeleteMapping("/hospitals/{id}")
-	  public ResponseEntity<String> deleteHospital(@PathVariable("id") int id){
+	  public void deleteHospital(@PathVariable("id") int id){
 	    hospitalService.deleteHospital(id);
-	    return new ResponseEntity<String>("Deleted",HttpStatus.OK);
+	  
 	  }
 	  
 		@GetMapping("/hospitalNames")
@@ -79,21 +79,20 @@ public class HospitalController {
 		
 		@GetMapping("/admin/doctorApproval")
 		public List<DoctorDetails> doctor() {
-//			List<DoctorDetails> user = doctor_detailsRepository.findAllByApprovalFalseAndDoctorIdNotNull();
-//			return user;
 			
-			return hospitalService.getdoctorlist();
+			return hospitalService.getDoctorList();
 		}
 		
 		@PostMapping("/admin/doctorApproval/{id}")
 		public String doctorApproval(@PathVariable("id") int id) {
-			 doctorService.approvingDoctor(id);
+			
+			 hospitalService.approvingDoctor(id);
 			 return "Approved";
 		}
 		
 		@DeleteMapping("/admin/doctorDisapproval/{id}")
 		public String doctorDisapproval(@PathVariable("id") int id) {
-			doctorService.deleteDoctor(id);
+			hospitalService.deletedoctor(id);
 			return "Disapproved";
 			
 		}
@@ -101,19 +100,20 @@ public class HospitalController {
 		
 		@GetMapping("/admin/nurseApproval")
 		public List<NurseDetails> nurse() {
-			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndNurseIdNotNull();
-			return user;
+//			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndNurseIdNotNull();
+//			return user;
+			return hospitalService.getNurseList();
 		}
 	
 		@PostMapping("/admin/nurseApproval/{id}")
 		public String nurseApproval(@PathVariable("id") int id) {
-			 nurseService.approvingNurse(id);
+			 hospitalService.approvingNurse(id);
 			 return "Approved";
 		}
 		
 		@DeleteMapping("/admin/nurseDisapproval/{id}")
 		public String nurseDisapproval(@PathVariable("id") int id) {
-			nurseService.deleteNurse(id);
+			hospitalService.deleteNurse(id);
 			return "Disapproved";
 			
 		}

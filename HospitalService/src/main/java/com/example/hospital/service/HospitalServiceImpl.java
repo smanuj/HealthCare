@@ -7,10 +7,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
+import com.example.hospital.entity.NurseDetails;
 import com.example.hospital.exception.ResourceNotFoundException;
 import com.example.hospital.repository.HospitalRepository;
 
@@ -84,10 +86,40 @@ public class HospitalServiceImpl implements HospitalService {
 	}
 	
 	@Override
-	public List<DoctorDetails> getdoctorlist(){
+	public List<DoctorDetails> getDoctorList(){
 		return userDetailsFacade.getdoctors();
+	}
+
+	
+	
+	public ResponseEntity<DoctorDetails> approvingDoctor(int id) {
+		DoctorDetails doctor = userDetailsFacade.getdoctorbyid(id);
+		doctor.setApproval(true);
+		return userDetailsFacade.savedoctor(doctor);
 	}
 	
 	
+	@Override
+	public List<NurseDetails> getNurseList(){
+		return userDetailsFacade.getNurses();
+	}
+
+
+	
+	public ResponseEntity<NurseDetails> approvingNurse(int id) {
+		NurseDetails nurse = userDetailsFacade.getNurseById(id);
+		nurse.setApproval(true);
+		return userDetailsFacade.saveNurse(nurse);
+	}
+	
+	public String deletedoctor(int id) {
+		userDetailsFacade.doctordisapprove(id);
+		return "Disapproved";
+	}
+	
+	public String deleteNurse(int id) {
+		userDetailsFacade.nursedisapprove(id);
+		return "Disapproved";
+	}
 
 }

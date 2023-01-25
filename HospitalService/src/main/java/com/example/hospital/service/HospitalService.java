@@ -1,9 +1,13 @@
 package com.example.hospital.service;
 
 import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
 import com.example.hospital.exception.ResourceNotFoundException;
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
+import com.example.hospital.entity.NurseDetails;
 
 public interface HospitalService {
 
@@ -19,7 +23,17 @@ public interface HospitalService {
 
 	List<String> findHospitalNames();
 
-	 List<DoctorDetails> getdoctorlist();
+	 List<DoctorDetails> getDoctorList();
+
+	List<NurseDetails> getNurseList();
+	
+	String deletedoctor(int id);
+	
+	String deleteNurse(int id);
+	ResponseEntity<DoctorDetails> approvingDoctor(int id) ;
+	
+	ResponseEntity<NurseDetails> approvingNurse(int id);
+	
 
 	
 }

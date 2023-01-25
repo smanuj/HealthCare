@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class NurseDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int nurseId;
 	private String name;
 	private String pnumber;

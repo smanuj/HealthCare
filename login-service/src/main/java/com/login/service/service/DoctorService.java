@@ -1,6 +1,7 @@
 package com.login.service.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.login.service.entity.DoctorDetails;
 import com.login.service.entity.Hospital;
@@ -17,6 +18,9 @@ public interface DoctorService {
 	DoctorDetails approvingDoctor(int id);
 	
 	List<Hospital> gethospitallist();
+	
+	Optional<DoctorDetails> doctorgetdoctorbyid(int id);
+	
 	
 
 }

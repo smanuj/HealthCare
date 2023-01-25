@@ -1,6 +1,7 @@
 package com.login.service.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.websocket.server.ServerEndpoint;
@@ -67,6 +68,18 @@ public class DoctorServiceImpl implements DoctorService {
 	public List<Hospital> gethospitallist(){
 		return hospitalfacade.getallhospital();
 	}
+	
+	public DoctorDetails getdoctorbyid(int id) {
+		return doctorRepository.getById(id);
+	}
+
+
+	@Override
+	public Optional<DoctorDetails> doctorgetdoctorbyid(int id) {
+		return doctorRepository.findById(id);
+	}
+	
+	
 	
 
 }
