@@ -46,4 +46,6 @@ public class DoctorServiceImpl implements DoctorService {
 		doctorRepository.deleteById(doctor.getDoctorId());
 	
 	}
+	
+	
 }

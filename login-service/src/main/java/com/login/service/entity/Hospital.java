@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Hospital {
 	@Id
 	@Column(name = "hospitalId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int hospitalId;
 	private String name;
 	private String location;

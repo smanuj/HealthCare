@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Comments {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int commentId;
 	private String comments;
 	@OneToOne(targetEntity = DoctorDetails.class)

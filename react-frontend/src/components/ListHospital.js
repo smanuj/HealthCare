@@ -16,13 +16,13 @@ export default class ListHospital extends Component{
 
     deleteHospital(id){
         HospitalService.deleteHospital(id).then( res => {
-            this.setState({hospitals: this.state.hospitals.filter(hospital => hospital.id !== id)});
+            this.setState({hospitals: this.state.hospitals.filter(hospital => hospital.hospitalId !== id)});
         });
     }
   
 
     componentDidMount(){
-        axios.get("http://localhost:8080/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
+        axios.get("http://localhost:8081/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
       
     }
    
@@ -52,15 +52,15 @@ export default class ListHospital extends Component{
                     {
                                     this.state.hospitals.map(
                                         hospital => 
-                                        <tr key = {hospital.id}>
-                                            <td> {hospital.id} </td>  
+                                        <tr key = {hospital.hospitalId}>
+                                            <td> {hospital.hospitalId} </td>  
                                              <td> {hospital.name} </td>   
                                              <td> {hospital.location}</td>
                                              <td> {hospital.pincode}</td>
-                                             <td> {hospital.bedavailability}</td>
+                                             <td> {String(hospital.bedAvailabilty)}</td>
                                              <td>
                                            
-     <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.id)} className="btn-list">Delete </button>
+     <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.hospitalId)} className="btn-list">Delete </button>
     
                                              </td>        
                                         </tr>

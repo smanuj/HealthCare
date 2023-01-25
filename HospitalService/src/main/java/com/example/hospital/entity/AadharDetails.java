@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class AadharDetails {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int aId;
 	private int aadharNo;
 	private String name;

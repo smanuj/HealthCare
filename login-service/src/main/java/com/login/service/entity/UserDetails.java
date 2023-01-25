@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public class UserDetails {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int userId;
 	private String email;
 	private String password;

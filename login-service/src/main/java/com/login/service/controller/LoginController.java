@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,15 +62,20 @@ public class LoginController {
 		
 		
 	}
+	
+	@PutMapping("/api/doctor")
+	public DoctorDetails userupdatedoctor(@RequestBody DoctorDetails doctor1) {
+		return doctorRepository.save(doctor1);
+		
+		
+		
+	}
 	@PostMapping("/api/savenurse")
 	public String user_nurse(@RequestBody UserDetails user) {
 		
 		 String savenurse = userService.savenurse(user);
 		 return savenurse;
-		 
-		
-		
-		
+	
 	}
 
 	
@@ -123,6 +129,10 @@ public class LoginController {
 		doctorService.deletedoctor(id);
 	}
 	
+	@GetMapping("/doctor/{id}")
+	public Optional<DoctorDetails> getdoctorbyid(@PathVariable("id") int id) {
+	return doctorService.doctorgetdoctorbyid(id);
+	}
 	@GetMapping("/doctorApproval")
 	public List<DoctorDetails> doctor() {
 		List<DoctorDetails> user = doctorService.getByapprovefalse();
@@ -136,17 +146,30 @@ public class LoginController {
 	}
 	
 	@DeleteMapping("/doctorDisapproval/{id}")
-	public String doctorDisapproval(@PathVariable("id") int id) {
+	public void doctorDisapproval(@PathVariable("id") int id) {
 		doctorService.deletedoctor(id);
-		return "Disapproved";
+//		return "Disapproved";
 		
 	}
-
+	
 	
 	@GetMapping("/nurseApproval")
 	public List<NurseDetails> nurse() {
 		List<NurseDetails> user = nurseService.getByapprovefalse();
 		return user;
+	}
+	
+	@PutMapping("/api/nurse")
+	public NurseDetails userupdatenurse(@RequestBody NurseDetails nurse) {
+		return nurseService.savenurse(nurse);
+		
+		
+		
+	}
+	
+	@GetMapping("/nurse/{id}")
+	public Optional<NurseDetails> getnursebyid(@PathVariable("id") int id) {
+	return nurseService.getnursebyid(id);
 	}
 
 	@PostMapping("/nurseApproval/{id}")
@@ -156,9 +179,8 @@ public class LoginController {
 	}
 	
 	@DeleteMapping("/nurseDisapproval/{id}")
-	public String nurseDisapproval(@PathVariable("id") int id) {
+	public void nurseDisapproval(@PathVariable("id") int id) {
 		nurseService.deletenurse(id);
-		return "Disapproved";
 		
 	}
 	

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import { Navigate } from 'react-router-dom';
 
 
 
@@ -15,9 +16,39 @@ export default class ApproveNurse extends Component{
     }
 
     componentDidMount(){
-       // axios.get("http://localhost:8080/api/v1/nurses").then(Response => Response.data).then((data)=>{this.setState({doctors:data})});
+        axios.get("http://localhost:8081/api/v1/admin/nurseApproval").then(Response => 
+        Response.data).then((data)=>{this.setState({nurses:data})});
+        
       
     }
+
+    approveNurse(id){ 
+        
+        axios.post("http://localhost:8081/api/v1/admin/nurseApproval/"+id).then(Response => {
+             if(Response.data==="Approved"){
+             alert(id);
+             alert("Approved");
+             window.location.reload();
+                 } 
+          
+                    }); 
+                   
+                }
+
+                disapproveNurse(id) {
+
+                
+                    axios.delete("http://localhost:8081/api/v1/admin/nurseDisapproval/"+id).then(Response => {
+                            if(Response.data==="Disapproved"){
+                                alert("Disapproved");
+                                window.location.reload();
+                               
+                            }
+                            
+                        });
+            
+                    
+                }
    
     render(){
         return(
@@ -49,13 +80,13 @@ export default class ApproveNurse extends Component{
                                              <td> {nurse.id} </td>  
                                              <td> {nurse.name} </td>   
                                              <td> {nurse.pnumber}</td>
-                                             <td> {nurse.availability}</td>
-                                             <td> {nurse.approval}</td>
+                                             <td> {String(nurse.avaliability)}</td>
+                                             <td> {String(nurse.approval)}</td>
  
                                              <td>
                                            
      <button style={{marginLeft: "20px"}} onClick={ () => this.approveNurse(nurse.id)} className="btn-list">Approve </button>
-<button style={{marginLeft: "20px"}} onClick={ () => this.rejectNurse(nurse.id)} className="btn-list">Reject </button>
+<button style={{marginLeft: "20px"}} onClick={ () => this.disapproveNurse(nurse.id)} className="btn-list">Disapprove </button>
     
                                              </td>        
                                         </tr>
