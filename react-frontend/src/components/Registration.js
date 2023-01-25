@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Dropdown,DropdownButton } from "react-bootstrap";
-import Select from 'react-select';
+
 
 import axios from "axios";
 class Registration extends React.Component{

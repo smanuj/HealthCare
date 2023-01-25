@@ -44,6 +44,7 @@ public class MailController {
 
 	@PostMapping("/reset/newPass/{id}")
 	public String newPass(@PathVariable("id") int id, @RequestBody UserDetails user) {
+		
 		// retrieving OTP in email field as a string
 		String otp = user.getEmail();
 		boolean b = userService.checkPassword(id, otp);
