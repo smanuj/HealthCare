@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 public class PatientDetails {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	@OneToOne(targetEntity = AadharDetails.class)
 	@JoinColumn(name = "aId", referencedColumnName = "aId")

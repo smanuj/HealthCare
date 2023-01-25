@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
-
+import { Navigate } from 'react-router-dom';
+import { WindowSharp } from '@mui/icons-material';
 
 
 export default class ApproveDoctor extends Component{
@@ -11,16 +12,41 @@ export default class ApproveDoctor extends Component{
             doctors:[]
     }
    
-    
     }
-
-   
-    
 
     componentDidMount(){
-      //  axios.get("http://localhost:8080/api/v1/doctors").then(Response => Response.data).then((data)=>{this.setState({doctors:data})});
+       axios.get("http://localhost:8081/api/v1/admin/doctorApproval").then(Response => Response.data).then((data)=>{this.setState({doctors:data})});
       
     }
+
+    approveDoctor(id){ 
+        
+        axios.post("http://localhost:8081/api/v1/admin/doctorApproval/"+id).then(Response => {
+            if(Response.data==="Approved"){
+                alert(id);
+                alert("Approved");
+                window.location.reload();
+                
+                
+                } 
+               
+                    }); 
+                }
+               
+                disapproveDoctor(id) {
+
+                
+                    axios.delete("http://localhost:8081/api/v1/admin/doctorDisapproval/"+id).then(Response => {
+                            if(Response.data==="Disapproved"){
+                                alert("Disapproved");
+                                window.location.reload();
+                               
+                            }
+                            
+                        });
+             
+                }
+   
    
     render(){
         return(
@@ -49,18 +75,18 @@ export default class ApproveDoctor extends Component{
                     {
                                     this.state.doctors.map(
                                         doctor => 
-                                        <tr key = {doctor.id}>
-                                            <td> {doctor.id} </td>  
+                                        <tr key = {doctor.doctorId}>
+                                            <td> {doctor.doctorId} </td>  
                                              <td> {doctor.name} </td>   
                                              <td> {doctor.pnumber}</td>
                                              <td> {doctor.specialization}</td>
-                                             <td> {doctor.availability}</td>
-                                             <td> {doctor.approval}</td>
+                                             <td> {String(doctor.avaliability)}</td>
+                                             <td> {String(doctor.approval)}</td>
  
                                              <td>
                                            
-     <button style={{marginLeft: "20px"}} onClick={ () => this.approveDoctor(doctor.id)} className="btn-list">Approve </button>
-<button style={{marginLeft: "20px"}} onClick={ () => this.rejectDoctor(doctor.id)} className="btn-list">Reject </button>
+     <button style={{marginLeft: "20px"}} onClick={ () => this.approveDoctor(doctor.doctorId)} className="btn-list">Approve </button>
+<button style={{marginLeft: "20px"}} onClick={ () => this.disapproveDoctor(doctor.doctorId)} className="btn-list">Disapprove </button>
     
                                              </td>        
                                         </tr>

@@ -1,5 +1,6 @@
 package com.login.service.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,11 +16,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 
 @Entity
-public class DoctorDetails {
+public class DoctorDetails implements Serializable {
 	
 	@Id
 	@Column(name = "doctorId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int doctorId;
 	private String name;
 	private String pnumber;
