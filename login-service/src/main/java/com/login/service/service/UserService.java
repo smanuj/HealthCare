@@ -23,5 +23,13 @@ public interface UserService {
 	void deletuser(int id);
 	
 	Hospital getbyid(int id);
+	
+	
+	
+	String getRole(UserDetails user);
+	
+	boolean checkPassword(int id, String password);
+	
+	void changePassword(int id, String password);
 
 }

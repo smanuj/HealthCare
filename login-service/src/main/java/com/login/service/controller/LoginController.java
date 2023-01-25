@@ -45,6 +45,10 @@ public class LoginController {
 	private DoctorRepository doctorRepository;
 	
 	
+   @GetMapping("/api/users")
+   public List<UserDetails> getallusers(){
+	   return userService.getalluser();
+   }
 
 	
 	@PostMapping("/api/savedoctor")
@@ -183,6 +187,28 @@ public class LoginController {
 		nurseService.deletenurse(id);
 		
 	}
+	
+	
+	@GetMapping("/getrole")
+	public String getrole( UserDetails user) {
+		return userService.getRole(user);
+	}
+	
+	@GetMapping("/checkpassword")
+	public boolean checkpassword(int id,String password) {
+		return userService.checkPassword(id, password);
+	}
+	
+	@PostMapping("/changepassword")
+	public void changepassword(int id,String password) {
+	 userService.changePassword(id, password);
+	}
+	
+	@GetMapping("/email")
+	public UserDetails  getbyemail(String email) {
+		return userService.getbyemail(email);
+	}
+	
 	
 
 }
