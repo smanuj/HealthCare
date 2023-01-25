@@ -46,13 +46,13 @@ public class NurseServiceImpl implements NurseService {
 		List<UserDetails> users = userRepository.findAll();
 	
 		for(UserDetails  u: users) {
-			if(u.getNursedetails()!=null && u.getNursedetails().getId()==id) {
+			if(u.getNursedetails()!=null && u.getNursedetails().getNurseId()==id) {
 			
 				userDao.deleteUser(u.getId());
 			}
 		}
 		
-		nurseRepository.deleteById(nurse.getId());
+		nurseRepository.deleteById(nurse.getNurseId());
 	
 	}
 	

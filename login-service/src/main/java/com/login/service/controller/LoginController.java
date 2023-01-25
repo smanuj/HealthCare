@@ -159,7 +159,7 @@ public class LoginController {
 		return user;
 	}
 	
-	@PutMapping("/api/nurse")
+	@PostMapping("/api/nurse")
 	public NurseDetails userupdatenurse(@RequestBody NurseDetails nurse) {
 		return nurseService.savenurse(nurse);
 		

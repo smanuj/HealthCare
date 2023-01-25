@@ -87,6 +87,7 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Override
 	public List<DoctorDetails> getDoctorList(){
+		System.out.println(userDetailsFacade.getdoctors());
 		return userDetailsFacade.getdoctors();
 	}
 
@@ -94,7 +95,6 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	public ResponseEntity<DoctorDetails> approvingDoctor(int id) {
 		DoctorDetails doctor = userDetailsFacade.getdoctorbyid(id);
-		System.out.println(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"+doctor);
 		doctor.setApproval(true);
 		return userDetailsFacade.savedoctor(doctor);
 	}

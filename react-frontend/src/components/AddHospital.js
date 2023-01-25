@@ -13,7 +13,7 @@ class AddHospital extends React.Component{
     
     
     initiaLSTATE={
-        hospitalId:"",
+      hospitalId:"",
         name:"",
         location:"",
         pincode:"",

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
 @Entity
 public class DoctorDetails {
 
@@ -73,14 +74,13 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Hospital getHospitals() {
+	public Hospital getHospital() {
 		return hospitalId;
 	}
 
-	public void setHospitals(Hospital hospitalId) {
-		this.hospitalId = hospitalId;
+	public void setHospital(Hospital hospital) {
+		this.hospitalId = hospital;
 	}
-
 	public DoctorDetails() {
 		super();
 		// TODO Auto-generated constructor stub

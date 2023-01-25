@@ -24,7 +24,6 @@ public List<UserDetails> getuser(){
 	return Arrays.asList(restTemplate.getForObject(Login_URL+"/api/users",UserDetails[].class ));
 }
 
-
 public List<DoctorDetails> getdoctors(){
 	return Arrays.asList(restTemplate.getForObject(Login_URL+"/doctor",DoctorDetails[].class ));
 }
@@ -58,6 +57,7 @@ public NurseDetails getNurseById(int id) {
 
 public ResponseEntity<NurseDetails> saveNurse(NurseDetails nurseDetails) {
 	return restTemplate.postForEntity(Login_URL+"/api/nurse", nurseDetails, NurseDetails.class);
+
 	
 }
 

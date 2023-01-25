@@ -19,11 +19,7 @@ import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.entity.NurseDetails;
 import com.example.hospital.exception.ResourceNotFoundException;
-import com.example.hospital.repository.DoctorDetailsRepository;
-import com.example.hospital.repository.NurseDetailsRepository;
-import com.example.hospital.service.DoctorService;
 import com.example.hospital.service.HospitalService;
-import com.example.hospital.service.NurseService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -33,14 +29,7 @@ public class HospitalController {
 	
 	@Autowired
 	private HospitalService hospitalService;
-	@Autowired
-	private DoctorDetailsRepository doctor_detailsRepository;
-	@Autowired
-	private NurseDetailsRepository nurse_detailsRepository;
-	@Autowired 
-	private DoctorService doctorService;
-	@Autowired
-	private NurseService nurseService;
+	
 	
 	
 	
@@ -83,7 +72,7 @@ public class HospitalController {
 			return hospitalService.getDoctorList();
 		}
 		
-		@PostMapping("/admin/doctorApproval/{id}")
+		@PutMapping("/admin/doctorApproval/{id}")
 		public String doctorApproval(@PathVariable("id") int id) {
 			
 			 hospitalService.approvingDoctor(id);
@@ -110,6 +99,8 @@ public class HospitalController {
 			 hospitalService.approvingNurse(id);
 			 return "Approved";
 		}
+		
+		
 		
 		@DeleteMapping("/admin/nurseDisapproval/{id}")
 		public String nurseDisapproval(@PathVariable("id") int id) {

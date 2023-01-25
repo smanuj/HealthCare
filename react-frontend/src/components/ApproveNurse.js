@@ -76,8 +76,8 @@ export default class ApproveNurse extends Component{
                     {
                                     this.state.nurses.map(
                                         nurse => 
-                                        <tr key = {nurse.id}>
-                                             <td> {nurse.id} </td>  
+                                        <tr key = {nurse.nurseId}>
+                                             <td> {nurse.nurseId} </td>  
                                              <td> {nurse.name} </td>   
                                              <td> {nurse.pnumber}</td>
                                              <td> {String(nurse.avaliability)}</td>
@@ -85,8 +85,8 @@ export default class ApproveNurse extends Component{
  
                                              <td>
                                            
-     <button style={{marginLeft: "20px"}} onClick={ () => this.approveNurse(nurse.id)} className="btn-list">Approve </button>
-<button style={{marginLeft: "20px"}} onClick={ () => this.disapproveNurse(nurse.id)} className="btn-list">Disapprove </button>
+     <button style={{marginLeft: "20px"}} onClick={ () => this.approveNurse(nurse.nurseId)} className="btn-list">Approve </button>
+<button style={{marginLeft: "20px"}} onClick={ () => this.disapproveNurse(nurse.nurseId)} className="btn-list">Disapprove </button>
     
                                              </td>        
                                         </tr>
