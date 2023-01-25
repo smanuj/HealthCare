@@ -68,7 +68,7 @@ class AddHospital extends React.Component{
                     <input type="text" placeholder="Pincode" className="name" pattern="[0-9]{6}" name="pincode"  value={this.state.pincode} onChange={this.hospitalChange} required/>
                   </div>
                   <br></br>
-                 <select   name="bedavailability"  value={this.state.bedAvailabilty} onChange={this.hospitalChange} >
+                 <select   name="bedAvailabilty"  value={this.state.bedAvailabilty} onChange={this.hospitalChange} >
                 <option value="" disabled selected>Select Bed Availability</option>
                     <option value="true">Yes</option>
                     <option value="false">No</option>

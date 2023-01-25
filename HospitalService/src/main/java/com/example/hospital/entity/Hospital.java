@@ -83,4 +83,12 @@ public class Hospital {
 		this.bedAvailabilty = bedAvailabilty;
 	}
 
+	@Override
+	public String toString() {
+		return "Hospital [hospitalId=" + hospitalId + ", name=" + name + ", location=" + location + ", pincode="
+				+ pincode + ", bedAvailabilty=" + bedAvailabilty + "]";
+	}
+	
+	
+
 }
