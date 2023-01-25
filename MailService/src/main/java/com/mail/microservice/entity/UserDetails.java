@@ -96,4 +96,10 @@ public class UserDetails {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "UserDetails [userId=" + userId + ", email=" + email + ", password=" + password + ", doctorDetails="
+				+ doctorDetails + ", nurseDetails=" + nurseDetails + "]";
+	}
+
 }

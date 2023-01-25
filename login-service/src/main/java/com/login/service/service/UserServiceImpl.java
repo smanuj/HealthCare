@@ -226,6 +226,10 @@ public class UserServiceImpl implements UserService {
 
 	}
 	
+	@Override
+	public UserDetails findById(int id) {
+		return userrepo.findById(id).get();
+	}
 	
 	
 	

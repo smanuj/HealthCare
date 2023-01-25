@@ -4,28 +4,37 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mail.microservice.entity.UserDetails;
-import com.mail.microservice.repo.UserRepo;
+import com.mail.microservice.facade.Userfacade;
 
 @Service
 public class ForgotPassImpl implements ForgotPass {
 
-	@Autowired
-	private UserRepo userRepo;
+
 	
 	@Autowired
 	MailMessage mailMessage;
+	
+	@Autowired
+	private Userfacade userfacade;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public boolean checkMailId(String email) {
-		List<UserDetails> allUsers = userRepo.findAll();
+		List<UserDetails> allUsers =userfacade.getuser();
+		System.out.println(allUsers);
 		for(UserDetails user1:allUsers) {
 //			String s1= "{\"email\":\""+user1.getEmail()+"\"}";
-			System.out.println(user1.getEmail());
-			System.out.println(email);
-			if(user1.getEmail().equals(email)) {
+//			System.out.println(user1.getEmail());
+//			System.out.println(email);
+			System.out.println("test1 "+user1.getEmail());
+			if(email.equals(user1.getEmail())) {
 				return true;
 			}
 		}
@@ -42,15 +51,32 @@ public class ForgotPassImpl implements ForgotPass {
 	
 	@Override
 	public boolean generateOtp(UserDetails user) {
-		
-		UserDetails usr = userRepo.findByEmail(user.getEmail());
-		String Otp = getRandomNumberString();
-		mailMessage.sendOTP(usr.getEmail(), Otp);
+		System.out.println("test2 "+user.getEmail());
+		UserDetails usr = userfacade.getbyemail(user.getEmail());
+		System.out.println("usr: "+usr);
+		String otp1=getRandomNumberString();
+		mailMessage.sendOTP(usr.getEmail(), otp1);
+		String Otp = bCryptPasswordEncoder.encode(otp1);
 		usr.setPassword(Otp);
-		userRepo.save(usr);
+		System.out.println("usr after otp: "+usr);
+		ResponseEntity<UserDetails> user1= userfacade.saveUser(usr);
 		return true;
 		
 	}
+	
+	@Override
+	public boolean checkpassword(int id,String password) {
+		return userfacade.checkpassword(id, password);
+	}
+	
+	@Override
+	public void changepassword(int id,String password) {
+		UserDetails usr= userfacade.findById(id);
+		usr.setPassword(password);
+		userfacade.saveUser(usr);
+	}
+	
+	
 	
 	
 	

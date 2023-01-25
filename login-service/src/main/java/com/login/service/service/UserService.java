@@ -32,4 +32,6 @@ public interface UserService {
 	
 	void changePassword(int id, String password);
 
+	UserDetails findById(int id);
+
 }

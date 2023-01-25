@@ -114,6 +114,13 @@ public class DoctorDetails {
 		this.hospitalId = hospitalId;
 	}
 
+	@Override
+	public String toString() {
+		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
+				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitalId="
+				+ hospitalId + "]";
+	}
+
 //	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")
 //	private user_details userdetails;
 
