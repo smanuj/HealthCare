@@ -18,189 +18,179 @@ import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 import com.login.service.facade.HospitalFacade;
 import com.login.service.repo.DoctorRepository;
-import com.login.service.repo.Userrepository;
+import com.login.service.repo.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
+
 	@Autowired
-	private Userrepository userrepo;
-	
+	private UserRepository userRepository;
+
 	@Autowired
-	private DoctorService doctorservice;
-	
+	private DoctorService doctorService;
+
 	@Autowired
-	private NurseService nurseservice;
-	
+	private NurseService nurseService;
+
 	@Autowired
 	private HospitalFacade hospitalFacade;
-	
+
 	@Autowired
-	private WebSecurityConfig websecurity;
-	
+	private WebSecurityConfig webSecurityConfig;
+
 	@Autowired
-	private UserDao userdao;
-	
+	private UserDao userDao;
+
 	@Override
-	public UserDetails getbyemail(String email){
-		return userrepo.findByEmail(email);
+	public UserDetails getByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
-	
+
 	@Override
-	public UserDetails saveuser(UserDetails user) {
-		return userrepo.save(user);
+	public UserDetails saveUser(UserDetails user) {
+		return userRepository.save(user);
 	}
 
 	@Override
 	public List<UserDetails> getalluser() {
-		return userrepo.findAll();
+		return userRepository.findAll();
 	}
 
 	@Override
-	public String savedoctor(UserDetails user) throws Exception  {
-		int flag=0;
+	public String saveDoctor(UserDetails user) throws Exception {
+		int flag = 0;
 		try {
-		List<UserDetails> users= userrepo.findAll();
-		for(UserDetails user1:users) {
-			if(user1.getEmail().equals(user.getEmail())) {
-				flag=1;
+			List<UserDetails> users = userRepository.findAll();
+			for (UserDetails user1 : users) {
+				if (user1.getEmail().equals(user.getEmail())) {
+					flag = 1;
+				}
 			}
+			if (flag == 1) {
+				return "not";
+			}
+			DoctorDetails doctor = user.getDoctordetails();
+			int hospitalId = doctor.getHospital().getHospitalId();
+			Hospital hospital = hospitalFacade.getHospitalById(hospitalId);
+			doctor.setApproval(false);
+			doctor.setAvaliability(true);
+			doctor.setHospital(hospital);
+			DoctorDetails doctor1 = doctorService.saveDoctor(doctor);
+			String dd = webSecurityConfig.passwordEncoder().encode(user.getPassword());
+			UserDetails user2 = new UserDetails(user.getEmail(),
+					webSecurityConfig.passwordEncoder().encode(user.getPassword()), doctor1);
+			userRepository.save(user2);
+			return "saved";
 		}
-		if(flag==1) {
-			return "not";
-		}
-//	     Hospital h = user.getDoctordetails().getHospital();
-//	     System.out.println("ggggggggggggggggggggggggggggggggg"+h);
-//	     
-		  DoctorDetails d = user.getDoctordetails();
-		  int h = d.getHospital().getHospitalId();
-		  System.out.println(d.getHospital().getHospitalId());
-		  Hospital h1= hospitalFacade.gethospitalbyid(h);
-		  System.out.println("******************************"+h1);
-		  d.setApproval(false);
-		  d.setAvaliability(true);
-		  d.setHospital(h1);
-		  DoctorDetails d1 = doctorservice.savedoctor(d);
-		  String  dd=websecurity.passwordEncoder().encode(user.getPassword());
-		  System.out.println("============================="+dd);
-		  UserDetails u = new UserDetails(user.getEmail(),websecurity.passwordEncoder().encode(user.getPassword()), d1);
-//		  u.setPassword(websecurity.passwordEncoder().encode(user.getPassword()));
-		  userrepo.save(u);
-		  return "saved";
-		}
-		
+
 		catch (Exception e) {
-//			Hospital h = user.getDoctordetails().getHospital();
-//		     System.out.println(h);
-			DoctorDetails d = user.getDoctordetails();
-			  int h = d.getHospital().getHospitalId();
-			  System.out.println(d.getHospital().getHospitalId());
-			  Hospital h1= hospitalFacade.gethospitalbyid(h);
-			  System.out.println("******************************"+h1);
-			  d.setApproval(false);
-			  d.setAvaliability(true);
-			  d.setHospital(h1);
-			  DoctorDetails d1 = doctorservice.savedoctor(d);
-			  String  dd=websecurity.passwordEncoder().encode(user.getPassword());
-			  System.out.println("============================="+dd);
-			  UserDetails u = new UserDetails(user.getEmail(),websecurity.passwordEncoder().encode(user.getPassword()), d1);
-//			  u.setPassword(websecurity.passwordEncoder().encode(user.getPassword()));
-			  userrepo.save(u);
-			  return "saved";
+
+			DoctorDetails doctor = user.getDoctordetails();
+			int hospitalId = doctor.getHospital().getHospitalId();
+			Hospital hospital = hospitalFacade.getHospitalById(hospitalId);
+			doctor.setApproval(false);
+			doctor.setAvaliability(true);
+			doctor.setHospital(hospital);
+			DoctorDetails doctor1 = doctorService.saveDoctor(doctor);
+			String dd = webSecurityConfig.passwordEncoder().encode(user.getPassword());
+			UserDetails user2 = new UserDetails(user.getEmail(),
+					webSecurityConfig.passwordEncoder().encode(user.getPassword()), doctor1);
+			userRepository.save(user2);
+			return "saved";
 		}
 	}
 
 	@Override
-	public String savenurse(UserDetails user) {
-		int flag=0;
-		List<UserDetails> users= userrepo.findAll();
-		for(UserDetails user1:users) {
-			if(user1.getEmail().equals(user.getEmail())) {
-				
-				flag=1;
-				
-			}
-		}
-		if(flag==1) {
-			return "not";
-		}
-		 NurseDetails n = user.getNursedetails();
-		  n.setApproval(false);
-		  n.setAvaliability(true);
-		  NurseDetails n1 = nurseservice.savenurse(n);
-		  UserDetails u = new UserDetails(user.getEmail(),websecurity.passwordEncoder().encode(user.getPassword()), n1);
-		  
-		  UserDetails u1 = userrepo.save(u); 
-		  System.out.println("========"+u1);
-		  return "saved";
-	}
-
-	@Override
-	public String loginuser(UserDetails user) throws Exception {
-		String pass = user.getPassword();
-		String email=user.getEmail();
+	public String saveNurse(UserDetails user) throws Exception {
+		int flag = 0;
 		try {
-		UserDetails user2= userrepo.findByEmail(email);
-		System.out.println("@@@@@@@@@"+user2);
-		System.out.println("============"+user.getPassword());
-		System.out.println("============"+user2.getPassword());
-		if(user2!=null) {
-			DoctorDetails d = user2.getDoctordetails();
-			if(d==null) {
-				NurseDetails n = user2.getNursedetails();
-				System.out.println(websecurity.passwordEncoder().matches(user.getPassword(), user2.getPassword()));
-				if(websecurity.passwordEncoder().matches(user.getPassword(), user2.getPassword())) {
-					if(n.isApproval()) {
-						return "successfully";
-					}
-					else {
-						return "wait";
-					}
-					}
-					else {
+			List<UserDetails> users = userRepository.findAll();
+			for (UserDetails user1 : users) {
+				if (user1.getEmail().equals(user.getEmail())) {
+
+					flag = 1;
+
+				}
+			}
+			if (flag == 1) {
+				return "not";
+			}
+			NurseDetails nurse = user.getNursedetails();
+			nurse.setApproval(false);
+			nurse.setAvaliability(true);
+			NurseDetails nurse1 = nurseService.saveNurse(nurse);
+			UserDetails user2 = new UserDetails(user.getEmail(),
+					webSecurityConfig.passwordEncoder().encode(user.getPassword()), nurse1);
+			userRepository.save(user2);
+			return "saved";
+		} catch (Exception e) {
+			NurseDetails nurse = user.getNursedetails();
+			nurse.setApproval(false);
+			nurse.setAvaliability(true);
+			NurseDetails nurse1 = nurseService.saveNurse(nurse);
+			UserDetails user2 = new UserDetails(user.getEmail(),
+					webSecurityConfig.passwordEncoder().encode(user.getPassword()), nurse1);
+			userRepository.save(user2);
+			return "saved";
+
+		}
+
+	}
+
+	@Override
+	public String loginUser(UserDetails user) throws Exception {
+		String password = user.getPassword();
+		String email = user.getEmail();
+		try {
+			UserDetails user2 = userRepository.findByEmail(email);
+			if (user2 != null) {
+				DoctorDetails doctor = user2.getDoctordetails();
+				if (doctor == null) {
+					NurseDetails nurse = user2.getNursedetails();
+					if (webSecurityConfig.passwordEncoder().matches(user.getPassword(), user2.getPassword())) {
+						if (nurse.isApproval()) {
+							return "nurse";
+						} else {
+							return "wait";
+						}
+					} else {
 						return "pass";
 					}
 				}
-			
-		else {
-			System.out.println(websecurity.passwordEncoder().matches(user.getPassword(), user2.getPassword()));
-			if(websecurity.passwordEncoder().matches(user.getPassword(), user2.getPassword())) {
-				if(d.isApproval()) {
-					return "successfully";
-				}
+
 				else {
-					return "wait";
+					System.out.println(
+							webSecurityConfig.passwordEncoder().matches(user.getPassword(), user2.getPassword()));
+					if (webSecurityConfig.passwordEncoder().matches(user.getPassword(), user2.getPassword())) {
+						if (doctor.isApproval()) {
+							return "doctor";
+						} else {
+							return "wait";
+						}
+					} else {
+						return "pass";
+					}
 				}
-				}
-				else {
-					return "pass";
-				}
+			} else {
+				return "failed";
 			}
-		}
-		else {
+		} catch (Exception e) {
 			return "failed";
 		}
-		
-			
-		
-		}
-		catch (Exception e) {
-			return "failed";
-		}
-		
-		
+
 	}
 	
+
+
 	@Override
-	public void deletuser(int id) {
-		userdao.deleteUser(id);
-		
+	public void deletUser(int id) {
+		userDao.deleteUser(id);
+
 	}
-	
-	public Hospital getbyid(int id) {
-		return hospitalFacade.gethospitalbyid(id);
+
+	public Hospital getById(int id) {
+		return hospitalFacade.getHospitalById(id);
 	}
-	
 
 	public String getRole(UserDetails user) {
 		if (user.getDoctordetails() != null) {
@@ -210,29 +200,25 @@ public class UserServiceImpl implements UserService {
 		}
 		return "admin";
 	}
-	
+
 	public boolean checkPassword(int id, String password) {
-		UserDetails u = userrepo.findById(id).get();
-		if (websecurity.passwordEncoder().matches(password, u.getPassword())) {
+		UserDetails u = userRepository.findById(id).get();
+		if (webSecurityConfig.passwordEncoder().matches(password, u.getPassword())) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public void changePassword(int id, String password) {
-		UserDetails u = userrepo.findById(id).get();
+		UserDetails u = userRepository.findById(id).get();
 		u.setPassword(password);
-		userrepo.save(u);
+		userRepository.save(u);
 
 	}
-	
+
 	@Override
 	public UserDetails findById(int id) {
-		return userrepo.findById(id).get();
+		return userRepository.findById(id).get();
 	}
-	
-	
-	
+
 }
-
-

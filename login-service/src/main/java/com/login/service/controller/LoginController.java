@@ -23,7 +23,7 @@ import com.login.service.entity.UserDetails;
 import com.login.service.repo.DoctorRepository;
 
 import com.login.service.repo.NurseRepository;
-import com.login.service.repo.Userrepository;
+import com.login.service.repo.UserRepository;
 import com.login.service.service.DoctorService;
 import com.login.service.service.NurseService;
 import com.login.service.service.UserService;
@@ -45,67 +45,65 @@ public class LoginController {
 	private DoctorRepository doctorRepository;
 
 	@GetMapping("/api/users")
-	public List<UserDetails> getallusers() {
+	public List<UserDetails> getAllUsers() {
 		return userService.getalluser();
 	}
 
 	@PostMapping("/api/savedoctor")
-	public String user_det(@RequestBody UserDetails user) throws Exception {
-		String savedoctor = userService.savedoctor(user);
-		System.out.println("pppppppppppppppppppppppppppppp");
+	public String saveUserDoctorDetail(@RequestBody UserDetails user) throws Exception {
+		String savedoctor = userService.saveDoctor(user);
 		return savedoctor;
 
 	}
 
 	@PostMapping("/api/doctor")
-	public DoctorDetails user(@RequestBody DoctorDetails doctor1) {
+	public DoctorDetails saveDoctorDetail(@RequestBody DoctorDetails doctor1) {
 		return doctorRepository.save(doctor1);
 
 	}
 
 	@PutMapping("/api/doctor")
-	public DoctorDetails userupdatedoctor(@RequestBody DoctorDetails doctor1) {
+	public DoctorDetails updateDoctorDetail(@RequestBody DoctorDetails doctor1) {
 		return doctorRepository.save(doctor1);
 
 	}
 
 	@PostMapping("/api/savenurse")
-	public String user_nurse(@RequestBody UserDetails user) {
-
-		String savenurse = userService.savenurse(user);
+	public String saveUserNurseDetail(@RequestBody UserDetails user)throws Exception {
+		String savenurse = userService.saveNurse(user);
 		return savenurse;
 
 	}
 
 	@PostMapping("/api/login")
-	public String loginuser(@RequestBody UserDetails user) throws Exception {
-		String loginuser = userService.loginuser(user);
+	public String userLogin(@RequestBody UserDetails user) throws Exception {
+		String loginuser = userService.loginUser(user);
 		return loginuser;
 	}
 
 	@GetMapping("/doctors")
-	public List<DoctorDetails> getalldoctors() {
+	public List<DoctorDetails> getAllDoctors() {
 		return doctorRepository.findAll();
 	}
 
 	@GetMapping("/hospitals")
-	public List<Hospital> getallhospital() {
-		return doctorService.gethospitallist();
+	public List<Hospital> getAllHospital() {
+		return doctorService.getHospitalList();
 	}
 
 	@GetMapping("/hospitals/{id}")
-	public Hospital getallhospitalbyid(@PathVariable("id") int hospitalId) {
+	public Hospital getAllHospitalById(@PathVariable("id") int hospitalId) {
 
-		return userService.getbyid(hospitalId);
+		return userService.getById(hospitalId);
 	}
 
 	@GetMapping("/nurse")
-	public List<NurseDetails> getnursedetailsapprovalfalse() {
+	public List<NurseDetails> getNurseDetailsApprovalFalse() {
 		return nurseService.getByapprovefalse();
 	}
 
 	@GetMapping("/doctor")
-	public List<DoctorDetails> getdoctordetailsapprovalfalse() {
+	public List<DoctorDetails> getDoctorDetailsApprovalFalse() {
 		return doctorService.getByapprovefalse();
 	}
 
@@ -115,22 +113,22 @@ public class LoginController {
 	}
 
 	@DeleteMapping("/user/{id}")
-	public void deleteuser(@PathVariable("id") int userId) {
-		userService.deletuser(userId);
+	public void deleteUser(@PathVariable("id") int userId) {
+		userService.deletUser(userId);
 	}
 
 	@DeleteMapping("/nurse/{id}")
-	public void deletenurse(@PathVariable("id") int id) {
-		nurseService.deletenurse(id);
+	public void deleteNurse(@PathVariable("id") int id) {
+		nurseService.deleteNurse(id);
 	}
 
 	@DeleteMapping("/doctor/{id}")
-	public void deletedoctor(@PathVariable("id") int id) {
-		doctorService.deletedoctor(id);
+	public void deleteDoctor(@PathVariable("id") int id) {
+		doctorService.deleteDoctor(id);
 	}
 
 	@GetMapping("/doctor/{id}")
-	public Optional<DoctorDetails> getdoctorbyid(@PathVariable("id") int id) {
+	public Optional<DoctorDetails> getDoctorById(@PathVariable("id") int id) {
 		return doctorService.doctorgetdoctorbyid(id);
 	}
 
@@ -148,26 +146,26 @@ public class LoginController {
 
 	@DeleteMapping("/doctorDisapproval/{id}")
 	public void doctorDisapproval(@PathVariable("id") int id) {
-		doctorService.deletedoctor(id);
-//		return "Disapproved";
+		doctorService.deleteDoctor(id);
+
 
 	}
 
 	@GetMapping("/nurseApproval")
-	public List<NurseDetails> nurse() {
+	public List<NurseDetails> getNurseDetailApproveFalse() {
 		List<NurseDetails> user = nurseService.getByapprovefalse();
 		return user;
 	}
 
 	@PostMapping("/api/nurse")
-	public NurseDetails userupdatenurse(@RequestBody NurseDetails nurse) {
-		return nurseService.savenurse(nurse);
+	public NurseDetails updateNurse(@RequestBody NurseDetails nurse) {
+		return nurseService.saveNurse(nurse);
 
 	}
 
 	@GetMapping("/nurse/{id}")
-	public Optional<NurseDetails> getnursebyid(@PathVariable("id") int id) {
-		return nurseService.getnursebyid(id);
+	public Optional<NurseDetails> getNurseById(@PathVariable("id") int id) {
+		return nurseService.getNurseById(id);
 	}
 
 	@PostMapping("/nurseApproval/{id}")
@@ -178,34 +176,33 @@ public class LoginController {
 
 	@DeleteMapping("/nurseDisapproval/{id}")
 	public void nurseDisapproval(@PathVariable("id") int id) {
-		nurseService.deletenurse(id);
+		nurseService.deleteNurse(id);
 
 	}
 
 	@GetMapping("/getrole")
-	public String getrole(UserDetails user) {
+	public String getRole(UserDetails user) {
 		return userService.getRole(user);
 	}
 
 	@GetMapping("/{id}/{password}")
-	public boolean checkpassword(@PathVariable("id") int id, @PathVariable("password") String password) {
+	public boolean checkPassword(@PathVariable("id") int id, @PathVariable("password") String password) {
 		return userService.checkPassword(id, password);
 	}
 
 	@PostMapping("/{id}/{password}")
-	public void changepassword(@PathVariable("id") int id, @PathVariable("password") String password) {
+	public void changePassword(@PathVariable("id") int id, @PathVariable("password") String password) {
 		userService.changePassword(id, password);
 	}
 
 	@GetMapping("/{email}")
-	public UserDetails getbyemail(@PathVariable("email") String email) {
-		return userService.getbyemail(email);
+	public UserDetails getByEmail(@PathVariable("email") String email) {
+		return userService.getByEmail(email);
 	}
 
 	@PostMapping("/saveuser")
-	public UserDetails saveuser(@RequestBody UserDetails userDetails) {
-		System.out.println("controller usr:"+userDetails);
-		return userService.saveuser(userDetails);
+	public UserDetails saveUser(@RequestBody UserDetails userDetails) {
+		return userService.saveUser(userDetails);
 	}
 
 }

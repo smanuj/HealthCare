@@ -16,7 +16,7 @@ import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 import com.login.service.facade.HospitalFacade;
 import com.login.service.repo.DoctorRepository;
-import com.login.service.repo.Userrepository;
+import com.login.service.repo.UserRepository;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -25,7 +25,7 @@ public class DoctorServiceImpl implements DoctorService {
 	private DoctorRepository doctorRepository;
 	
 	@Autowired
-	private Userrepository userRepository;
+	private UserRepository userRepository;
 	
 	@Autowired
 	private HospitalFacade hospitalfacade;
@@ -35,7 +35,7 @@ public class DoctorServiceImpl implements DoctorService {
 
 
 	@Override
-	public DoctorDetails savedoctor(DoctorDetails doctor) {
+	public DoctorDetails saveDoctor(DoctorDetails doctor) {
 		return doctorRepository.save(doctor);
 	}
 	
@@ -50,7 +50,7 @@ public class DoctorServiceImpl implements DoctorService {
 		return doctorRepository.findAllByApprovalFalseAndDoctorIdNotNull();
 	}
 
-	public void deletedoctor(int id) {
+	public void deleteDoctor(int id) {
 		DoctorDetails doctor = doctorRepository.findById(id).get();
 
 		List<UserDetails> users = userRepository.findAll();
@@ -65,11 +65,11 @@ public class DoctorServiceImpl implements DoctorService {
 		doctorRepository.deleteById(doctor.getDoctorId());
 	}
 	
-	public List<Hospital> gethospitallist(){
-		return hospitalfacade.getallhospital();
+	public List<Hospital> getHospitalList(){
+		return hospitalfacade.getAllHospital();
 	}
 	
-	public DoctorDetails getdoctorbyid(int id) {
+	public DoctorDetails getDoctorById(int id) {
 		return doctorRepository.getById(id);
 	}
 

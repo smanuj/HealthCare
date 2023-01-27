@@ -10,7 +10,7 @@ import com.login.service.dao.UserDao;
 import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 import com.login.service.repo.NurseRepository;
-import com.login.service.repo.Userrepository;
+import com.login.service.repo.UserRepository;
 
 @Service
 public class NurseServiceImpl implements NurseService {
@@ -19,13 +19,13 @@ public class NurseServiceImpl implements NurseService {
 	private NurseRepository nurseRepository;
 	
 	@Autowired
-	private Userrepository userRepository;
+	private UserRepository userRepository;
 	
 	@Autowired
 	private UserDao userDao;
 
 	@Override
-	public NurseDetails savenurse(NurseDetails nurse) {
+	public NurseDetails saveNurse(NurseDetails nurse) {
 		return nurseRepository.save(nurse);
 	}
 	
@@ -40,7 +40,7 @@ public class NurseServiceImpl implements NurseService {
 		return nurseRepository.save(nurse);
 	}
 	
-	public void deletenurse(int id) {
+	public void deleteNurse(int id) {
 		NurseDetails nurse = nurseRepository.findById(id).get();
 
 		List<UserDetails> users = userRepository.findAll();
@@ -56,7 +56,7 @@ public class NurseServiceImpl implements NurseService {
 	
 	}
 	
-	public Optional<NurseDetails> getnursebyid(int id) {
+	public Optional<NurseDetails> getNurseById(int id) {
 		return nurseRepository.findById(id);
 	}
 	
