@@ -2,20 +2,15 @@ package com.example.hospital.service;
 
 
 import java.util.List;
-
-
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.entity.NurseDetails;
 import com.example.hospital.exception.ResourceNotFoundException;
 import com.example.hospital.repository.HospitalRepository;
-
 import com.example.hospital.facade.UserDetailsFacade;
 
 
@@ -42,7 +37,6 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Override
 	public Hospital findHospitalById(int id) throws ResourceNotFoundException  {
-		// TODO Auto-generated method stub
 		 Optional<Hospital> h = hospitalRepository.findById(id);
 		    if(h.isPresent()) {
 		      return h.get();
@@ -54,13 +48,14 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Override
 	public Hospital updateHospital(Hospital h, int id) {
-		// TODO Auto-generated method stub
+		
 		 Hospital hospital = hospitalRepository.findById(id).get();
 		    if(hospital.getHospitalId()!=0) {
-		      hospital.setName(h.getName());
-		      hospital.setLocation(h.getLocation());
-		      hospital.setPincode(h.getPincode());
-		      hospital.setBedAvailabilty(h.isBedAvailabilty());
+				
+				  hospital.setName(h.getName()); hospital.setLocation(h.getLocation());
+				  hospital.setPincode(h.getPincode());
+				  hospital.setBedAvailabilty(h.isBedAvailabilty());
+				 
 		    }
 		    else
 		    {
@@ -73,28 +68,25 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Override
 	public void deleteHospital(int id) {
-		// TODO Auto-generated method stub
 		 hospitalRepository.deleteById(id);
 	}
 
 	@Override
 	public List<String> findHospitalNames() {
-		// TODO Auto-generated method stub
 		return hospitalRepository.findHospitalNames();
 	}
 	
 	@Override
 	public List<DoctorDetails> getDoctorList(){
-		System.out.println(userDetailsFacade.getdoctors());
-		return userDetailsFacade.getdoctors();
+		return userDetailsFacade.getDoctors();
 	}
 
 	
 	
 	public ResponseEntity<DoctorDetails> approvingDoctor(int id) {
-		DoctorDetails doctor = userDetailsFacade.getdoctorbyid(id);
+		DoctorDetails doctor = userDetailsFacade.getDoctorById(id);
 		doctor.setApproval(true);
-		return userDetailsFacade.savedoctor(doctor);
+		return userDetailsFacade.saveDoctor(doctor);
 	}
 	
 	
@@ -111,13 +103,13 @@ public class HospitalServiceImpl implements HospitalService {
 		return userDetailsFacade.saveNurse(nurse);
 	}
 	
-	public String deletedoctor(int id) {
-		userDetailsFacade.doctordisapprove(id);
+	public String deleteDoctor(int id) {
+		userDetailsFacade.doctorDisapprove(id);
 		return "Disapproved";
 	}
 	
 	public String deleteNurse(int id) {
-		userDetailsFacade.nursedisapprove(id);
+		userDetailsFacade.nurseDisapprove(id);
 		return "Disapproved";
 	}
 

@@ -23,7 +23,7 @@ export default class ListHospital extends Component{
   
 
     componentDidMount(){
-        axios.get("http://localhost:8081/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
+        axios.get("http://localhost:8003/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
       
     }
    

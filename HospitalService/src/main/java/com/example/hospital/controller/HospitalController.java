@@ -35,7 +35,6 @@ public class HospitalController {
 	
 	@PostMapping("/hospitals")
 	public Hospital createHospital(@RequestBody Hospital hospital) {
-		
 		return hospitalService.save(hospital);
 	}
  
@@ -77,7 +76,7 @@ public class HospitalController {
 		
 		@DeleteMapping("/admin/doctorDisapproval/{id}")
 		public String doctorDisapproval(@PathVariable("id") int id) {
-			hospitalService.deletedoctor(id);
+			hospitalService.deleteDoctor(id);
 			return "Disapproved";
 			
 		}
@@ -85,8 +84,6 @@ public class HospitalController {
 		
 		@GetMapping("/admin/nurseApproval")
 		public List<NurseDetails> nurse() {
-//			List<NurseDetails> user = nurse_detailsRepository.findAllByApprovalFalseAndNurseIdNotNull();
-//			return user;
 			return hospitalService.getNurseList();
 		}
 	

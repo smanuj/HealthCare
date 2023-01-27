@@ -18,13 +18,13 @@ public class UserDetailsFacade {
 @Autowired
 private RestTemplate restTemplate;
 
-private static final String Login_URL="http://localhost:8080/";
+private static final String Login_URL="http://localhost:8002/";
 
-public List<UserDetails> getuser(){
+public List<UserDetails> getUser(){
 	return Arrays.asList(restTemplate.getForObject(Login_URL+"/api/users",UserDetails[].class ));
 }
 
-public List<DoctorDetails> getdoctors(){
+public List<DoctorDetails> getDoctors(){
 	return Arrays.asList(restTemplate.getForObject(Login_URL+"/doctor",DoctorDetails[].class ));
 }
 
@@ -38,11 +38,11 @@ public List<NurseDetails> getNurses(){
 	return Arrays.asList(restTemplate.getForObject(Login_URL+"/nurseApproval",NurseDetails[].class ));
 }
 
-public DoctorDetails getdoctorbyid(int id) {
+public DoctorDetails getDoctorById(int id) {
 	return restTemplate.getForObject(Login_URL+"/doctor/"+id, DoctorDetails.class);
 }
 
-public ResponseEntity<DoctorDetails> savedoctor(DoctorDetails doctordetails) {
+public ResponseEntity<DoctorDetails> saveDoctor(DoctorDetails doctordetails) {
 	return restTemplate.postForEntity(Login_URL+"/api/doctor", doctordetails, DoctorDetails.class);
 	
 }
@@ -61,13 +61,12 @@ public ResponseEntity<NurseDetails> saveNurse(NurseDetails nurseDetails) {
 	
 }
 
-public void doctordisapprove(int id) {
-	/*return restTemplate.postForObject(Login_URL+"/doctorDisapproval/"+id,null,null,id);*/
+public void doctorDisapprove(int id) {
 	
 	restTemplate.delete(Login_URL+"/doctorDisapproval/"+id, id);
 }
 
-public void nursedisapprove(int id) {
+public void nurseDisapprove(int id) {
 	restTemplate.delete(Login_URL+"/nurseDisapproval/"+id, id);
 }
 	

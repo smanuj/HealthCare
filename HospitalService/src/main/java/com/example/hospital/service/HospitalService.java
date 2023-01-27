@@ -27,9 +27,10 @@ public interface HospitalService {
 
 	List<NurseDetails> getNurseList();
 	
-	String deletedoctor(int id);
+	String deleteDoctor(int id);
 	
 	String deleteNurse(int id);
+	
 	ResponseEntity<DoctorDetails> approvingDoctor(int id) ;
 	
 	ResponseEntity<NurseDetails> approvingNurse(int id);

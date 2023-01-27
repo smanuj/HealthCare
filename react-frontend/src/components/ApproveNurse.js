@@ -16,7 +16,7 @@ export default class ApproveNurse extends Component{
     }
 
     componentDidMount(){
-        axios.get("http://localhost:8081/api/v1/admin/nurseApproval").then(Response => 
+        axios.get("http://localhost:8003/api/v1/admin/nurseApproval").then(Response => 
         Response.data).then((data)=>{this.setState({nurses:data})});
         
       
@@ -24,7 +24,7 @@ export default class ApproveNurse extends Component{
 
     approveNurse(id){ 
         
-        axios.post("http://localhost:8081/api/v1/admin/nurseApproval/"+id).then(Response => {
+        axios.post("http://localhost:8003/api/v1/admin/nurseApproval/"+id).then(Response => {
              if(Response.data==="Approved"){
              alert(id);
              alert("Approved");
@@ -38,7 +38,7 @@ export default class ApproveNurse extends Component{
                 disapproveNurse(id) {
 
                 
-                    axios.delete("http://localhost:8081/api/v1/admin/nurseDisapproval/"+id).then(Response => {
+                    axios.delete("http://localhost:8003/api/v1/admin/nurseDisapproval/"+id).then(Response => {
                             if(Response.data==="Disapproved"){
                                 alert("Disapproved");
                                 window.location.reload();

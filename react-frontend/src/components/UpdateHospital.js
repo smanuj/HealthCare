@@ -20,16 +20,14 @@ function UpdateHospital() {
              try {
           
           
-                 const res = axios.put("http://localhost:8081/api/v1/hospitals/"+id,{
+                 const res = axios.put("http://localhost:8003/api/v1/hospitals/"+id,{
                   name,
                    location,
                    pincode,
                    bedAvailabilty
 
             });
-                      // name: name,
                      
-                      // location: location, pincode: pincode, bedAvailabilty: bedAvailabilty});
                       alert("Updated successfully");  
                        } 
                        catch (err) {
@@ -44,7 +42,7 @@ function UpdateHospital() {
                                 }
                              });
                               const loadUsers=async () => {
-                                const result=await axios.get("http://localhost:8081/api/v1/hospitals/"+id);
+                                const result=await axios.get("http://localhost:8003/api/v1/hospitals/"+id);
                               setHospital(result.data);
                              }
                               const handleReset = () =>
@@ -59,7 +57,8 @@ function UpdateHospital() {
                                       <div>
                                         <div>
                                           <h1>Update HOSPITAL</h1>
-                                          <div className="second-input">
+                                          
+				                         <div className="second-input">
                                             
                                             <input type="text" defaultValue={hospital.name} className="name"   onChange={e => setName(e.target.value)} />
                                           </div>
@@ -69,6 +68,7 @@ function UpdateHospital() {
                                             <input type="text" defaultValue={hospital.location} onChange={e => setLocation(e.target.value)}  className="name"  />
                                           </div>
                                           
+                                          
                                           <div className="second-input">
                                           
                                             <input type="text" defaultValue={hospital.pincode} onChange={e => setPincode(e.target.value)}  className="name"  />
@@ -77,6 +77,7 @@ function UpdateHospital() {
                                           <div className="second-input">
                                           
                                           <input type="text" defaultValue={hospital.bedAvailabilty} onChange={e => setBedAvailabilty(e.target.value)}   className="name"  />
+                                         
                                         </div>
                                         <br></br>
                                         

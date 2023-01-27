@@ -15,13 +15,13 @@ export default class ApproveDoctor extends Component{
     }
 
     componentDidMount(){
-       axios.get("http://localhost:8081/api/v1/admin/doctorApproval").then(Response => Response.data).then((data)=>{this.setState({doctors:data})});
+       axios.get("http://localhost:8003/api/v1/admin/doctorApproval").then(Response => Response.data).then((data)=>{this.setState({doctors:data})});
       
     }
 
     approveDoctor(id){ 
         
-        axios.put("http://localhost:8081/api/v1/admin/doctorApproval/"+id).then(Response => {
+        axios.put("http://localhost:8003/api/v1/admin/doctorApproval/"+id).then(Response => {
             if(Response.data==="Approved"){
                 alert(id);
                 alert("Approved");
@@ -36,7 +36,7 @@ export default class ApproveDoctor extends Component{
                 disapproveDoctor(id) {
 
                 
-                    axios.delete("http://localhost:8081/api/v1/admin/doctorDisapproval/"+id).then(Response => {
+                    axios.delete("http://localhost:8003/api/v1/admin/doctorDisapproval/"+id).then(Response => {
                             if(Response.data==="Disapproved"){
                                 alert("Disapproved");
                                 window.location.reload();

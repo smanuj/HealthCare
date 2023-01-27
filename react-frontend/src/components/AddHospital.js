@@ -33,7 +33,7 @@ class AddHospital extends React.Component{
            
         }
        
-         axios.post("http://localhost:8081/api/v1/hospitals",hospital).then(response => {
+         axios.post("http://localhost:8003/api/v1/hospitals",hospital).then(response => {
              alert("hospital saved");
              window.location="/admin/dashboard";
           })
