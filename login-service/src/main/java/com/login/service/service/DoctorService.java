@@ -8,16 +8,16 @@ import com.login.service.entity.Hospital;
 
 public interface DoctorService {
 	
-	DoctorDetails savedoctor(DoctorDetails doctor);
+	DoctorDetails saveDoctor(DoctorDetails doctor);
 	
 	List<DoctorDetails>  getByapprovefalse();
 	
 	
-	void deletedoctor(int id);
+	void deleteDoctor(int id);
 	
 	DoctorDetails approvingDoctor(int id);
 	
-	List<Hospital> gethospitallist();
+	List<Hospital> getHospitalList();
 	
 	Optional<DoctorDetails> doctorgetdoctorbyid(int id);
 	

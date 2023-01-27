@@ -26,7 +26,7 @@ class Login extends React.Component{
         password:""
     };
     componentDidMount(){
-        axios.get("http://localhost:8080/api/login").then(Response => (Response.data));
+        axios.get("http://localhost:8002/api/login").then(Response => (Response.data));
         
     }
     handlesubmit= (event) => {
@@ -37,24 +37,34 @@ class Login extends React.Component{
         }
         this.state=this.initiaLSTATE    
         
-        axios.post("http://localhost:8080/api/login",user).then(Response => {
-            if(Response.data=="successfully"){
-                alert("log in success")
+        axios.post("http://localhost:8002/api/login",user).then(Response => {
+            if(Response.data=="nurse"){
+                window.location="/admin/dashboard"
                 
             }
+            else if(Response.data=="doctor"){
+               window.location="/admin/addHospital"
+          }
+            
         else if(Response.data=="wait"){
             alert("wait for approval")  
+            window.location.reload();
         }
         else if(Response.data=="pass"){
-            alert("password invalid")  
+            alert("password invalid") 
+            window.location.reload(); 
         }
         else{
-            alert("Please Register")
+            alert("Email has not been register please Register")
+            window.location.reload();
         }
        
     
     }
-            )
+        )
+
+  
+            
             
         
        

@@ -78,11 +78,11 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Hospital getHospitals() {
+	public Hospital getHospital() {
 		return hospitalId;
 	}
 
-	public void setHospitals(Hospital hospitalId) {
+	public void setHospital(Hospital hospitalId) {
 		this.hospitalId = hospitalId;
 	}
 

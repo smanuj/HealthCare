@@ -33,7 +33,7 @@ class Registration extends React.Component{
 
     componentDidMount(){
        
-          axios.get("http://localhost:8080/hospitals").then(Response => (Response.data))
+          axios.get("http://localhost:8002/hospitals").then(Response => (Response.data))
            .then((data)=>{this.setState({hospitals:data})});
            
            
@@ -78,33 +78,24 @@ class Registration extends React.Component{
        
       
         
-         if(confirmpassword==password) {
-            axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
+         if(confirmpassword===password) {
+            axios.post("http://localhost:8002/api/savedoctor",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("User with this email already Exists")  ;
-
-                    
-                  
     
                 }
                 else{
                     alert("user saved")
-                    window.location="/";
-                   // window.location("/")
+                     window.location="/";
+                   
                 }
               } )
          }
          else{
             alert("Password and ConfirmPassword are not same");
-            
-         //   window.location("/")
+           
          }
-          
-
-
-        
-        
 
     }
     bookChange = (event) => {
@@ -130,7 +121,7 @@ class Registration extends React.Component{
     
     
         return(
-        <Form onClick={this.handlesubmit} >
+        <Form onSubmit={this.handlesubmit} >
             <div className="main">
             <div >
               <div>
@@ -156,7 +147,7 @@ class Registration extends React.Component{
                  
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" value={this.state.pnumber} onChange={this.bookChange} required/>
+                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" pattern="(0/91)?[6-9][0-9]{9}" value={this.state.pnumber}  onChange={this.bookChange} required/>
                   </div>
                   
                   <br></br>

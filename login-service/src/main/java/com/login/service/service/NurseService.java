@@ -7,14 +7,14 @@ import com.login.service.entity.NurseDetails;
 
 public interface NurseService {
 	
-	NurseDetails savenurse(NurseDetails nurse);
+	NurseDetails saveNurse(NurseDetails nurse);
 	
 	List<NurseDetails>  getByapprovefalse();
 	
-	void deletenurse(int id);
+	void deleteNurse(int id);
 	
 	NurseDetails approvingNurse(int id);
 	
-	Optional<NurseDetails> getnursebyid(int id);
+	Optional<NurseDetails> getNurseById(int id);
 
 }

@@ -15,14 +15,14 @@ public class HospitalFacade {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	private static final String Hospital_URL="http://localhost:8081/api/v1";
+	private static final String Hospital_URL="http://localhost:8003/api/v1";
 	
 	
-	public List<Hospital> getallhospital(){
+	public List<Hospital> getAllHospital(){
 		return Arrays.asList(restTemplate.getForObject(Hospital_URL+"/hospitals",Hospital[].class ));
 	}
 	
-	public Hospital  gethospitalbyid(int id) {
+	public Hospital  getHospitalById(int id) {
 		return restTemplate.getForObject(Hospital_URL+"/hospitals/"+id,Hospital.class );
 	}
 
