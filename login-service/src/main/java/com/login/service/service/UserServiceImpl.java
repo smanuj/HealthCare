@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.websocket.server.ServerEndpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.login.service.config.WebSecurityConfig;
@@ -199,6 +200,37 @@ public class UserServiceImpl implements UserService {
 	public Hospital getbyid(int id) {
 		return hospitalFacade.gethospitalbyid(id);
 	}
+	
+
+	public String getRole(UserDetails user) {
+		if (user.getDoctordetails() != null) {
+			return "doctor";
+		} else if (user.getNursedetails() != null) {
+			return "nurse";
+		}
+		return "admin";
+	}
+	
+	public boolean checkPassword(int id, String password) {
+		UserDetails u = userrepo.findById(id).get();
+		if (websecurity.passwordEncoder().matches(password, u.getPassword())) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void changePassword(int id, String password) {
+		UserDetails u = userrepo.findById(id).get();
+		u.setPassword(password);
+		userrepo.save(u);
+
+	}
+	
+	@Override
+	public UserDetails findById(int id) {
+		return userrepo.findById(id).get();
+	}
+	
 	
 	
 }

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mail.microservice.entity.PatientDetails;
 import com.mail.microservice.entity.UserDetails;
-import com.mail.microservice.repo.UserRepo;
+import com.mail.microservice.facade.Userfacade;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)
@@ -26,25 +26,25 @@ public class MailMessageImpl implements MailMessage {
 	@Autowired
 	MailData mailData;
 
-	@Autowired
-	UserService userService;
+	
 
 	@Autowired
-	UserRepo userRepo;
+	Userfacade userfacade;
 
 	@Override
 	public void sendAlert(int id, PatientDetails pd) {
-		UserDetails user = userRepo.findById(id).get();
+		UserDetails user = userfacade.findById(id);
 		String subject = "Alert!! ";
 		String condition = pd.getDisease();
 		String doctor = pd.getDoctorId().getName();
 		String pr = pd.getPulse_rate();
 		String oxy = pd.getOxygenlevel();
 		String temp = pd.getTemperature();
-		String body = "Hello " + doctor
-				+ ", A patient with immediate need of your attention is headed your way with the medical condition: "
+		int pId = pd.getId();
+		String body = "Hello " + doctor + ", A patient with id: " + pId
+				+ " is in immediate need of your attention and is headed your way with the medical condition: "
 				+ condition + "\n Current pulse rate is : " + pr + "\n Oxygen level: " + oxy + "\n Temperature: " + temp
-				+ " Please prepare and update the nurse on-board accordingly -admin";
+				+ " Please prepare and update the nurse on-board accordingly. -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
 
@@ -52,7 +52,7 @@ public class MailMessageImpl implements MailMessage {
 	public void registeredSuccessfully(UserDetails user) {
 		logger.debug("Successfully registered User with email: " + user.getEmail());
 		String subject = "Congratulations! ";
-		String role = userService.getRole(user);
+		String role = userfacade.getrole(user);
 		String body = "Hello, You have successfully registered as " + role
 				+ " at Health Care App, you can now log in to your account through the website using your registered email id and password. Thank you for choosing us :) -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
@@ -60,11 +60,11 @@ public class MailMessageImpl implements MailMessage {
 
 	@Override
 	public void registerationFailure(UserDetails user) {
-		logger.debug("Registering User with email: " + user.getEmail() + " under role: " + userService.getRole(user)
+		logger.debug("Registering User with email: " + user.getEmail() + " under role: " + userfacade.getrole(user)
 				+ " has Failed! ");
 		String subject = "Dart Express Logistics ";
 		String body = "Hello, We regret to inform you that your regristration request was not successful for "
-				+ userService.getRole(user)
+				+ userfacade.getrole(user)
 				+ " . This might have occured due to various reasons. Please contact us for more info. Thank you for understanding, you can try registering again if you think there was a mistake  -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
@@ -87,18 +87,19 @@ public class MailMessageImpl implements MailMessage {
 	@Override
 	public void successfulPasswordChange(UserDetails user) {
 		logger.debug("Password has been successfully changed for " + user.getEmail() + " registered under role: "
-				+ userService.getRole(user));
+				+ userfacade.getrole(user));
 		String subject = "Password Changed Successfully ";
-		String body = "Congratulations, your password has been changed successfully. You can now log in to your account through the website using your registered email id and new password. -admin";
+		String body = "Congratulations " + userfacade.getrole(user)
+				+ ", your password has been changed successfully. You can now log in to your account through the website using your registered email id and new password. -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
 
 	@Override
 	public void notifyRegisteration(UserDetails user) {
 		logger.debug(
-				"Registration Request Recieved from " + user.getEmail() + " for role " + userService.getRole(user));
+				"Registration Request Recieved from " + user.getEmail() + " for role " + userfacade.getrole(user));
 		String subject = "Registeration form recieved";
-		String body = "Hello, Your registeration form is received for the role: " + userService.getRole(user)
+		String body = "Hello, Your registeration form is received for the role: " + userfacade.getrole(user)
 				+ " You will be notified regarding the approval soon. -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
