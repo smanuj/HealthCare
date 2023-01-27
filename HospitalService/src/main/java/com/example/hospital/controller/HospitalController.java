@@ -3,8 +3,6 @@ package com.example.hospital.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.entity.NurseDetails;
-import com.example.hospital.exception.ResourceNotFoundException;
 import com.example.hospital.service.HospitalService;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -31,8 +28,6 @@ public class HospitalController {
 	private HospitalService hospitalService;
 	
 	
-	
-	
 	@GetMapping("/hospitals")
 	public List<Hospital> getAllHospitals(){
 		return hospitalService.findAll();
@@ -40,6 +35,7 @@ public class HospitalController {
 	
 	@PostMapping("/hospitals")
 	public Hospital createHospital(@RequestBody Hospital hospital) {
+		
 		return hospitalService.save(hospital);
 	}
  

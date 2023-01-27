@@ -22,7 +22,7 @@ class AddHospital extends React.Component{
 
     };
     handlesubmit= (event) => {
-      event.preventDefaullt();
+      event.preventDefault()
       alert(this.state.name)
        
         const hospital ={
@@ -35,6 +35,7 @@ class AddHospital extends React.Component{
        
          axios.post("http://localhost:8081/api/v1/hospitals",hospital).then(response => {
              alert("hospital saved");
+             window.location="/admin/dashboard";
           })
     }
        
@@ -55,12 +56,12 @@ class AddHospital extends React.Component{
                   <h1>ADD HOSPITAL</h1>
                   <div className="second-input">
                     
-                    <input type="text" placeholder="Hospital Name" className="name" pattern="[A-Za-z]{5,50}" name="name" value={this.state.name} onChange={this.hospitalChange} required/>
+                    <input type="text" placeholder="Hospital Name" className="name" pattern="[A-Za-z]+([\ A-Za-z]+)" name="name" value={this.state.name} onChange={this.hospitalChange} required/>
                   </div>
            
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Location" className="name" pattern="[A-Za-z]{5,30}" value={this.state.location}  name="location" onChange={this.hospitalChange} required/>
+                    <input type="text" placeholder="Location" className="name" pattern="[A-Za-z]+([\ A-Za-z]+)" value={this.state.location}  name="location" onChange={this.hospitalChange} required/>
                   </div>
                   
                   <div className="second-input">
@@ -69,7 +70,7 @@ class AddHospital extends React.Component{
                   </div>
                   <br></br>
                  <select   name="bedAvailabilty"  value={this.state.bedAvailabilty} onChange={this.hospitalChange} >
-                <option value="" disabled selected>Select Bed Availability</option>
+                 <option value="" disabled selected>Select Bed Availability</option> 
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                     

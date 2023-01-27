@@ -31,14 +31,12 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Override
 	public List<Hospital> findAll() {
-		// TODO Auto-generated method stub
 		
 		return hospitalRepository.findAll();
 	}
 	
 	@Override
 	public Hospital save(Hospital hospital) {
-		// TODO Auto-generated method stub
 		return hospitalRepository.save(hospital);
 	}
 	

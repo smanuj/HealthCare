@@ -23,6 +23,7 @@ import Registration from './components/Registration';
 import Nurse from './components/Nurse';
 import PatientForm from "./components/PatientForm/PatientForm";
 import NavBar from "./components/NavBar"
+import UpdateHospital from "./components/UpdateHospital";
 
 
 
@@ -50,6 +51,7 @@ import NavBar from "./components/NavBar"
         <Route exact path ="/admin/getHospitals" element={<ListHospital/>}></Route>
         <Route exact path ="/admin/approveDoctor" element={<ApproveDoctor/>}></Route>
         <Route exact path ="/admin/approveNurse" element={<ApproveNurse/>}></Route>
+        <Route path='/update/:id' element={<UpdateHospital/>} ></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass" element={<NewPass/>}/>
       </Routes>       

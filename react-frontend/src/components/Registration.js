@@ -36,12 +36,13 @@ class Registration extends React.Component{
           axios.get("http://localhost:8080/hospitals").then(Response => (Response.data))
            .then((data)=>{this.setState({hospitals:data})});
            
+           
          
      
       }
       
     handlesubmit= (event) => {
-      
+      event.preventDefault()
    
         const doctor = {
             name: this.state.name,
@@ -82,19 +83,22 @@ class Registration extends React.Component{
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("User with this email already Exists")  ;
+
                     
                   
     
                 }
                 else{
                     alert("user saved")
-                    window.location("/")
+                    window.location="/";
+                   // window.location("/")
                 }
               } )
          }
          else{
             alert("Password and ConfirmPassword are not same");
-            window.location("/")
+            
+         //   window.location("/")
          }
           
 
@@ -126,7 +130,7 @@ class Registration extends React.Component{
     
     
         return(
-        <Form onSubmit={this.handlesubmit} >
+        <Form onClick={this.handlesubmit} >
             <div className="main">
             <div >
               <div>
@@ -185,7 +189,7 @@ class Registration extends React.Component{
                  <div className="login-button">
                  <button  >submit</button><br></br>
                  <br></br>
-                 <button ><Link to={"/"}>Login Page</Link></button>
+                 {/* <button ><Link to={"/"}>Login Page</Link></button> */}
                  </div>
                 </div>
               </div>
