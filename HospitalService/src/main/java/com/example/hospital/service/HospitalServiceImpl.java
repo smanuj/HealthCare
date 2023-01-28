@@ -3,15 +3,17 @@ package com.example.hospital.service;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.entity.NurseDetails;
 import com.example.hospital.exception.ResourceNotFoundException;
-import com.example.hospital.repository.HospitalRepository;
 import com.example.hospital.facade.UserDetailsFacade;
+import com.example.hospital.repository.HospitalRepository;
 
 
 @Service
@@ -23,6 +25,8 @@ public class HospitalServiceImpl implements HospitalService {
 	
 	@Autowired
 	private UserDetailsFacade userDetailsFacade;
+	
+	
 	
 	@Override
 	public List<Hospital> findAll() {
@@ -112,5 +116,7 @@ public class HospitalServiceImpl implements HospitalService {
 		userDetailsFacade.nurseDisapprove(id);
 		return "Disapproved";
 	}
+	
+	
 
 }

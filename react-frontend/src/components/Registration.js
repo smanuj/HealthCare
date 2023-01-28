@@ -33,7 +33,7 @@ class Registration extends React.Component{
 
     componentDidMount(){
        
-          axios.get("http://localhost:8002/hospitals").then(Response => (Response.data))
+          axios.get("http://localhost:8002/api/login/hospitals").then(Response => (Response.data))
            .then((data)=>{this.setState({hospitals:data})});
            
            
@@ -79,7 +79,7 @@ class Registration extends React.Component{
       
         
          if(confirmpassword===password) {
-            axios.post("http://localhost:8002/api/savedoctor",user).then(response => {
+            axios.post("http://localhost:8002/api/login/savedoctor",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("User with this email already Exists")  ;

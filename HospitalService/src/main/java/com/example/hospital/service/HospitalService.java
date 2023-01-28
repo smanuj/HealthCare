@@ -35,6 +35,8 @@ public interface HospitalService {
 	
 	ResponseEntity<NurseDetails> approvingNurse(int id);
 	
+	
+	
 
 	
 }

@@ -79,6 +79,9 @@ public class Hospital {
 	public void setBedAvailabilty(boolean bedAvailabilty) {
 		this.bedAvailabilty = bedAvailabilty;
 	}
+	
+	
+	
 
 	@Override
 	public String toString() {

@@ -34,4 +34,8 @@ public interface UserService {
 
 	UserDetails findById(int id);
 
+	int doctorlogin(String email);
+
+	int nurselogin(String email);
+
 }

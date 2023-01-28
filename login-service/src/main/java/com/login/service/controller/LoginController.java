@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.hibernate.internal.build.AllowSysOut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,10 +29,14 @@ import com.login.service.repo.UserRepository;
 import com.login.service.service.DoctorService;
 import com.login.service.service.NurseService;
 import com.login.service.service.UserService;
+import com.login.service.service.UserServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/api/login")
 public class LoginController {
+
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired
 	private UserService userService;
@@ -44,91 +50,125 @@ public class LoginController {
 	@Autowired
 	private DoctorRepository doctorRepository;
 
-	@GetMapping("/api/users")
+	@GetMapping("/users")
 	public List<UserDetails> getAllUsers() {
+		logger.info("Fetching all user details");
 		return userService.getalluser();
 	}
 
-	@PostMapping("/api/savedoctor")
+	@PostMapping("/savedoctor")
 	public String saveUserDoctorDetail(@RequestBody UserDetails user) throws Exception {
+		logger.info("Creating new Doctor details");
 		String savedoctor = userService.saveDoctor(user);
+		logger.debug("Saved doctor details", savedoctor);
 		return savedoctor;
 
 	}
 
-	@PostMapping("/api/doctor")
+	@PostMapping("/doctor")
 	public DoctorDetails saveDoctorDetail(@RequestBody DoctorDetails doctor1) {
-		return doctorRepository.save(doctor1);
+		DoctorDetails doctor = doctorRepository.save(doctor1);
+		logger.debug("Saved doctor details", doctor);
+		return doctor;
 
 	}
 
-	@PutMapping("/api/doctor")
+	@PutMapping("/doctor")
 	public DoctorDetails updateDoctorDetail(@RequestBody DoctorDetails doctor1) {
-		return doctorRepository.save(doctor1);
+		logger.info("Updating doctor  details");
+		DoctorDetails doctor = doctorRepository.save(doctor1);
+		logger.debug("Updated doctor details", doctor);
+		return doctor;
 
 	}
 
-	@PostMapping("/api/savenurse")
-	public String saveUserNurseDetail(@RequestBody UserDetails user)throws Exception {
+	@PostMapping("/savenurse")
+	public String saveUserNurseDetail(@RequestBody UserDetails user) throws Exception {
+		logger.info("Creating new Nurse details");
 		String savenurse = userService.saveNurse(user);
+		logger.debug("Saved Nurse details", savenurse);
 		return savenurse;
 
 	}
 
-	@PostMapping("/api/login")
+	@PostMapping("/login")
 	public String userLogin(@RequestBody UserDetails user) throws Exception {
+		logger.info("Checking email and password is registered or not");
 		String loginuser = userService.loginUser(user);
+		return loginuser;
+	}
+
+	@GetMapping("/doctorlogin/{email}")
+	public int doctorLogin(@PathVariable("email") String email) {
+		logger.info("Fetching id of the doctor");
+		int loginuser = userService.doctorlogin(email);
+		return loginuser;
+	}
+
+	@GetMapping("/nurselogin/{email}")
+	public int nurseLogin(@PathVariable("email") String email) {
+		logger.info("Fetching id of the nurse");
+		int loginuser = userService.nurselogin(email);
 		return loginuser;
 	}
 
 	@GetMapping("/doctors")
 	public List<DoctorDetails> getAllDoctors() {
+		logger.info("Fetching add doctor details");
 		return doctorRepository.findAll();
 	}
 
 	@GetMapping("/hospitals")
 	public List<Hospital> getAllHospital() {
+		logger.info("Fetching all hospital details");
 		return doctorService.getHospitalList();
 	}
 
 	@GetMapping("/hospitals/{id}")
 	public Hospital getAllHospitalById(@PathVariable("id") int hospitalId) {
-
+		logger.info("Fetching hospital detail by id");
 		return userService.getById(hospitalId);
 	}
 
 	@GetMapping("/nurse")
 	public List<NurseDetails> getNurseDetailsApprovalFalse() {
+		logger.info("List of nurse details where approval is false");
 		return nurseService.getByapprovefalse();
 	}
 
 	@GetMapping("/doctor")
 	public List<DoctorDetails> getDoctorDetailsApprovalFalse() {
+		logger.info("List of doctor details where approval is false");
 		return doctorService.getByapprovefalse();
 	}
 
 	@GetMapping("/user/{id}")
 	public UserDetails findById(@PathVariable("id") int id) {
+		logger.info("Fecthing user details by id");
 		return userService.findById(id);
 	}
 
 	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable("id") int userId) {
+		logger.info("Deleting user details by id");
 		userService.deletUser(userId);
 	}
 
 	@DeleteMapping("/nurse/{id}")
 	public void deleteNurse(@PathVariable("id") int id) {
+		logger.info("Deleting nurse details by id");
 		nurseService.deleteNurse(id);
 	}
 
 	@DeleteMapping("/doctor/{id}")
 	public void deleteDoctor(@PathVariable("id") int id) {
+		logger.info("Deleting doctor details by id");
 		doctorService.deleteDoctor(id);
 	}
 
 	@GetMapping("/doctor/{id}")
 	public Optional<DoctorDetails> getDoctorById(@PathVariable("id") int id) {
+		logger.info("Fetching doctor detail by id");
 		return doctorService.doctorgetdoctorbyid(id);
 	}
 
@@ -140,14 +180,15 @@ public class LoginController {
 
 	@PostMapping("/doctorApproval/{id}")
 	public String doctorApproval(@PathVariable("id") int id) {
+		logger.info("Updating doctor approve as true");
 		doctorService.approvingDoctor(id);
 		return "Approved";
 	}
 
 	@DeleteMapping("/doctorDisapproval/{id}")
 	public void doctorDisapproval(@PathVariable("id") int id) {
+		logger.info("Deleting doctor detail ,if admin disapprove");
 		doctorService.deleteDoctor(id);
-
 
 	}
 
@@ -159,29 +200,34 @@ public class LoginController {
 
 	@PostMapping("/api/nurse")
 	public NurseDetails updateNurse(@RequestBody NurseDetails nurse) {
+		logger.info("Updating nurse details");
 		return nurseService.saveNurse(nurse);
 
 	}
 
 	@GetMapping("/nurse/{id}")
 	public Optional<NurseDetails> getNurseById(@PathVariable("id") int id) {
+		logger.info("Fetching nurse details by id");
 		return nurseService.getNurseById(id);
 	}
 
 	@PostMapping("/nurseApproval/{id}")
 	public String nurseApproval(@PathVariable("id") int id) {
+		logger.info("Updating nurse approve as true");
 		nurseService.approvingNurse(id);
 		return "Approved";
 	}
 
 	@DeleteMapping("/nurseDisapproval/{id}")
 	public void nurseDisapproval(@PathVariable("id") int id) {
+		logger.info("Deleting nurse detail ,if admin disapprove");
 		nurseService.deleteNurse(id);
 
 	}
 
 	@GetMapping("/getrole")
 	public String getRole(UserDetails user) {
+		logger.info("Getting role of the user");
 		return userService.getRole(user);
 	}
 

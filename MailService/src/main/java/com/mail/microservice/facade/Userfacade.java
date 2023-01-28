@@ -16,10 +16,10 @@ public class Userfacade {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	private static final String user_URL = "http://localhost:8080/";
+	private static final String user_URL = "http://localhost:8080/api/login/";
 
 	public List<UserDetails> getuser() {
-		return Arrays.asList(restTemplate.getForObject(user_URL + "/api/users", UserDetails[].class));
+		return Arrays.asList(restTemplate.getForObject(user_URL + "/users", UserDetails[].class));
 	}
 
 	public UserDetails getbyemail(String email) {

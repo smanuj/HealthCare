@@ -25,10 +25,7 @@ class Login extends React.Component{
         email:"",
         password:""
     };
-    componentDidMount(){
-        axios.get("http://localhost:8002/api/login").then(Response => (Response.data));
-        
-    }
+    
     handlesubmit= (event) => {
        event.preventDefault()
         const user={
@@ -37,13 +34,19 @@ class Login extends React.Component{
         }
         this.state=this.initiaLSTATE    
         
-        axios.post("http://localhost:8002/api/login",user).then(Response => {
+        axios.post("http://localhost:8002/api/login/login",user).then(Response => {
             if(Response.data=="nurse"){
-                window.location="/admin/dashboard"
+              axios.get("http://localhost:8002/api/login/nurselogin/"+user.email).then(Response => {const id = Response.data ;
+              window.location="/nurse/"+id})
                 
             }
+            else if(Response.data=="admindashboard"){
+              window.location="/admin/dashboard"
+         }
             else if(Response.data=="doctor"){
-               window.location="/admin/addHospital"
+              axios.get("http://localhost:8002/api/login/doctorlogin/"+user.email).then(Response => {const id = Response.data ;
+               window.location="/doctor/"+id})
+              //  window.location="/admin/addHospital"
           }
             
         else if(Response.data=="wait"){

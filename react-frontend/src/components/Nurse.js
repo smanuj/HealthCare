@@ -49,7 +49,7 @@ class Nurse extends React.Component{
     
           
          if(confirmpassword==password) {
-            axios.post("http://localhost:8002/api/savenurse",user).then(response => {
+            axios.post("http://localhost:8002/api/login/savenurse",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("user not saved")

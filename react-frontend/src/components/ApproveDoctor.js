@@ -21,7 +21,7 @@ export default class ApproveDoctor extends Component{
 
     approveDoctor(id){ 
         
-        axios.put("http://localhost:8003/api/v1/admin/doctorApproval/"+id).then(Response => {
+        axios.post("http://localhost:8003/api/v1/admin/doctorApproval/"+id).then(Response => {
             if(Response.data==="Approved"){
                 alert(id);
                 alert("Approved");

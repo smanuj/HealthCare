@@ -18,10 +18,10 @@ public class UserDetailsFacade {
 @Autowired
 private RestTemplate restTemplate;
 
-private static final String Login_URL="http://localhost:8002/";
+private static final String Login_URL="http://localhost:8002/api/login";
 
 public List<UserDetails> getUser(){
-	return Arrays.asList(restTemplate.getForObject(Login_URL+"/api/users",UserDetails[].class ));
+	return Arrays.asList(restTemplate.getForObject(Login_URL+"/users",UserDetails[].class ));
 }
 
 public List<DoctorDetails> getDoctors(){
@@ -43,7 +43,7 @@ public DoctorDetails getDoctorById(int id) {
 }
 
 public ResponseEntity<DoctorDetails> saveDoctor(DoctorDetails doctordetails) {
-	return restTemplate.postForEntity(Login_URL+"/api/doctor", doctordetails, DoctorDetails.class);
+	return restTemplate.postForEntity(Login_URL+"/doctor", doctordetails, DoctorDetails.class);
 	
 }
 

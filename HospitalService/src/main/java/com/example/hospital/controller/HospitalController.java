@@ -31,7 +31,9 @@ public class HospitalController {
 	@GetMapping("/hospitals")
 	public List<Hospital> getAllHospitals(){
 		return hospitalService.findAll();
-	}		
+	}	
+	
+	
 	
 	@PostMapping("/hospitals")
 	public Hospital createHospital(@RequestBody Hospital hospital) {
@@ -67,7 +69,7 @@ public class HospitalController {
 			return hospitalService.getDoctorList();
 		}
 		
-		@PutMapping("/admin/doctorApproval/{id}")
+		@PostMapping("/admin/doctorApproval/{id}")
 		public String doctorApproval(@PathVariable("id") int id) {
 			
 			 hospitalService.approvingDoctor(id);
