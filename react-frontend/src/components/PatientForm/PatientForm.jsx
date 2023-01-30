@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import './PatientForm.css';
+import axios from 'axios';
 
 const PatientForm = () => {
-    const [patient, setPatient] = useState({
-        aId: '',
-        bg: '',
-        pr: '',
-        oxy:'',
-        temp:'',
-        disease:'',
-        pincode:''
-    });
+    const [patient, setPatient] = useState('');
+    const [aId, setAadharNumber] = useState('');
+    const [bg, setBloodGroup] = useState('');
+    const [pr, setPulseRate] = useState('');
+    const [oxy, setOxygenLevel] = useState('');
+    const [temp, setBodyTemperature] = useState('');
+    const [disease, setDisease] = useState('');
+    const [pincode, setPincode] = useState('');
+
+    //     aId: '',
+    //     bg: '',
+    //     pr: '',
+    //     oxy:'',
+    //     temp:'',
+    //     disease:'',
+    //     pincode:''
+    // });
 
     const handleChange = (event) => {
         setPatient({
@@ -21,13 +30,18 @@ const PatientForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Code to submit the form data to the backend goes here
+        const patientData = { aId, bg, pr, oxy, temp, disease, pincode };
+        axios.post('http://localhost:8009/api/patients/create', patientData)
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
     }
+
+     
 
     return (
         <div className="app">
         <form className="patient-form" onSubmit={handleSubmit}>
-            <h2>Patient Details</h2>
+            <h2>Patient Registration</h2>
             <label>
                 Aadhar number:
                 <input type="text" name="aId" value={patient.aId} onChange={handleChange} required />
@@ -63,7 +77,8 @@ const PatientForm = () => {
                 Pincode :
                 <input type="text" name="pincode" value={patient.pincode} onChange={handleChange} required />
             </label>
-            <button type="submit" className='button'>Register</button>
+
+            <button type="submit">Register</button>
         </form>
         </div>
     );

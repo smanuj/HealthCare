@@ -31,12 +31,11 @@ import NavBar from "./components/NavBar"
       marginTop:"20px"
     };
   return( 
-   
+   <div>
     <BrowserRouter>
     <NavBar />
-    <Container>
-    <Row>
-     <Col lg={12} style={marginTop}></Col>
+   
+
     
       <Routes>
         <Route exact path ="/" element={<Login/>}></Route>
@@ -53,10 +52,10 @@ import NavBar from "./components/NavBar"
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass" element={<NewPass/>}/>
       </Routes>       
-     </Row></Container>  
+    
     </BrowserRouter>
         
-     
+    </div>
   );
 }
 
