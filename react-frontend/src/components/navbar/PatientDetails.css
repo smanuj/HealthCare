@@ -1,0 +1,86 @@
+#add-comment-button,
+#save-button,
+#downloadpdf {
+    margin-right: 10px;
+}
+
+/* main container */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* patient details container */
+.patient-details-container {
+    width: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: 20%;
+}
+
+/* patient detail */
+.patient-detail {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* aadhar details container */
+.aadhar-details-container {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-right: 20%;
+}
+
+/* aadhar detail */
+.aadhar-detail {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+/* patient comments container */
+.patient-comments-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* patient comments list */
+.patient-comments-container ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* patient comment */
+.patient-comments-container li {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.patient-comments-container h3 {
+    text-align: center;
+}
+  .bold {
+    font-weight: bold;
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
