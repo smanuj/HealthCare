@@ -1,4 +1,4 @@
-package com.mail.microservice.entity;
+package com.login.service.entity;
 
 import java.util.Set;
 

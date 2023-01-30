@@ -1,13 +1,13 @@
 package com.example.hospital.entity;
 
-
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Comments {
@@ -15,65 +15,44 @@ public class Comments {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int commentId;
 	private String comments;
-	@OneToOne(targetEntity = DoctorDetails.class)
-	@JoinColumn(name = "doctorId", referencedColumnName = "doctorId")
-	private DoctorDetails doctorId;
-	@OneToOne(targetEntity = NurseDetails.class)
-	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
-	private NurseDetails nurseId;
-
+	@JsonIgnoreProperties("comments")
+	@ManyToOne()
+	@JoinColumn(name = "patient_id")
+	private PatientDetails patients;
 	public int getCommentId() {
 		return commentId;
 	}
-
 	public void setCommentId(int commentId) {
 		this.commentId = commentId;
 	}
-
 	public String getComments() {
 		return comments;
 	}
-
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
-
-	public DoctorDetails getDoctorId() {
-		return doctorId;
+	public PatientDetails getPatients() {
+		return patients;
 	}
-
-	public void setDoctorId(DoctorDetails doctorId) {
-		this.doctorId = doctorId;
+	public void setPatients(PatientDetails patients) {
+		this.patients = patients;
 	}
-
-	public NurseDetails getNurseId() {
-		return nurseId;
-	}
-
-	public void setNurseId(NurseDetails nurseId) {
-		this.nurseId = nurseId;
-	}
-
-	public Comments(int commentId, String comments, DoctorDetails doctorId, NurseDetails nurseId) {
-		super();
-		this.commentId = commentId;
-		this.comments = comments;
-		this.doctorId = doctorId;
-		this.nurseId = nurseId;
-	}
-
 	public Comments() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Comments(String comments, DoctorDetails doctorId, NurseDetails nurseId) {
+	public Comments(int commentId, String comments, PatientDetails patients) {
+		super();
+		this.commentId = commentId;
+		this.comments = comments;
+		this.patients = patients;
+	}
+	public Comments(String comments, PatientDetails patients) {
 		super();
 		this.comments = comments;
-		this.doctorId = doctorId;
-		this.nurseId = nurseId;
+		this.patients = patients;
 	}
-
-
-
+	
+	
+	
 }
