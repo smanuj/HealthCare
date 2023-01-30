@@ -113,7 +113,19 @@ public class DoctorDetails {
 		this.hospitals = hospitals;
 	}
 
-//	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")
-//	private user_details userdetails;
+	public DoctorDetails(int doctorId, String name, String pnumber, String specialization, boolean avaliability,
+			boolean approval) {
+		super();
+		this.doctorId = doctorId;
+		this.name = name;
+		this.pnumber = pnumber;
+		this.specialization = specialization;
+		this.avaliability = avaliability;
+		this.approval = approval;
+	}
+	
+	
+
+
 
 }
