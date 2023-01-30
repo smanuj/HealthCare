@@ -13,6 +13,8 @@ public interface PatientDetailsService {
 
 	PatientDetails createPatientDetails(PatientDetails patient);
 
+	void treatmentComplete(PatientDetails pd);
+
 
 
 	

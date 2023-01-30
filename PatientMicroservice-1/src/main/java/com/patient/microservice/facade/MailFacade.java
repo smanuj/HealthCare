@@ -14,8 +14,9 @@ public class MailFacade {
 	
 	private static final String user_URL = "http://localhost:8008/api/s1/";
 	
-	public void alertDoctor(int id, PatientDetails patientDetails) {
-		restTemplate.postForObject(user_URL + "/" + id, null, null,id,patientDetails);
+	public String alertDoctor(int id, PatientDetails patientDetails) {
+		restTemplate.postForObject(user_URL +"/patientDetails/sendMail/" + id,null,null,patientDetails);
+		return "alert sent";
 	}
 	
 }

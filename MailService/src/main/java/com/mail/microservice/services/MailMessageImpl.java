@@ -34,6 +34,7 @@ public class MailMessageImpl implements MailMessage {
 	@Override
 	public void sendAlert(int id, PatientDetails pd) {
 		UserDetails user = userfacade.findById(id);
+		System.out.println("ID in mmsi: "+id);
 		String subject = "Alert!! ";
 		String condition = pd.getDisease();
 		String doctor = pd.getDoctorId().getName();

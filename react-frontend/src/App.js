@@ -36,12 +36,11 @@ import DoctorDashboard from './components/navbar/DoctorDashboard'
       marginTop:"20px"
     };
   return( 
-   
+   <div>
     <BrowserRouter>
     <NavBar />
-    <Container>
-    <Row>
-     <Col lg={12} style={marginTop}></Col>
+   
+
     
       <Routes>
         <Route exact path ="/" element={<Login/>}></Route>
@@ -63,10 +62,10 @@ import DoctorDashboard from './components/navbar/DoctorDashboard'
         <Route exact path='/doctor/:id' element={<DoctorDashboard/>} />
         <Route path='/patientDetails/:patientId' element={<PatientDetails/>} />
       </Routes>       
-     </Row></Container>  
+    
     </BrowserRouter>
         
-     
+    </div>
   );
 }
 

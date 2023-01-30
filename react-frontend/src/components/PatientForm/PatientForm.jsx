@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import './PatientForm.css';
-import axios from "axios";
-import { render } from '@testing-library/react';
-import { Alert, Form } from "react-bootstrap";
+import axios from 'axios';
 
-import {Link} from 'react-router-dom';
-import { useHistory } from "react-router-dom";
-import { Dropdown,DropdownButton } from "react-bootstrap";
 
 const PatientForm = () => {
-    const [patient, setPatient] = useState({
-        aId: '',
-        bg: '',
-        pr: '',
-        oxy:'',
-        temp:'',
-        disease:'',
-        pincode:''
-    });
+    const [patient, setPatient] = useState('');
+    const [aId, setAadharNumber] = useState('');
+    const [bg, setBloodGroup] = useState('');
+    const [pr, setPulseRate] = useState('');
+    const [oxy, setOxygenLevel] = useState('');
+    const [temp, setBodyTemperature] = useState('');
+    const [disease, setDisease] = useState('');
+    const [pincode, setPincode] = useState('');
+
+    //     aId: '',
+    //     bg: '',
+    //     pr: '',
+    //     oxy:'',
+    //     temp:'',
+    //     disease:'',
+    //     pincode:''
+    // });
 
     const handleChange = (event) => {
         setPatient({
@@ -28,30 +31,20 @@ const PatientForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const form = {
-            aId: this.state.aId,
-            bg: this.state.bg,
-            pr:this.state.pr,
-            oxy: this.state.oxy,
-            temp: this.state.temp,
-            disease: this.state.disease,
-            pincode: this.state.pincode
-          }
-        axios.post("http://localhost:8009/api/patients/create",form).then(response => {
-                if(response.data=="sent"){
-                    this.setState(this.initiaLSTATE);
-                    alert("Data sent");
-                }
-                else{
-                    alert("failed")
-                }
-              } )
-    };
+        const patientData = { aId, bg, pr, oxy, temp, disease, pincode };
+        axios.post('http://localhost:8009/api/patients/create', patientData)
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+    }
+
+
+     
 
     return (
         <div className="app">
-        <form className='patient-form'>
-            <h2>Patient Details</h2>
+        <form className="patient-form" onSubmit={handleSubmit}>
+            <h2>Patient Registration</h2>
+
             <label>
                 Aadhar number:
                 <input type="text" name="aId" value={patient.aId} onChange={handleChange} required />
@@ -87,8 +80,9 @@ const PatientForm = () => {
                 Pincode :
                 <input type="text" name="pincode" value={patient.pincode} onChange={handleChange} required />
             </label>
-            {/* <button className='button'>Register</button> */}
-            <input type='submit' className='button' value="Register" name='Register'></input>
+
+            <button type="submit">Register</button>
+
         </form>
         </div>
     );
