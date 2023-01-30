@@ -291,5 +291,10 @@ public class UserServiceImpl implements UserService {
 		int id = nurse.getNurseId();
 		return id;
 	}
+	
+	@Override
+	public UserDetails getbydoctordetails(DoctorDetails doctor) {
+		return userRepository.findByDoctorDetails(doctor);
+	}
 
 }

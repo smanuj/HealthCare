@@ -55,7 +55,7 @@ import Nurse1 from "./components/Nurse1";
         <Route exact path ="/admin/approveNurse" element={<ApproveNurse/>}></Route>
         <Route path='/update/:id' element={<UpdateHospital/>} ></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
-        <Route path="/reset/newPass" element={<NewPass/>}/>
+        <Route path="/reset/newPass/:id" element={<NewPass/>}/>
         <Route path="/doctor/:id" element={<Doctor/>}/>
         <Route path="/nurse/:id" element={<Nurse1/>}/>
       </Routes>       

@@ -3,6 +3,7 @@ package com.login.service.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.login.service.entity.DoctorDetails;
 import com.login.service.entity.Hospital;
 import com.login.service.entity.UserDetails;
 
@@ -37,5 +38,7 @@ public interface UserService {
 	int doctorlogin(String email);
 
 	int nurselogin(String email);
+
+	UserDetails getbydoctordetails(DoctorDetails doctor);
 
 }

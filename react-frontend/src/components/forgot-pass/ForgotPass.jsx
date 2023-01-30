@@ -54,9 +54,10 @@ class ForgotPass extends React.Component{
         
        axios.post("http://localhost:8008/api/s1/reset/forgotPass",email).then(response => {
                 if(response.data=="sent"){
-                    this.setState(this.initiaLSTATE);
-                    alert("OTP sent")
-        ;
+                    
+                  
+                    axios.get("http://localhost:8008/api/s1/"+email).then(Response => {const id = Response.data ; alert(id);
+              window.location="/reset/newPass/"+id})
                   
     
                 }
