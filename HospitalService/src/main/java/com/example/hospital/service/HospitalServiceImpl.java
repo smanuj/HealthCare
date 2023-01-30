@@ -135,7 +135,15 @@ public class HospitalServiceImpl implements HospitalService {
 		logger.debug("Deleting the nurse and set approval with id to false", id);
 		return "Disapproved";
 	}
-	
+
+	@Override
+	public List<Hospital> getHospitalsByPincode(String pincode) {
+		// TODO Auto-generated method stub
+		return hospitalRepository.findByPincode(pincode);
+	}
+
+
+
 	
 
 }

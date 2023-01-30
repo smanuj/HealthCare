@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import './PatientForm.css';
+import axios from "axios";
+import { render } from '@testing-library/react';
+import { Alert, Form } from "react-bootstrap";
+
+import {Link} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import { Dropdown,DropdownButton } from "react-bootstrap";
 
 const PatientForm = () => {
     const [patient, setPatient] = useState({
@@ -17,16 +24,33 @@ const PatientForm = () => {
             ...patient,
             [event.target.name]: event.target.value
         });
-    }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Code to submit the form data to the backend goes here
-    }
+        const form = {
+            aId: this.state.aId,
+            bg: this.state.bg,
+            pr:this.state.pr,
+            oxy: this.state.oxy,
+            temp: this.state.temp,
+            disease: this.state.disease,
+            pincode: this.state.pincode
+          }
+        axios.post("http://localhost:8009/api/patients/create",form).then(response => {
+                if(response.data=="sent"){
+                    this.setState(this.initiaLSTATE);
+                    alert("Data sent");
+                }
+                else{
+                    alert("failed")
+                }
+              } )
+    };
 
     return (
         <div className="app">
-        <form className="patient-form" onSubmit={handleSubmit}>
+        <form className='patient-form'>
             <h2>Patient Details</h2>
             <label>
                 Aadhar number:
@@ -63,10 +87,12 @@ const PatientForm = () => {
                 Pincode :
                 <input type="text" name="pincode" value={patient.pincode} onChange={handleChange} required />
             </label>
-            <button type="submit" className='button'>Register</button>
+            {/* <button className='button'>Register</button> */}
+            <input type='submit' className='button' value="Register" name='Register'></input>
         </form>
         </div>
     );
+    
 }
 
 export default PatientForm;

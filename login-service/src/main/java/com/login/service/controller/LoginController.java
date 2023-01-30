@@ -250,5 +250,10 @@ public class LoginController {
 	public UserDetails saveUser(@RequestBody UserDetails userDetails) {
 		return userService.saveUser(userDetails);
 	}
+	
+	@GetMapping("/doctorbyuserdetails")
+	public UserDetails  getdoctordetailsbyuser(@RequestBody DoctorDetails doctor) {
+		return userService.getbydoctordetails(doctor);
+	}
 
 }
