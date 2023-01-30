@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './DoctorDashboard.css';
+import axios from 'axios';
 
 
 function DoctorDashboard() {
-  let {doctorId} = useParams();
+  let {id: doctorId} = useParams();
   const [doctor, setDoctor] = useState({});
   const [patients, setPatients] = useState([])
   
   useEffect(() => {
     // Fetch doctor data from database
-    fetch('http://localhost:8006/api/doctor/${doctorId}')
-      .then(res => res.json())
-      .then(data => setDoctor(data));
+    axios.get(`http://localhost:8006/api/doctor/${doctorId}`)
+      .then(res => {
+        setDoctor(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
 
     // Fetch patient data from database
-    fetch('http://localhost:8006/api/patientslist/${doctorId}')
-      .then(res => res.json())
-      .then(data => setPatients(data));
+    
+    axios.get(`http://localhost:8006/api/patientslist/${doctorId}`)
+      .then(res => {
+        setPatients(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
    
   }, [doctorId]);
 

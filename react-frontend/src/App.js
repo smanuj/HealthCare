@@ -59,7 +59,7 @@ import DoctorDashboard from './components/navbar/DoctorDashboard'
         <Route path="/reset/newPass/:id" element={<NewPass/>}/>
         {/* <Route path="/doctor/:id" element={<Doctor/>}/> */}
         <Route path="/nurse/:id" element={<Nurse1/>}/>
-        <Route exact path='/doctor/:id' element={<DoctorDashboard/>} />
+        <Route path='/doctor/:id' element={<DoctorDashboard/>} />
         <Route path='/patientDetails/:patientId' element={<PatientDetails/>} />
       </Routes>       
     
