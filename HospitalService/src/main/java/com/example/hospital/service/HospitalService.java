@@ -34,6 +34,10 @@ public interface HospitalService {
 	ResponseEntity<DoctorDetails> approvingDoctor(int id) ;
 	
 	ResponseEntity<NurseDetails> approvingNurse(int id);
+
+	List<Hospital> getHospitalsByPincode(String pincode);
+
+	
 	
 	
 	

@@ -12,6 +12,10 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 	
 	@Query("SELECT name FROM Hospital hospital")
 	List<String> findHospitalNames();
+
+	
+
+	List<Hospital> findByPincode(String pincode);
 	
 
 }
