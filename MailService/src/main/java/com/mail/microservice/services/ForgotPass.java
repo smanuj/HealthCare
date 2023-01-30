@@ -14,4 +14,6 @@ public interface ForgotPass {
 
 	void changepassword(int id, String password);
 
+	int getidbyemail(String email);
+
 }

@@ -66,7 +66,7 @@ class Nurse extends React.Component{
          }
          else{
           this.setState(this.initiaLSTATE);
-            alert("password");
+            alert("Password and ConfirmPassword are not same");
          }
 
 
@@ -115,8 +115,7 @@ class Nurse extends React.Component{
                  
                  <div className="login-button">
                  <button  >submit</button><br></br>
-                 <br></br>
-                 <button ><Link to={"/"}>Login Page</Link></button>
+                 
                  </div>
                 </div>
               </div>

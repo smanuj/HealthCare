@@ -76,8 +76,11 @@ public class ForgotPassImpl implements ForgotPass {
 		userfacade.saveUser(usr);
 	}
 	
-	
-	
+	@Override
+	public int getidbyemail(String email) {
+		UserDetails user = userfacade.getbyemail(email);
+		return user.getId();
+	}
 	
 	
 //	bCryptPasswordEncoder.matches(password, u.getPassword())

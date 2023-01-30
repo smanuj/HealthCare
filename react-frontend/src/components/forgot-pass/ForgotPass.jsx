@@ -27,13 +27,15 @@ class ForgotPass extends React.Component{
     };
     handlesubmit= (event) => {
        
-            const email = {
+            const user = {
               email: this.state.email
             }
-       axios.post("http://localhost:8008/api/s1/reset/forgotPass",email).then(response => {
+       axios.post("http://localhost:8008/api/s1/reset/forgotPass",user).then(response => {
                 if(response.data=="sent"){
                     this.setState(this.initiaLSTATE);
                     alert("OTP sent");
+              //       axios.get("http://localhost:8008/api/s1/getid/"+user.email).then(Response => {const id = Response.data ;
+              // window.location="/reset/newPass/"+id})
                 }
                 else{
                     alert("fail")
@@ -55,7 +57,7 @@ class ForgotPass extends React.Component{
                   <h1>Reset Password</h1>
                   <div className="second-input">
                   
-                    <input type="email" placeholder="Email" className="name" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" value={this.state.email}  name="email" onChange={this.bookChange} required/>
+                    <input type="email" placeholder="Email"  style={{width: "370px"}} className="name" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" value={this.state.email}  name="email" onChange={this.bookChange} required/>
                   </div>
                   <br></br>
                  

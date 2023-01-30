@@ -1078,3 +1078,50 @@ This generated password is for development use only. Your security configuration
 2023-01-30 12:02:45.528  INFO 19200 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
 2023-01-30 12:02:45.566  INFO 19200 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
 2023-01-30 12:07:14.692  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:12:14.701  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:17:14.707  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:22:14.713  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:27:14.722  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:32:14.730  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:37:14.743  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:42:14.750  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:47:14.763  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:52:14.778  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 12:56:36.716  INFO 19200 --- [http-nio-8002-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 12:56:36.716  INFO 19200 --- [http-nio-8002-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 12:56:36.719  INFO 19200 --- [http-nio-8002-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-01-30 12:56:36.779  INFO 19200 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 12:56:36.779  INFO 19200 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 12:57:14.783  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:02:14.792  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:07:14.805  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:12:14.820  INFO 19200 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:13:20.727  INFO 19200 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2023-01-30 13:13:20.742  INFO 19200 --- [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 13:13:20.742  INFO 19200 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675064600742, current=DOWN, previous=UP]
+2023-01-30 13:13:20.742  INFO 19200 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2202.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 13:13:20.755  INFO 19200 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2202.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 13:13:21.016  INFO 19200 --- [Thread-1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 13:13:21.018  INFO 19200 --- [Thread-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 13:13:21.055  INFO 19200 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 13:13:21.063  INFO 19200 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-30 13:13:21.146  INFO 19200 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-30 13:13:21.147  INFO 19200 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 13:13:24.169  INFO 19200 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 13:13:24.182  INFO 19200 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2202.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 13:13:24.203  INFO 19200 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 13:13:24.642  INFO 19200 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2202 with PID 19200 (D:\app\login-service\target\classes started by Pradeekar.RD in D:\app\login-service)
+2023-01-30 13:13:24.642  INFO 19200 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 13:13:25.304  INFO 19200 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 13:13:25.335  INFO 19200 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2023-01-30 13:13:25.488  INFO 19200 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 13:13:25.890  INFO 19200 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 13:13:25.890  INFO 19200 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 13:13:25.890  INFO 19200 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 13:13:25.966  INFO 19200 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 13:13:25.967  INFO 19200 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1321 ms
+2023-01-30 13:13:26.037  INFO 19200 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 13:13:26.045  INFO 19200 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-01-30 13:13:26.046  WARN 19200 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 13:13:26.245  INFO 19200 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-01-30 13:13:26.246  INFO 19200 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect

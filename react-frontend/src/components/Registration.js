@@ -121,6 +121,9 @@ class Registration extends React.Component{
     
     
         return(
+  
+<div>
+    
         <Form onSubmit={this.handlesubmit} >
             <div className="main">
             <div >
@@ -151,19 +154,22 @@ class Registration extends React.Component{
                   </div>
                   
                   <br></br>
-                 <select   name="specialization"  value={this.state.specialization} onChange={this.bookChange} >
+                 <select   name="specialization"  value={this.state.specialization} onChange={this.bookChange} required >
                 <option value="" disabled selected>Select Your Specialization</option>
                     <option value="Cardiology">Cardiology</option>
                     <option value="Dermatology">Dermatology</option>
+                    <option value="Ayurvedic physician">Dentists</option>
                     <option value="General Surgery">General Surgery</option>
+                    <option value="Ayurvedic physician">Gynecologists</option>
                     <option value="Neurosurgery">Neurosurgery</option>
                     <option value="Ayurvedic physician">Ayurvedic physician</option>
+                    
                     
                     
                   </select>
                     <br></br>
                     <br></br>
-                    <select name="hospital"  value={this.state.hosp} onChange={this.bookChange} >
+                    <select name="hospital"  value={this.state.hosp} onChange={this.bookChange}  required>
                     <option value="" disabled selected>Select Your Hospital</option>
                     
                      {
@@ -189,6 +195,8 @@ class Registration extends React.Component{
             </div>
            </div> 
            </Form>
+
+           </div>
 
 
            

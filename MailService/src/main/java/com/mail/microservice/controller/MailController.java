@@ -3,6 +3,7 @@ package com.mail.microservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,10 +37,13 @@ public class MailController {
 		boolean b = forgotPass.checkMailId(user.getEmail());
 		System.out.println(b);
 		if (b == true) {
-			forgotPass.generateOtp(user);
-			return "sent";
+		Boolean forgot =	forgotPass.generateOtp(user);
+		System.out.println(forgot);
+		String s1="sent";
+			return s1;
 		}
-		return "fail";
+		String s2="fail";
+		return s2;
 	}
 
 	@PostMapping("/reset/newPass/{id}")
@@ -59,6 +63,11 @@ public class MailController {
 	@PostMapping("/patientDetails/sendMail/{id}")
 	public void alertDoctor(@PathVariable("id") int id, @RequestBody PatientDetails pd) {
 		mailMessage.sendAlert(id, pd);
+	}
+	
+	@GetMapping("/getid/{email}")
+	public int getidbyemail(@PathVariable("email") String email) {
+		return forgotPass.getidbyemail(email);
 	}
 	
 //	@PostMapping("/")
