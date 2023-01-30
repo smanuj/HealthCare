@@ -1,15 +1,16 @@
 package com.doctor.service.controller;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,15 +22,12 @@ import com.doctor.service.service.CommentsService;
 import com.doctor.service.service.DoctorDetailsService;
 import com.doctor.service.service.NurseDetailsService;
 import com.doctor.service.service.PatientDetailsService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 public class DoctorController {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(DoctorController.class);
 	
 	@Autowired
 	private DoctorDetailsService doctorDetailsService;
@@ -43,67 +41,89 @@ public class DoctorController {
 	@Autowired
 	private NurseDetailsService nurseDetailsService;
 	
-	@PostMapping("/api/savecomments")
+	@PostMapping("api/savecomments")
 	public Comments saveComments(@RequestBody Comments comments){
-		 return commentsService.createComment(comments);
+		LOGGER.debug("Saving comments for patient id: {}", comments.getPatients().getId());
+		comments.setComments(comments.getComments());
+		comments.setPatients(comments.getPatients());
+		Comments savedComments = commentsService.createComment(comments);
+		LOGGER.info("Successfully saved comments for patient id: {}", comments.getPatients().getId());
+		return savedComments;
 	}
 	
-	@GetMapping("/api/comments/{id}")
+	@PutMapping("api/updatePatientStatus/{id}")
+    public ResponseEntity<String> updatePatientStatus(@PathVariable int id) {
+		LOGGER.debug("Updating patient status and availability for patient id: {}", id);
+        patientDetailsService.updatePatientStatus(id);
+        LOGGER.info("Successfully updated patient status and availability for patient id: {}", id);
+        return ResponseEntity.ok("Patient status and availability updated successfully.");
+    }
+	
+	 @GetMapping("api/status/{id}")
+	    public boolean getPatientStatusById(@PathVariable("id") int id) {
+			LOGGER.debug("Getting patient status by id: {}", id);
+	        boolean status = patientDetailsService.getPatientStatusById(id);
+	        LOGGER.info("Successfully retrieved patient status by id: {}", id);
+	        return status;
+	    }
+
+	@GetMapping("api/comments/{id}")
 	public Comments getComments(@PathVariable ("id") int id) {
-		return commentsService.getCommentsById(id);
+		LOGGER.debug("Getting comments by id: {}", id);
+		Comments comments = commentsService.getCommentsById(id);
+		LOGGER.info("Successfully retrieved comments by id: {}", id);
+		return comments;
 	}
 	
 	@GetMapping("api/patientslist/{id}")
 	public List<PatientDetails> getPatientList(@PathVariable ("id") DoctorDetails doctorId){
-		return patientDetailsService.getAllPatientsByDoctorId(doctorId);
+		LOGGER.debug("Getting patient list by doctor id: {}", doctorId.getDoctorId());
+		List<PatientDetails> patientList = patientDetailsService.getAllPatientsByDoctorId(doctorId);
+		LOGGER.info("Successfully retrieved patient list by doctor id: {}", doctorId.getDoctorId());
+		return patientList;
 	}
 	
 	@GetMapping("api/patientdetails/{id}")
 	public PatientDetails getPatientList(@PathVariable ("id") int id){
-		return patientDetailsService.getPatientDetailsById(id);
+	LOGGER.debug("Getting patient details by id: {}", id);
+	PatientDetails patientDetails = patientDetailsService.getPatientDetailsById(id);
+	LOGGER.info("Successfully retrieved patient details for id: {}", id);
+	return patientDetails;
 	}
 	
 	@GetMapping("api/doctor/{id}")
 	public DoctorDetails getdoctor(@PathVariable ("id") int id){
-		return doctorDetailsService.getDoctorsById(id);
+		LOGGER.debug("Getting doctor details by id: {}", id);
+		DoctorDetails doctorDetails = doctorDetailsService.getDoctorsById(id);
+		LOGGER.info("Successfully retrieved doctor details for id: {}", id);
+		return doctorDetails;
 	}
-	
+
 	@GetMapping("api/specializeddoctor/{specialization}")
 	public List<DoctorDetails> getdoctor(@PathVariable ("specialization") String specialization){
-		return doctorDetailsService.getAllDoctorsBySpecialization(specialization);
+		LOGGER.debug("Getting all doctor details by specialization: {}", specialization);
+		List<DoctorDetails> doctorDetails = doctorDetailsService.getAllDoctorsBySpecialization(specialization);
+		LOGGER.info("Successfully retrieved doctor details for specialization: {}", specialization);
+		return doctorDetails;
 	}
-	
+
 	@GetMapping("api/nurse/{id}")
 	public NurseDetails getnurse(@PathVariable ("id") int id){
-		return nurseDetailsService.getNurseById(id);
+		LOGGER.debug("Getting nurse details by id: {}", id);
+		NurseDetails nurseDetails = nurseDetailsService.getNurseById(id);
+		LOGGER.info("Successfully retrieved nurse details for id: {}", id);
+		return nurseDetails;
 	}
-	
-	@GetMapping("/download-pdf/{id}")
-    public void downloadPDF(HttpServletResponse response,@PathVariable ("id") int id) throws IOException,DocumentException {
-        // Create a new PDF document
-    	PatientDetails patients = patientDetailsService.getPatientDetailsById(id);
-    	ObjectMapper objectMapper = new ObjectMapper();
-		String json = objectMapper.writeValueAsString(patients);
-		String newLine=json.replace(',','\n');
-		String s=newLine.replaceAll("[{}]", " "); 
-        Document document = new Document();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PdfWriter.getInstance(document, baos);
-        document.open();
 
-        // Write the JSON data to the PDF
-        document.add(new Paragraph(s));
 
-        // Close the document
-        document.close();
+	@GetMapping("api/commentsbypatientid/{id}")
+	public List<Comments> getCommentsByPatientId(@PathVariable ("id") PatientDetails id){
+		LOGGER.debug("Getting comments by patient id: {}", id);
+		List<Comments> comments = commentsService.getCommentsBypatients(id);
+		LOGGER.info("Successfully retrieved comments for patient id: {}", id);
+		return comments;
+	}
 
-        // Set the content type and attachment header.
-        response.addHeader("Content-Disposition", "attachment; filename=my_pdf.pdf");
-        response.setContentType("application/pdf");
-
-        // Write the PDF to the response.
-        response.getOutputStream().write(baos.toByteArray());
-    }
 	
 	
 	

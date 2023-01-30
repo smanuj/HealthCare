@@ -13,6 +13,10 @@ public interface PatientDetailsService {
     
     PatientDetails getPatientDetailsById(int id);
 
+	PatientDetails updatePatientStatus(int patientId);
+
+	boolean getPatientStatusById(int id);
+
 
 
 
