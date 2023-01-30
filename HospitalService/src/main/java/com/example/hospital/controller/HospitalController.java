@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.example.hospital.entity.DoctorDetails;
 import com.example.hospital.entity.Hospital;
 import com.example.hospital.entity.NurseDetails;
@@ -23,6 +24,7 @@ import com.example.hospital.service.HospitalService;
 @RequestMapping("/api/v1/")
 public class HospitalController {
 
+	private static final Logger logger = LoggerFactory.getLogger(HospitalController.class);
 	
 	@Autowired
 	private HospitalService hospitalService;
