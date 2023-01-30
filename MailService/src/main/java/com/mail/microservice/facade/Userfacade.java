@@ -48,7 +48,10 @@ public class Userfacade {
 	}
 
 	public String getrole(UserDetails userDetails) {
-		return restTemplate.getForObject(user_URL + "/getrole", null, userDetails);
+		String s1= restTemplate.getForObject(user_URL + "/getrole/"+userDetails,String.class);
+		System.out.println(s1);
+		return s1;
+		
 	}
 
 }

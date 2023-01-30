@@ -60,7 +60,8 @@ class Nurse extends React.Component{
                 else{
                   this.setState(this.initiaLSTATE);
                     alert("user saved")
-                    window.location="/";
+                    axios.post("http://localhost:8008/api/s1/notifyregistration",user)
+                     window.location="/";
                 }
               } )
          }

@@ -25,6 +25,7 @@ export default class ApproveDoctor extends Component{
             if(Response.data==="Approved"){
                 alert(id);
                 alert("Approved");
+                axios.post("http://localhost:8008/api/s1/registersuccessfulfordoctor/"+id)
                 window.location.reload();
                 
                 

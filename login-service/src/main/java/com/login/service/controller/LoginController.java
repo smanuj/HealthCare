@@ -225,10 +225,12 @@ public class LoginController {
 
 	}
 
-	@GetMapping("/getrole")
-	public String getRole(UserDetails user) {
+	@GetMapping("/getrole/{user}")
+	public String getRole(@PathVariable("user")UserDetails user) {
 		logger.info("Getting role of the user");
-		return userService.getRole(user);
+		String s1= userService.getRole(user);
+		System.out.println(s1);
+		return s1;
 	}
 
 	@GetMapping("/{id}/{password}")

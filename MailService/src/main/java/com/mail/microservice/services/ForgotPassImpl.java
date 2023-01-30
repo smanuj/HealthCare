@@ -82,6 +82,16 @@ public class ForgotPassImpl implements ForgotPass {
 		return user.getId();
 	}
 	
+	@Override
+	public UserDetails getuserdetailsbyid(int id) {
+		System.out.println("===================================");
+		return userfacade.findById(id);
+	}
+	
+	@Override
+	public List<UserDetails> getalluser() {
+		return userfacade.getuser();
+	}
 	
 //	bCryptPasswordEncoder.matches(password, u.getPassword())
 	

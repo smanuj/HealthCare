@@ -1,0 +1,1144 @@
+2023-01-30 13:13:40.814  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 13:13:40.816  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 13:13:40.858  INFO 14108 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Divyashree.MD\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Divyashree.MD/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-01-30 13:13:40.938  INFO 14108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-30 13:13:40.939  INFO 14108 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-30 13:13:41.581  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 13:13:41.643  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2023-01-30 13:13:41.861  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 13:13:42.718  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 13:13:42.726  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 13:13:42.727  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 13:13:42.968  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 13:13:42.968  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2027 ms
+2023-01-30 13:13:43.210  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 13:13:43.249  INFO 14108 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-30 13:13:43.489  INFO 14108 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-30 13:13:43.584  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-30 13:13:43.586  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 13:13:44.354  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-30 13:13:44.409  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 13:14:36.765  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 13:14:36.813  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 13:14:36.856  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 13:14:37.328  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b36c357e-b827-4756-bf72-9adfd47153bf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 13:14:37.397  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@701abe6d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2eff7b65, org.springframework.security.web.context.SecurityContextPersistenceFilter@5802e0c6, org.springframework.security.web.header.HeaderWriterFilter@3b96ec0c, org.springframework.security.web.authentication.logout.LogoutFilter@314e548f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33a77f87, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33942350, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17544716, org.springframework.security.web.session.SessionManagementFilter@1cd693a6, org.springframework.security.web.access.ExceptionTranslationFilter@17143d0d]
+2023-01-30 13:14:37.880  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 13:14:38.036  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 13:14:38.216  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 13:14:38.234  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 13:14:38.322  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 13:14:38.333  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:14:38.365  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 13:14:38.365  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 13:14:38.367  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 13:14:38.373  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 13:14:38.374  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 13:14:38.374  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 13:14:38.375  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 13:14:38.718  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 13:14:38.721  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 13:14:38.724  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 13:14:38.732  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675064678731 with initial instances count: 3
+2023-01-30 13:14:38.734  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 13:14:38.735  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675064678735, current=UP, previous=STARTING]
+2023-01-30 13:14:38.737  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 13:14:38.784  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 13:14:38.789  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 13:14:38.790  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 13:14:38.905  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 58.644 seconds (JVM running for 59.442)
+2023-01-30 13:14:57.092  INFO 14108 --- [http-nio-8002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 13:14:57.093  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 13:14:57.095  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-30 13:14:57.123  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 13:14:57.123  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 13:18:52.896  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 13:18:52.897  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 13:19:38.405  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:24:38.419  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:29:38.436  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:34:38.449  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:39:38.455  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:44:38.464  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:49:38.481  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:54:38.496  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 13:59:38.501  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:04:38.505  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:09:38.522  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:14:38.527  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:19:38.537  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:20:25.129  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:20:25.129  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:20:59.098  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:20:59.098  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:20:59.156  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:21:03.524  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:21:04.216  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:21:16.501  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:21:16.502  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:21:17.571  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:21:17.572  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:21:21.197  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:21:21.198  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:22:34.259  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:22:34.260  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:22:38.896  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:22:38.896  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:22:42.296  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:22:42.297  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:23:43.528  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:23:43.528  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:23:43.530  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:23:43.534  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:23:43.564  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:23:43.567  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:23:47.080  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:23:47.110  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:23:47.238  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:23:47.255  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:24:38.564  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:25:58.788  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:25:58.789  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:26:27.855  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:26:27.856  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:29:38.594  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:34:38.610  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:39:38.629  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:42:54.057  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (3 additions, 0 deletions, 0 modifications)
+2023-01-30 14:42:54.064  INFO 14108 --- [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 14:42:54.066  INFO 14108 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675069974066, current=DOWN, previous=UP]
+2023-01-30 14:42:54.067  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 14:42:54.090  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 14:42:54.147  INFO 14108 --- [Thread-1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 14:42:54.149  INFO 14108 --- [Thread-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 14:42:54.162  INFO 14108 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 14:42:54.166  INFO 14108 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-30 14:42:54.193  INFO 14108 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-30 14:42:54.193  INFO 14108 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 14:42:57.208  INFO 14108 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 14:42:57.223  INFO 14108 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 14:42:57.240  INFO 14108 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 14:42:57.548  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 14:42:57.548  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 14:42:57.793  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 14:42:57.813  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2023-01-30 14:42:57.879  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 14:42:58.128  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 14:42:58.129  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 14:42:58.129  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 14:42:58.182  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 14:42:58.183  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 632 ms
+2023-01-30 14:42:58.218  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 14:42:58.223  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-01-30 14:42:58.223  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 14:42:58.327  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-01-30 14:42:58.328  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 14:43:33.404  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 14:43:33.405  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 14:43:33.422  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 14:43:33.531  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5f7140a2-480c-467e-a8fa-10079592d85f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 14:43:33.537  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2658e330, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79299c09, org.springframework.security.web.context.SecurityContextPersistenceFilter@af22689, org.springframework.security.web.header.HeaderWriterFilter@386c35c7, org.springframework.security.web.authentication.logout.LogoutFilter@7e729bbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39dc25d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60c7ed27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65e59414, org.springframework.security.web.session.SessionManagementFilter@30b6bb63, org.springframework.security.web.access.ExceptionTranslationFilter@1c65ef1e]
+2023-01-30 14:43:33.634  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 14:43:33.758  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 14:43:33.893  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 14:43:33.902  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 14:43:33.904  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 14:43:33.905  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:43:33.964  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 14:43:33.964  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 14:43:33.964  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 14:43:33.965  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 14:43:33.965  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 14:43:33.965  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 14:43:33.966  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 14:43:33.986  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 14:43:33.988  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 14:43:33.988  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 14:43:33.989  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675070013989 with initial instances count: 3
+2023-01-30 14:43:33.990  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 14:43:33.991  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675070013991, current=UP, previous=STARTING]
+2023-01-30 14:43:33.991  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 14:43:33.997  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 14:43:33.997  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 14:43:34.005  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 14:43:34.108  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 36.706 seconds (JVM running for 5394.543)
+2023-01-30 14:43:34.111  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 14:46:14.009  INFO 14108 --- [http-nio-8002-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 14:46:14.009  INFO 14108 --- [http-nio-8002-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 14:46:14.012  INFO 14108 --- [http-nio-8002-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-30 14:46:14.015  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:46:14.016  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:47:46.285  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:47:46.285  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:47:49.825  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:47:49.825  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:47:52.503  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:47:52.504  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:48:06.910  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:48:06.910  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:48:33.975  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:48:39.256  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:48:39.256  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:48:52.000  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:48:52.000  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:48:52.016  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:48:54.703  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:48:54.704  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:48:54.718  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:48:54.877  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:48:55.033  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:48:58.229  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:48:58.393  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:49:32.481  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:49:32.481  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:49:32.495  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:49:36.043  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:49:36.180  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:49:40.538  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:50:22.730  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:50:22.730  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:50:35.631  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:50:35.632  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:50:35.645  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:50:38.719  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:50:38.837  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:50:40.323  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:53:33.984  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:58:34.001  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 14:59:27.782  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 14:59:27.783  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 14:59:27.799  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:59:30.630  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 14:59:30.784  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 14:59:33.013  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:03:34.005  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:08:10.095  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:08:10.299  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 15:08:10.299  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:08:10.318  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 15:08:33.734  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:08:33.734  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:08:33.741  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:08:33.831  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Checking whether doctor has benn  approval or not
+2023-01-30 15:08:33.875  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching id of the doctor
+2023-01-30 15:08:34.007  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:11:05.564  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:11:05.564  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:11:05.576  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:11:19.242  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:11:19.243  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:11:19.251  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:11:19.344  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking whether doctor has benn  approval or not
+2023-01-30 15:11:19.384  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching id of the doctor
+2023-01-30 15:11:36.821  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 15:11:36.821  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:11:36.854  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:11:40.579  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:11:40.766  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 15:11:49.707  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:12:07.903  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:12:18.938  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:12:19.138  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 15:12:19.138  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:12:19.153  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 15:13:03.056  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:13:03.056  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:13:03.064  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:13:09.794  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:13:09.794  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:13:09.827  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:13:09.916  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Checking whether doctor has benn  approval or not
+2023-01-30 15:13:09.932  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching id of the doctor
+2023-01-30 15:13:34.021  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:14:19.687  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 15:14:19.687  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:14:19.708  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:14:23.792  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:14:24.057  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 15:14:26.359  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:14:49.220  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:14:49.419  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 15:14:49.419  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 15:14:49.433  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 15:18:34.032  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:20:47.283  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:20:47.286  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:20:47.829  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:20:47.832  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:21:31.101  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:21:31.101  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:21:31.111  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:21:31.135  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:21:31.136  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:21:31.391  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:23:34.047  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:27:16.303  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 15:27:16.307  INFO 14108 --- [Thread-29] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 15:27:16.307  INFO 14108 --- [Thread-29] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675072636307, current=DOWN, previous=UP]
+2023-01-30 15:27:16.308  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:27:16.333  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:27:16.417  INFO 14108 --- [Thread-29] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 15:27:16.419  INFO 14108 --- [Thread-29] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 15:27:16.430  INFO 14108 --- [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:27:16.431  INFO 14108 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-01-30 15:27:16.458  INFO 14108 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-01-30 15:27:16.459  INFO 14108 --- [Thread-29] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 15:27:19.473  INFO 14108 --- [Thread-29] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 15:27:19.487  INFO 14108 --- [Thread-29] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 15:27:19.499  INFO 14108 --- [Thread-29] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 15:27:19.977  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 15:27:19.978  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 15:27:20.209  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 15:27:20.227  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2023-01-30 15:27:20.289  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 15:27:20.538  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 15:27:20.539  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 15:27:20.539  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 15:27:20.599  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 15:27:20.600  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 620 ms
+2023-01-30 15:27:20.644  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 15:27:20.650  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-01-30 15:27:20.650  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 15:27:20.737  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-01-30 15:27:20.738  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 15:28:08.132  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 15:28:08.132  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:28:08.158  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 15:28:08.271  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 94f4f297-587a-4d6c-97c2-888c65796272
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 15:28:08.277  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57d64cd4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a275fe0, org.springframework.security.web.context.SecurityContextPersistenceFilter@6be1250a, org.springframework.security.web.header.HeaderWriterFilter@465c68b1, org.springframework.security.web.authentication.logout.LogoutFilter@58604cad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73ef8ac7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56d37deb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f359480, org.springframework.security.web.session.SessionManagementFilter@5856844e, org.springframework.security.web.access.ExceptionTranslationFilter@2cf69c05]
+2023-01-30 15:28:08.359  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 15:28:08.483  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 15:28:08.619  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 15:28:08.627  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 15:28:08.629  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 15:28:08.629  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:28:08.632  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 15:28:08.632  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 15:28:08.633  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 15:28:08.633  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 15:28:08.633  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 15:28:08.633  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 15:28:08.634  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 15:28:08.652  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 15:28:08.653  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 15:28:08.654  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 15:28:08.654  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675072688654 with initial instances count: 3
+2023-01-30 15:28:08.656  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 15:28:08.656  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675072688656, current=UP, previous=STARTING]
+2023-01-30 15:28:08.657  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:28:08.661  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 15:28:08.662  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 15:28:08.670  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:28:08.770  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 48.931 seconds (JVM running for 8069.189)
+2023-01-30 15:28:08.772  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 15:28:09.808  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 15:28:09.810  INFO 14108 --- [Thread-71] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 15:28:09.810  INFO 14108 --- [Thread-71] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675072689810, current=DOWN, previous=UP]
+2023-01-30 15:28:09.812  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:28:09.843  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:28:09.901  INFO 14108 --- [Thread-71] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 15:28:09.914  INFO 14108 --- [Thread-71] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:28:09.915  INFO 14108 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-01-30 15:28:09.941  INFO 14108 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-01-30 15:28:09.941  INFO 14108 --- [Thread-71] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 15:28:12.946  INFO 14108 --- [Thread-71] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 15:28:12.962  INFO 14108 --- [Thread-71] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 15:28:12.968  INFO 14108 --- [Thread-71] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 15:28:13.384  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 15:28:13.386  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 15:28:13.631  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 15:28:13.651  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2023-01-30 15:28:13.711  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 15:28:13.934  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 15:28:13.935  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 15:28:13.935  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 15:28:13.988  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 15:28:13.988  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 599 ms
+2023-01-30 15:28:14.024  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 15:28:14.028  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-01-30 15:28:14.028  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 15:28:14.128  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-01-30 15:28:14.128  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 15:28:52.327  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 15:28:52.328  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:28:52.356  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 15:28:52.448  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d96b36e2-cca1-4709-9273-215bb3c8b56d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 15:28:52.454  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68f8ae3f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53b296a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@169ca680, org.springframework.security.web.header.HeaderWriterFilter@78576546, org.springframework.security.web.authentication.logout.LogoutFilter@6118db02, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66ede08e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@25d3c440, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f465319, org.springframework.security.web.session.SessionManagementFilter@23a290b6, org.springframework.security.web.access.ExceptionTranslationFilter@1c2d8598]
+2023-01-30 15:28:52.526  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 15:28:52.645  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 15:28:52.774  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 15:28:52.784  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 15:28:52.785  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 15:28:52.786  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:28:52.787  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 15:28:52.787  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 15:28:52.787  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 15:28:52.788  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 15:28:52.788  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 15:28:52.789  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 15:28:52.790  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 15:28:52.807  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 15:28:52.808  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 15:28:52.809  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 15:28:52.811  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675072732811 with initial instances count: 2
+2023-01-30 15:28:52.813  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 15:28:52.817  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675072732817, current=UP, previous=STARTING]
+2023-01-30 15:28:52.818  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:28:52.822  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 15:28:52.823  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 15:28:52.830  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:28:52.929  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 39.72 seconds (JVM running for 8113.349)
+2023-01-30 15:28:52.931  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 15:30:04.595  INFO 14108 --- [http-nio-8002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 15:30:04.596  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 15:30:04.600  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-30 15:30:04.602  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:30:04.602  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:30:04.625  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:30:04.625  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:30:14.853  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:30:14.853  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:30:14.868  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:30:14.878  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:30:14.878  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:30:15.065  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:30:17.012  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:30:17.057  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:32:42.810  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:32:42.811  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:32:42.841  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:32:42.842  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:32:51.801  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:32:51.802  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:32:51.909  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:32:51.982  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:32:51.983  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:32:52.238  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:32:54.896  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:32:54.920  INFO 14108 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:33:52.818  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:35:28.559  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:35:28.559  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:35:28.586  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:35:28.587  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:35:37.256  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:35:37.256  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:35:37.273  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:35:37.284  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:35:37.284  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:35:37.478  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:35:39.406  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:35:39.445  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:38:15.720  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 15:38:15.723  INFO 14108 --- [Thread-78] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 15:38:15.723  INFO 14108 --- [Thread-78] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073295723, current=DOWN, previous=UP]
+2023-01-30 15:38:15.724  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:38:15.731  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:38:15.806  INFO 14108 --- [Thread-78] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 15:38:15.808  INFO 14108 --- [Thread-78] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 15:38:15.819  INFO 14108 --- [Thread-78] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:38:15.820  INFO 14108 --- [Thread-78] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-01-30 15:38:15.851  INFO 14108 --- [Thread-78] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-01-30 15:38:15.851  INFO 14108 --- [Thread-78] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 15:38:18.862  INFO 14108 --- [Thread-78] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 15:38:18.876  INFO 14108 --- [Thread-78] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 15:38:18.898  INFO 14108 --- [Thread-78] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 15:38:19.322  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 15:38:19.322  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 15:38:19.535  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 15:38:19.552  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2023-01-30 15:38:19.605  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 15:38:19.837  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 15:38:19.838  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 15:38:19.839  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 15:38:19.900  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 15:38:19.900  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 575 ms
+2023-01-30 15:38:19.935  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 15:38:19.939  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-01-30 15:38:19.940  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 15:38:20.046  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-01-30 15:38:20.047  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 15:38:57.656  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 15:38:57.658  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:38:57.705  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 15:38:57.804  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8d60632b-29ec-4706-a85d-d7586d55ed5d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 15:38:57.809  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@561e62a8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2efd3e07, org.springframework.security.web.context.SecurityContextPersistenceFilter@6eace470, org.springframework.security.web.header.HeaderWriterFilter@3cadd9bf, org.springframework.security.web.authentication.logout.LogoutFilter@6e9fa93b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c8497af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4eb6c5a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bf7aaa, org.springframework.security.web.session.SessionManagementFilter@36e3ecbf, org.springframework.security.web.access.ExceptionTranslationFilter@2c7bc43e]
+2023-01-30 15:38:57.882  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 15:38:57.996  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 15:38:58.117  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 15:38:58.125  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 15:38:58.126  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 15:38:58.126  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:38:58.127  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 15:38:58.128  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 15:38:58.128  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 15:38:58.129  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 15:38:58.129  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 15:38:58.130  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 15:38:58.130  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 15:38:58.149  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 15:38:58.150  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 15:38:58.150  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 15:38:58.151  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675073338151 with initial instances count: 3
+2023-01-30 15:38:58.157  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 15:38:58.157  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073338157, current=UP, previous=STARTING]
+2023-01-30 15:38:58.158  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:38:58.162  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 15:38:58.191  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 15:38:58.201  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:38:58.300  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 39.129 seconds (JVM running for 8718.691)
+2023-01-30 15:38:58.302  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 15:39:35.029  INFO 14108 --- [http-nio-8002-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 15:39:35.030  INFO 14108 --- [http-nio-8002-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 15:39:35.033  INFO 14108 --- [http-nio-8002-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-30 15:39:35.036  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:39:35.036  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:39:35.078  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:39:35.079  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:39:42.330  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:39:42.330  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:39:42.346  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:39:42.346  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:40:51.656  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:40:51.656  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:40:51.664  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:40:51.677  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:40:51.677  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:40:51.861  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:42:26.441  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:42:26.442  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:42:26.470  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:42:26.470  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:42:34.952  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:42:34.952  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:42:35.288  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:42:35.650  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:42:35.651  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:42:35.852  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:42:37.456  WARN 14108 --- [http-nio-8002-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2023-01-30 15:43:53.460  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 15:43:53.467  INFO 14108 --- [Thread-91] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 15:43:53.468  INFO 14108 --- [Thread-91] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073633468, current=DOWN, previous=UP]
+2023-01-30 15:43:53.470  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:43:53.484  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:43:53.575  INFO 14108 --- [Thread-91] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 15:43:53.576  INFO 14108 --- [Thread-91] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 15:43:53.586  INFO 14108 --- [Thread-91] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:43:53.587  INFO 14108 --- [Thread-91] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-01-30 15:43:53.605  INFO 14108 --- [Thread-91] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-01-30 15:43:53.605  INFO 14108 --- [Thread-91] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 15:43:56.613  INFO 14108 --- [Thread-91] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 15:43:56.630  INFO 14108 --- [Thread-91] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 15:43:56.639  INFO 14108 --- [Thread-91] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 15:43:57.100  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 15:43:57.101  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 15:43:57.308  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 15:43:57.325  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2023-01-30 15:43:57.378  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 15:43:57.620  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 15:43:57.621  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 15:43:57.621  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 15:43:57.680  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 15:43:57.681  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 578 ms
+2023-01-30 15:43:57.712  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 15:43:57.716  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-01-30 15:43:57.716  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 15:43:57.803  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-01-30 15:43:57.804  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 15:44:40.995  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 15:44:40.995  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:44:41.012  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 15:44:41.103  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ef134d56-8fc5-4c85-88db-508821eb20a5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 15:44:41.108  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@49d5ccae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68f6a3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c6b173c, org.springframework.security.web.header.HeaderWriterFilter@2cd36a0, org.springframework.security.web.authentication.logout.LogoutFilter@77b058bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2912e925, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4201b291, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26d1d3be, org.springframework.security.web.session.SessionManagementFilter@10083bc5, org.springframework.security.web.access.ExceptionTranslationFilter@35040d11]
+2023-01-30 15:44:41.180  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 15:44:41.293  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 15:44:41.416  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 15:44:41.424  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 15:44:41.425  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 15:44:41.425  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:44:41.426  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 15:44:41.428  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 15:44:41.428  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 15:44:41.429  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 15:44:41.429  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 15:44:41.430  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 15:44:41.436  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 15:44:41.459  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 15:44:41.459  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 15:44:41.460  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 15:44:41.467  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675073681467 with initial instances count: 3
+2023-01-30 15:44:41.473  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 15:44:41.477  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073681477, current=UP, previous=STARTING]
+2023-01-30 15:44:41.478  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:44:41.484  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 15:44:41.484  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 15:44:41.491  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:44:41.587  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 44.618 seconds (JVM running for 9061.969)
+2023-01-30 15:44:41.589  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 15:45:10.062  INFO 14108 --- [http-nio-8002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 15:45:10.062  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 15:45:10.066  INFO 14108 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-30 15:45:10.068  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:45:10.068  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:45:10.095  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:45:10.095  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:45:17.738  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:45:17.738  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:45:17.749  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:45:17.758  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:45:17.758  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:45:17.976  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:45:19.720  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:45:19.733  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:47:02.255  INFO 14108 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 15:47:02.257  INFO 14108 --- [Thread-101] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 15:47:02.257  INFO 14108 --- [Thread-101] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073822257, current=DOWN, previous=UP]
+2023-01-30 15:47:02.258  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:47:02.270  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:47:02.328  INFO 14108 --- [Thread-101] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 15:47:02.329  INFO 14108 --- [Thread-101] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-30 15:47:02.341  INFO 14108 --- [Thread-101] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:47:02.342  INFO 14108 --- [Thread-101] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-01-30 15:47:02.366  INFO 14108 --- [Thread-101] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-01-30 15:47:02.366  INFO 14108 --- [Thread-101] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 15:47:05.377  INFO 14108 --- [Thread-101] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 15:47:05.392  INFO 14108 --- [Thread-101] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 15:47:05.404  INFO 14108 --- [Thread-101] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 15:47:05.839  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 14108 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 15:47:05.843  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 15:47:06.073  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 15:47:06.090  INFO 14108 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2023-01-30 15:47:06.143  INFO 14108 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 15:47:06.364  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 15:47:06.365  INFO 14108 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 15:47:06.366  INFO 14108 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 15:47:06.423  INFO 14108 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 15:47:06.424  INFO 14108 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
+2023-01-30 15:47:06.454  INFO 14108 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 15:47:06.457  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-01-30 15:47:06.457  WARN 14108 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 15:47:06.981  INFO 14108 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-01-30 15:47:06.982  INFO 14108 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 15:47:41.929  INFO 14108 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 15:47:41.930  INFO 14108 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 15:47:41.977  WARN 14108 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 15:47:42.076  WARN 14108 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d773b4d0-2ab5-4fe0-92d7-6379d69f3895
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 15:47:42.081  INFO 14108 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6ae5cfc5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31eb5a75, org.springframework.security.web.context.SecurityContextPersistenceFilter@391bb197, org.springframework.security.web.header.HeaderWriterFilter@37482b4e, org.springframework.security.web.authentication.logout.LogoutFilter@65787884, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b9c81d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d78d5b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f8f584d, org.springframework.security.web.session.SessionManagementFilter@38148f7a, org.springframework.security.web.access.ExceptionTranslationFilter@79056a01]
+2023-01-30 15:47:42.154  WARN 14108 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 15:47:42.282  INFO 14108 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 15:47:42.406  WARN 14108 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 15:47:42.414  INFO 14108 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 15:47:42.416  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 15:47:42.416  INFO 14108 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:47:42.417  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 15:47:42.417  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 15:47:42.418  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 15:47:42.419  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 15:47:42.419  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 15:47:42.420  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 15:47:42.420  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 15:47:42.437  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 15:47:42.438  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 15:47:42.441  INFO 14108 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 15:47:42.448  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675073862448 with initial instances count: 3
+2023-01-30 15:47:42.458  INFO 14108 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 15:47:42.459  INFO 14108 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675073862459, current=UP, previous=STARTING]
+2023-01-30 15:47:42.464  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 15:47:42.468  INFO 14108 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 15:47:42.487  INFO 14108 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 15:47:42.498  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 15:47:42.592  INFO 14108 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 36.894 seconds (JVM running for 9242.971)
+2023-01-30 15:47:42.594  INFO 14108 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 15:47:48.465  INFO 14108 --- [http-nio-8002-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 15:47:48.466  INFO 14108 --- [http-nio-8002-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 15:47:48.468  INFO 14108 --- [http-nio-8002-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-30 15:47:48.471  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:47:48.471  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:47:48.497  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:47:48.497  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:47:55.542  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:47:55.543  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:47:55.557  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:47:55.567  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:47:55.568  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:47:55.758  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:47:57.093  INFO 14108 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:47:57.105  INFO 14108 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 15:49:25.605  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:49:25.606  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:49:25.629  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:49:25.629  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:49:45.294  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:49:45.294  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:49:45.304  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:49:52.113  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 15:49:52.114  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 15:49:52.130  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Checking registered password and given password of doctor is correct or not
+2023-01-30 15:49:52.217  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Checking whether doctor has benn  approval or not
+2023-01-30 15:49:52.268  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching id of the doctor
+2023-01-30 15:50:52.584  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:50:52.584  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:50:52.612  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:50:52.612  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:51:16.060  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:51:16.060  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:51:16.109  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:51:16.153  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:51:16.153  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:51:16.342  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:51:18.290  WARN 14108 --- [http-nio-8002-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.login.service.entity.UserDetails'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'UserDetails [userId=0, email=varshithaj2000@gmail.com, password=vvv, doctorDetails=DoctorDetails [doctorId=0, name=Varshitha, pnumber=9897654232, specialization=Neurosurgery, avaliability=false, approval=false, hospitalId=com.mail.microservice.entity.Hospital@34a8a1c], nurseDetails=null]'; nested exception is java.lang.NumberFormatException: For input string: "UserDetails[userId=0,email=varshithaj2000@gmail.com,password=vvv,doctorDetails=DoctorDetails[doctorId=0,name=Varshitha,pnumber=9897654232,specialization=Neurosurgery,avaliability=false,approval=false,hospitalId=com.mail.microservice.entity.Hospital@34a8a1c],nurseDetails=null]"]
+2023-01-30 15:52:42.428  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:56:23.889  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:56:23.889  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:56:23.914  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:56:23.915  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:56:31.807  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:56:31.807  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:56:31.823  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:56:31.836  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:56:31.837  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:56:32.035  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:57:42.434  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 15:57:49.108  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:57:49.108  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:57:49.144  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:57:49.144  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:58:00.955  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Creating new Doctor details
+2023-01-30 15:58:00.955  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 15:58:00.971  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Finding whether the email is registered or not
+2023-01-30 15:58:00.982  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new doctor details
+2023-01-30 15:58:00.982  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Creating new doctor
+2023-01-30 15:58:01.177  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 15:58:38.432  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:58:38.432  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 15:58:38.454  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Fetching all hospital details
+2023-01-30 15:58:38.455  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching hoospital details
+2023-01-30 16:00:04.970  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Creating new Nurse details
+2023-01-30 16:00:04.970  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 16:00:04.994  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new nurse details
+2023-01-30 16:00:04.995  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.service.NurseServiceImpl     : creating new Nurse
+2023-01-30 16:00:05.123  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : creating new user
+2023-01-30 16:01:00.435  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:01:00.436  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:01:02.927  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:01:02.927  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:01:03.063  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:01:03.064  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:02:42.446  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:07:13.219  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:07:13.219  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:07:13.255  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:07:13.255  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:07:36.608  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:07:36.608  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:07:39.942  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:07:39.943  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:07:39.982 ERROR 14108 --- [http-nio-8002-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
+
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:135) ~[na:1.8.0_121]
+	at com.login.service.service.UserServiceImpl.findById(UserServiceImpl.java:276) ~[classes/:na]
+	at com.login.service.controller.LoginController.findById(LoginController.java:148) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+
+2023-01-30 16:07:40.503  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:07:40.503  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:07:40.539  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:07:40.539  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:07:42.456  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:10:09.920  INFO 14108 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:10:09.920  INFO 14108 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:10:09.931 ERROR 14108 --- [http-nio-8002-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.NoSuchElementException: No value present] with root cause
+
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:135) ~[na:1.8.0_121]
+	at com.login.service.service.UserServiceImpl.findById(UserServiceImpl.java:276) ~[classes/:na]
+	at com.login.service.controller.LoginController.findById(LoginController.java:148) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:337) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:346) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:221) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:186) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+
+2023-01-30 16:12:42.472  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:17:42.485  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:20:32.985  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:20:32.986  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:20:33.022  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:20:33.023  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:20:35.355  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:20:35.356  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:20:38.053  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:20:38.053  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:20:38.074  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:20:38.074  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:21:29.681  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:21:29.681  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:21:29.697  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:21:29.697  INFO 14108 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:21:56.192  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:22:06.392  INFO 14108 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:08.811  INFO 14108 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:42.210  INFO 14108 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:15.907  INFO 14108 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:16.229  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:22:16.370  INFO 14108 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:34.294  INFO 14108 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:35.987  INFO 14108 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:22:42.187  INFO 14108 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:22:42.211  INFO 14108 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:42.211  INFO 14108 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:42.211  INFO 14108 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:22:42.212  INFO 14108 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:42.212  INFO 14108 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:42.212  INFO 14108 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:22:42.490  INFO 14108 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:22:43.485  INFO 14108 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 16:22:43.485  INFO 14108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675075963485, current=DOWN, previous=UP]
+2023-01-30 16:22:43.488  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 16:22:43.515  INFO 14108 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 16:22:43.596  INFO 14108 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 16:22:43.597  INFO 14108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-01-30 16:22:43.640  INFO 14108 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-01-30 16:22:43.641  INFO 14108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 16:22:46.648  WARN 14108 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2023-01-30 16:22:46.648  INFO 14108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 16:22:46.666  INFO 14108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 16:22:46.681  INFO 14108 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 16:22:56.780  INFO 7272 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 7272 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 16:22:56.782  INFO 7272 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 16:22:56.823  INFO 7272 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Divyashree.MD\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Divyashree.MD/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-01-30 16:22:56.824  INFO 7272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-01-30 16:22:56.826  INFO 7272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-01-30 16:22:57.471  INFO 7272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 16:22:57.541  INFO 7272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 3 JPA repository interfaces.
+2023-01-30 16:22:57.772  INFO 7272 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 16:22:58.519  INFO 7272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 16:22:58.528  INFO 7272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 16:22:58.529  INFO 7272 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 16:22:58.697  INFO 7272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 16:22:58.698  INFO 7272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1871 ms
+2023-01-30 16:22:58.890  INFO 7272 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 16:22:58.925  INFO 7272 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-30 16:22:59.109  INFO 7272 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-30 16:22:59.183  INFO 7272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-30 16:22:59.185  WARN 7272 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 16:22:59.700  INFO 7272 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-30 16:22:59.711  INFO 7272 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 16:23:35.651  INFO 7272 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 16:23:35.659  INFO 7272 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 16:23:35.697  WARN 7272 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 16:23:36.330  WARN 7272 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5808ab9e-ebc8-483a-8af3-c7705a5bee6a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 16:23:36.409  INFO 7272 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@91b1932, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7bf33ad7, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ee69133, org.springframework.security.web.header.HeaderWriterFilter@1888a5ed, org.springframework.security.web.authentication.logout.LogoutFilter@2ed744e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7846bc88, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@350ca815, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4df456f8, org.springframework.security.web.session.SessionManagementFilter@5ef51e72, org.springframework.security.web.access.ExceptionTranslationFilter@1f07c16f]
+2023-01-30 16:23:37.098  WARN 7272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 16:23:37.303  INFO 7272 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 16:23:37.505  WARN 7272 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 16:23:37.523  INFO 7272 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 16:23:37.555  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 16:23:37.559  INFO 7272 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:23:37.581  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 16:23:37.582  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 16:23:37.582  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 16:23:37.582  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 16:23:37.583  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 16:23:37.583  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 16:23:37.583  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 16:23:37.846  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 16:23:37.849  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 16:23:37.851  INFO 7272 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 16:23:37.856  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675076017855 with initial instances count: 3
+2023-01-30 16:23:37.858  INFO 7272 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 16:23:37.859  INFO 7272 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675076017859, current=UP, previous=STARTING]
+2023-01-30 16:23:37.861  INFO 7272 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 16:23:37.882  INFO 7272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 16:23:37.883  INFO 7272 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 16:23:37.907  INFO 7272 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 16:23:38.006  INFO 7272 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 41.76 seconds (JVM running for 42.604)
+2023-01-30 16:28:37.597  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:33:37.609  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:38:37.622  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:43:37.635  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:45:00.540  INFO 7272 --- [http-nio-8002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 16:45:00.541  INFO 7272 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 16:45:00.543  INFO 7272 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-01-30 16:45:00.588  INFO 7272 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Checking email and password is registered or not
+2023-01-30 16:45:00.588  INFO 7272 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Checking whether the email and password belongs to admin
+2023-01-30 16:45:03.824  INFO 7272 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:45:03.825  INFO 7272 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:45:04.450  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:45:04.450  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:45:07.010  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:45:07.011  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:45:09.432  INFO 7272 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 16:45:09.433  INFO 7272 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 16:45:09.491  INFO 7272 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:45:09.491  INFO 7272 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:45:09.534  WARN 7272 --- [http-nio-8002-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.login.service.entity.UserDetails'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'UserDetails [userId=184, email=varshithaj2000@gmail.com, password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C, doctorDetails=DoctorDetails [doctorId=183, name=Varshitha, pnumber=9897654232, specialization=Ayurvedic physician, avaliability=true, approval=true, hospitalId=com.mail.microservice.entity.Hospital@21f06072], nurseDetails=null]'; nested exception is java.lang.NumberFormatException: For input string: "UserDetails[userId=184,email=varshithaj2000@gmail.com,password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C,doctorDetails=DoctorDetails[doctorId=183,name=Varshitha,pnumber=9897654232,specialization=Ayurvedicphysician,avaliability=true,approval=true,hospitalId=com.mail.microservice.entity.Hospital@21f06072],nurseDetails=null]"]
+2023-01-30 16:45:09.572  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:45:09.573  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:45:09.605  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:45:09.606  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:48:35.900  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:48:35.900  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:48:35.934  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:48:35.934  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:48:37.649  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:48:39.736  INFO 7272 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:48:39.737  INFO 7272 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:48:41.944  INFO 7272 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 16:48:41.944  INFO 7272 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 16:48:41.958  INFO 7272 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:48:41.960  INFO 7272 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:48:41.981  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:48:41.981  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:48:41.990  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:48:41.990  INFO 7272 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:48:42.011  WARN 7272 --- [http-nio-8002-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.login.service.entity.UserDetails'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'UserDetails [userId=184, email=varshithaj2000@gmail.com, password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C, doctorDetails=DoctorDetails [doctorId=183, name=Varshitha, pnumber=9897654232, specialization=Ayurvedic physician, avaliability=true, approval=true, hospitalId=com.mail.microservice.entity.Hospital@5bc55c96], nurseDetails=null]'; nested exception is java.lang.NumberFormatException: For input string: "UserDetails[userId=184,email=varshithaj2000@gmail.com,password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C,doctorDetails=DoctorDetails[doctorId=183,name=Varshitha,pnumber=9897654232,specialization=Ayurvedicphysician,avaliability=true,approval=true,hospitalId=com.mail.microservice.entity.Hospital@5bc55c96],nurseDetails=null]"]
+2023-01-30 16:51:11.609  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:51:11.610  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:51:11.641  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:51:11.642  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:51:13.185  INFO 7272 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:51:13.185  INFO 7272 --- [http-nio-8002-exec-5] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:51:15.109  INFO 7272 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:51:15.109  INFO 7272 --- [http-nio-8002-exec-8] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:51:15.138  INFO 7272 --- [http-nio-8002-exec-7] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:51:15.139  INFO 7272 --- [http-nio-8002-exec-7] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:51:28.349  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 16:51:28.352  INFO 7272 --- [http-nio-8002-exec-9] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 16:51:28.398  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:51:28.398  INFO 7272 --- [http-nio-8002-exec-10] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:51:28.409  WARN 7272 --- [http-nio-8002-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.login.service.entity.UserDetails'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'UserDetails [userId=184, email=varshithaj2000@gmail.com, password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C, doctorDetails=DoctorDetails [doctorId=183, name=Varshitha, pnumber=9897654232, specialization=Ayurvedic physician, avaliability=true, approval=true, hospitalId=com.mail.microservice.entity.Hospital@14499238], nurseDetails=null]'; nested exception is java.lang.NumberFormatException: For input string: "UserDetails[userId=184,email=varshithaj2000@gmail.com,password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C,doctorDetails=DoctorDetails[doctorId=183,name=Varshitha,pnumber=9897654232,specialization=Ayurvedicphysician,avaliability=true,approval=true,hospitalId=com.mail.microservice.entity.Hospital@14499238],nurseDetails=null]"]
+2023-01-30 16:52:14.792  INFO 7272 --- [http-nio-8002-exec-2] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:52:14.793  INFO 7272 --- [http-nio-8002-exec-2] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:52:14.821  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:52:14.821  INFO 7272 --- [http-nio-8002-exec-3] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:52:16.552  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fetching doctor detail by id
+2023-01-30 16:52:16.552  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.service.DoctorServiceImpl    : Fetching doctor details by id
+2023-01-30 16:52:18.434  INFO 7272 --- [http-nio-8002-exec-6] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 16:52:18.435  INFO 7272 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 16:52:18.485  INFO 7272 --- [http-nio-8002-exec-8] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:52:18.486  INFO 7272 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:52:18.507  WARN 7272 --- [http-nio-8002-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'com.login.service.entity.UserDetails'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'UserDetails [userId=184, email=varshithaj2000@gmail.com, password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C, doctorDetails=DoctorDetails [doctorId=183, name=Varshitha, pnumber=9897654232, specialization=Ayurvedic physician, avaliability=true, approval=true, hospitalId=com.mail.microservice.entity.Hospital@751a7e45], nurseDetails=null]'; nested exception is java.lang.NumberFormatException: For input string: "UserDetails[userId=184,email=varshithaj2000@gmail.com,password=$2a$10$IKhhzS3zxanc446wqXuzdeHyFwBp0BO1s5SYDnKGQ1zVLMxcQsw3C,doctorDetails=DoctorDetails[doctorId=183,name=Varshitha,pnumber=9897654232,specialization=Ayurvedicphysician,avaliability=true,approval=true,hospitalId=com.mail.microservice.entity.Hospital@751a7e45],nurseDetails=null]"]
+2023-01-30 16:52:18.573  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:52:18.574  INFO 7272 --- [http-nio-8002-exec-9] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:52:18.602  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.controller.LoginController   : List of doctor details where approval is false
+2023-01-30 16:52:18.603  INFO 7272 --- [http-nio-8002-exec-10] c.l.service.service.DoctorServiceImpl    : Fetching doctor details where approval is false
+2023-01-30 16:53:20.224  INFO 7272 --- [http-nio-8002-exec-4] c.l.service.controller.LoginController   : Fecthing user details by id
+2023-01-30 16:53:20.225  INFO 7272 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : Fetching user detail by id
+2023-01-30 16:53:37.658  INFO 7272 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 16:55:25.406  INFO 7272 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 16:55:25.408  INFO 7272 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675077925408, current=DOWN, previous=UP]
+2023-01-30 16:55:25.408  INFO 7272 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 16:55:25.439  INFO 7272 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 16:55:25.522  INFO 7272 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 16:55:25.524  INFO 7272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-30 16:55:25.544  INFO 7272 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-30 16:55:25.546  INFO 7272 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 16:55:28.571  INFO 7272 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 16:55:28.583  INFO 7272 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 16:55:28.597  INFO 7272 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import {Link} from 'react-router-dom';
 import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
@@ -87,6 +87,7 @@ class Registration extends React.Component{
                 }
                 else{
                     alert("user saved")
+                    axios.post("http://localhost:8008/api/s1/notifyregistration",user)
                      window.location="/";
                    
                 }

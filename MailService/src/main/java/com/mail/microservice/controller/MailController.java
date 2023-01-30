@@ -1,5 +1,7 @@
 package com.mail.microservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -68,6 +70,34 @@ public class MailController {
 	@GetMapping("/getid/{email}")
 	public int getidbyemail(@PathVariable("email") String email) {
 		return forgotPass.getidbyemail(email);
+	}
+	
+	@PostMapping("/notifyregistration")
+	public void notifyregistration(@RequestBody UserDetails user) {
+		System.out.println("sending mail");
+		mailMessage.notifyRegisteration(user);
+	}
+	
+	@PostMapping("/registersuccessfulfordoctor/{id}")
+	public void registrationsuccesull(@PathVariable("id") int id) {
+		System.out.println("---------------------------------------");
+		List<UserDetails> user1= forgotPass.getalluser();
+		UserDetails user = null;
+		for (UserDetails u : user1) {
+			if (u.getDoctordetails() != null && u.getDoctordetails().getDoctorId() == id) {
+
+			 user = u;
+			}
+		}
+		System.out.println(user);
+		UserDetails user2 = forgotPass.getuserdetailsbyid(user.getId());
+		mailMessage.registeredSuccessfully(user2);
+		
+	}
+	
+	@GetMapping("/{id}")
+	public UserDetails getbyid(@PathVariable("id") int id) {
+		return forgotPass.getuserdetailsbyid(id);
 	}
 	
 //	@PostMapping("/")

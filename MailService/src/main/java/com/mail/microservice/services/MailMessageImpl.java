@@ -97,9 +97,9 @@ public class MailMessageImpl implements MailMessage {
 	@Override
 	public void notifyRegisteration(UserDetails user) {
 		logger.debug(
-				"Registration Request Recieved from " + user.getEmail() + " for role " + userfacade.getrole(user));
+				"Registration Request Recieved " + user.getEmail());
 		String subject = "Registeration form recieved";
-		String body = "Hello, Your registeration form is received for the role: " + userfacade.getrole(user)
+		String body = "Hello, Your registeration form is received " 
 				+ " You will be notified regarding the approval soon. -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
