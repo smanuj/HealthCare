@@ -46,7 +46,7 @@ import Nurse1 from "./components/Nurse1";
         <Route exact path ="/doctorReg" element={< Registration/> } />
         <Route exact path ="/nurseReg" element={< Nurse/> } />
         <Route path="/index" element={<Index/>}/>
-        <Route path="/info" element={<PatientForm/>}/>
+        <Route path="/create" element={<PatientForm/>}/>
         <Route path="/hospital" element={<Hospital/>}/>
         <Route exact path ="/admin/dashboard" element={<Admin/>}></Route>
         <Route exact path ="/admin/addHospital" element={<AddHospital/>}></Route>

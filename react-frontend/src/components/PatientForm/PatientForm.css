@@ -1,5 +1,6 @@
 .app {
-    height: auto;
+    height: 100%;
+    width: 100%;
 	background-image:
 		url("https://wallpapercave.com/wp/wp9630379.jpg");
 	background-repeat: no-repeat;
