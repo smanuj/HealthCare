@@ -86,6 +86,21 @@ public class HospitalServiceImpl implements HospitalService {
 	}
 
 	@Override
+	public void changeAvailability(int id) {
+		// TODO Auto-generated method stub
+		Hospital h = hospitalRepository.findById(id).get();
+		if(h.isBedAvailabilty()==true) {
+		h.setBedAvailabilty(false);
+		}
+		else {
+		h.setBedAvailabilty(true);
+		}
+		 hospitalRepository.save(h);
+		
+	}
+
+
+	@Override
 	public List<String> findHospitalNames() {
 		logger.info("fetching all the hospital names");
 		return hospitalRepository.findHospitalNames();
