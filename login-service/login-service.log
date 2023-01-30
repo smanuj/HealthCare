@@ -376,3 +376,115 @@ This generated password is for development use only. Your security configuration
 2023-01-30 10:59:16.158  WARN 2676 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
 2023-01-30 10:59:16.256  INFO 2676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
 2023-01-30 10:59:16.257  INFO 2676 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 10:59:52.152  INFO 2676 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 10:59:52.153  INFO 2676 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 10:59:52.184  WARN 2676 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 10:59:52.283  WARN 2676 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 578bb945-23a0-439d-b109-82ffaeb03716
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 10:59:52.288  INFO 2676 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48b7d6be, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@800bef5, org.springframework.security.web.context.SecurityContextPersistenceFilter@62297eb8, org.springframework.security.web.header.HeaderWriterFilter@5d705354, org.springframework.security.web.authentication.logout.LogoutFilter@7fbef612, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31b0c1ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e85de5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@237e4de, org.springframework.security.web.session.SessionManagementFilter@56edd37d, org.springframework.security.web.access.ExceptionTranslationFilter@738419de]
+2023-01-30 10:59:52.362  WARN 2676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 10:59:52.475  INFO 2676 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 10:59:52.593  WARN 2676 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 10:59:52.601  INFO 2676 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 10:59:52.602  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 10:59:52.602  INFO 2676 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 10:59:52.603  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 10:59:52.604  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 10:59:52.604  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 10:59:52.604  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 10:59:52.605  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 10:59:52.605  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 10:59:52.606  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 10:59:52.623  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 10:59:52.624  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 10:59:52.624  INFO 2676 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 10:59:52.625  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675056592625 with initial instances count: 3
+2023-01-30 10:59:52.626  INFO 2676 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 10:59:52.627  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675056592627, current=UP, previous=STARTING]
+2023-01-30 10:59:52.627  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 10:59:52.632  INFO 2676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 10:59:52.632  INFO 2676 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 10:59:52.639  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 10:59:52.733  INFO 2676 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 37.303 seconds (JVM running for 3858.353)
+2023-01-30 10:59:52.734  INFO 2676 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 11:04:52.625  INFO 2676 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 11:05:25.358  INFO 2676 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-01-30 11:05:25.365  INFO 2676 --- [Thread-32] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application LOGIN-SERVICE with eureka with status DOWN
+2023-01-30 11:05:25.365  INFO 2676 --- [Thread-32] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675056925365, current=DOWN, previous=UP]
+2023-01-30 11:05:25.366  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 11:05:25.374  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 11:05:25.457  INFO 2676 --- [Thread-32] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-30 11:05:25.468  INFO 2676 --- [Thread-32] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 11:05:25.469  INFO 2676 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-01-30 11:05:25.485  INFO 2676 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-01-30 11:05:25.485  INFO 2676 --- [Thread-32] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-30 11:05:28.496  INFO 2676 --- [Thread-32] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-01-30 11:05:28.511  INFO 2676 --- [Thread-32] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - deregister  status: 200
+2023-01-30 11:05:28.521  INFO 2676 --- [Thread-32] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2023-01-30 11:05:28.914  INFO 2676 --- [restartedMain] c.login.service.LoginServiceApplication  : Starting LoginServiceApplication using Java 1.8.0_121 on VDC01LTC2128 with PID 2676 (D:\New folder (2)\login-service\target\classes started by Divyashree.MD in D:\New folder (2)\login-service)
+2023-01-30 11:05:28.914  INFO 2676 --- [restartedMain] c.login.service.LoginServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-01-30 11:05:29.118  INFO 2676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30 11:05:29.136  INFO 2676 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2023-01-30 11:05:29.188  INFO 2676 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a0523d4f-8226-3ec9-933d-b8546c9358f8
+2023-01-30 11:05:29.411  INFO 2676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
+2023-01-30 11:05:29.412  INFO 2676 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-30 11:05:29.412  INFO 2676 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-30 11:05:29.464  INFO 2676 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-30 11:05:29.464  INFO 2676 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 548 ms
+2023-01-30 11:05:29.510  INFO 2676 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30 11:05:29.514  INFO 2676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-01-30 11:05:29.514  WARN 2676 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-01-30 11:05:29.581  INFO 2676 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-01-30 11:05:29.582  INFO 2676 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2023-01-30 11:06:12.471  INFO 2676 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30 11:06:12.472  INFO 2676 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30 11:06:12.504  WARN 2676 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30 11:06:12.629  WARN 2676 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 789f6051-de73-457d-a555-b1109c4da0bd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-01-30 11:06:12.633  INFO 2676 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c7da9d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3eb49b18, org.springframework.security.web.context.SecurityContextPersistenceFilter@3207aefb, org.springframework.security.web.header.HeaderWriterFilter@4766aa2c, org.springframework.security.web.authentication.logout.LogoutFilter@63f7ef6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@343f7f5c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46fa943d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1534fbf5, org.springframework.security.web.session.SessionManagementFilter@66199825, org.springframework.security.web.access.ExceptionTranslationFilter@1672198e]
+2023-01-30 11:06:12.708  WARN 2676 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-30 11:06:12.820  INFO 2676 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-30 11:06:12.942  WARN 2676 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-30 11:06:12.949  INFO 2676 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-30 11:06:12.950  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-30 11:06:12.950  INFO 2676 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-30 11:06:12.951  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-30 11:06:12.952  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-30 11:06:12.952  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-30 11:06:12.952  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-30 11:06:12.953  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-30 11:06:12.953  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-30 11:06:12.953  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-30 11:06:12.972  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-30 11:06:12.973  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-30 11:06:12.974  INFO 2676 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-30 11:06:12.974  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1675056972974 with initial instances count: 2
+2023-01-30 11:06:12.976  INFO 2676 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application LOGIN-SERVICE with eureka with status UP
+2023-01-30 11:06:12.976  INFO 2676 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1675056972976, current=UP, previous=STARTING]
+2023-01-30 11:06:12.976  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002: registering service...
+2023-01-30 11:06:12.981  INFO 2676 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path ''
+2023-01-30 11:06:12.981  INFO 2676 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
+2023-01-30 11:06:12.989  INFO 2676 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_LOGIN-SERVICE/VDC01LTC2128.IN.valtech.com:login-service:8002 - registration status: 204
+2023-01-30 11:06:13.091  INFO 2676 --- [restartedMain] c.login.service.LoginServiceApplication  : Started LoginServiceApplication in 44.308 seconds (JVM running for 4238.704)
+2023-01-30 11:06:13.093  INFO 2676 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-01-30 11:06:21.788  INFO 2676 --- [http-nio-8002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-30 11:06:21.790  INFO 2676 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-30 11:06:21.793  INFO 2676 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-30 11:06:21.796  INFO 2676 --- [http-nio-8002-exec-1] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 11:06:21.796  INFO 2676 --- [http-nio-8002-exec-1] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 11:06:21.851  INFO 2676 --- [http-nio-8002-exec-3] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 11:06:25.280  INFO 2676 --- [http-nio-8002-exec-2] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 11:06:25.428  INFO 2676 --- [http-nio-8002-exec-4] c.login.service.service.UserServiceImpl  : creating new  user 
+2023-01-30 11:06:55.771  INFO 2676 --- [http-nio-8002-exec-5] c.l.service.controller.LoginController   : Fetching all user details
+2023-01-30 11:06:55.772  INFO 2676 --- [http-nio-8002-exec-5] c.login.service.service.UserServiceImpl  : Fetching all user details
+2023-01-30 11:06:55.799  INFO 2676 --- [http-nio-8002-exec-6] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 11:06:58.805  INFO 2676 --- [http-nio-8002-exec-7] c.login.service.service.UserServiceImpl  : Fetching Userdetails by email
+2023-01-30 11:06:58.983  INFO 2676 --- [http-nio-8002-exec-8] c.login.service.service.UserServiceImpl  : creating new  user 

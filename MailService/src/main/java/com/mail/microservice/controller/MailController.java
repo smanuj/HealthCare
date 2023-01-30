@@ -37,10 +37,13 @@ public class MailController {
 		boolean b = forgotPass.checkMailId(user.getEmail());
 		System.out.println(b);
 		if (b == true) {
-			forgotPass.generateOtp(user);
-			return "sent";
+		Boolean forgot =	forgotPass.generateOtp(user);
+		System.out.println(forgot);
+		String s1="sent";
+			return s1;
 		}
-		return "fail";
+		String s2="fail";
+		return s2;
 	}
 
 	@PostMapping("/reset/newPass/{id}")
