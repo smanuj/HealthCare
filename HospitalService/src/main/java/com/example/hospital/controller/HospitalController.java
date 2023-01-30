@@ -70,6 +70,11 @@ public class HospitalController {
 
 	}
 
+	@PostMapping("/changeBedAvailability/{id}")
+	public void change(@PathVariable("id") int id) {
+		hospitalService.changeAvailability(id);
+	}
+
 	@GetMapping("/hospitalNames")
 	public List<String> getHospital() {
 		logger.info("fetching all the hospital names");

@@ -22,6 +22,17 @@ export default class ListHospital extends Component{
     }
   
 
+    change(id){ 
+        
+        axios.post("http://localhost:8003/api/v1/changeBedAvailability/"+id).then(Response => {
+           
+                alert(id);
+                alert("Changed Bed Availability");
+                window.location.reload();
+                
+                    }); 
+                }
+
     componentDidMount(){
         axios.get("http://localhost:8003/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
       
@@ -62,7 +73,8 @@ export default class ListHospital extends Component{
                                              <td>
                                            
      <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.hospitalId)} className="btn-list">Delete </button>&nbsp;&nbsp;
-    <button className="btn-list"> <Link to={`/update/${hospital.hospitalId}`} >Edit</Link></button>
+     <button style={{marginLeft: "20px"}} onClick={ () => this.change(hospital.hospitalId)} className="btn-list">Change</button>&nbsp;&nbsp;
+    {/* <button className="btn-list"> <Link to={`/update/${hospital.hospitalId}`} >Edit</Link></button> */}
     
                                              </td>        
                                         </tr>

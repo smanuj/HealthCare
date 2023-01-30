@@ -37,10 +37,7 @@ public interface HospitalService {
 
 	List<Hospital> getHospitalsByPincode(String pincode);
 
-	
-	
-	
-	
+	void changeAvailability(int id);
 
 	
 }

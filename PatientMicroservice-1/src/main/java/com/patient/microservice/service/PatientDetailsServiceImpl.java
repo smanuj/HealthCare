@@ -50,6 +50,8 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	DoctorDetails d = doctorDetailsRepository.findBySpecializationAndAvaliabilityTrue(spec);
     	System.out.println("d is : "+d);
     	patient.setDoctorId(d);
+//    	d.setAvaliability(false);
+    	doctorDetailsRepository.save(d);
     	patient.setHospitalId(d.getHospitals());
     	Comments comm = new Comments();
     	comm.setDoctorId(d);
@@ -66,6 +68,12 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     public List<PatientDetails> getAllPatients() {
     	System.out.println(patientRepository.findAll());
         return (List<PatientDetails>) patientRepository.findAll();
+    }
+    
+    @Override
+    public void treatmentComplete(PatientDetails pd) {
+    	pd.setStatus(true);
+    	patientRepository.save(pd);
     }
 	
 }
