@@ -31,6 +31,18 @@ public class UserDetails {
 	public void setNursedetails(NurseDetails nursedetails) {
 		this.nurseDetails = nursedetails;
 	}
+	
+	
+
+	public UserDetails(int userId, String email, String password, DoctorDetails doctorDetails,
+			NurseDetails nurseDetails) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.doctorDetails = doctorDetails;
+		this.nurseDetails = nurseDetails;
+	}
 
 	public UserDetails(String email, String password, NurseDetails nursedetails) {
 		super();

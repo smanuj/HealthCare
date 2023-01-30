@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import {Link} from 'react-router-dom';
 import HospitalService from '../services/HospitalService';
 
 
@@ -22,7 +23,7 @@ export default class ListHospital extends Component{
   
 
     componentDidMount(){
-        axios.get("http://localhost:8081/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
+        axios.get("http://localhost:8003/api/v1/hospitals").then(Response => Response.data).then((data)=>{this.setState({hospitals:data})});
       
     }
    
@@ -60,7 +61,8 @@ export default class ListHospital extends Component{
                                              <td> {String(hospital.bedAvailabilty)}</td>
                                              <td>
                                            
-     <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.hospitalId)} className="btn-list">Delete </button>
+     <button style={{marginLeft: "20px"}} onClick={ () => this.deleteHospital(hospital.hospitalId)} className="btn-list">Delete </button>&nbsp;&nbsp;
+    <button className="btn-list"> <Link to={`/update/${hospital.hospitalId}`} >Edit</Link></button>
     
                                              </td>        
                                         </tr>

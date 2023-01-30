@@ -78,11 +78,11 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Hospital getHospitals() {
+	public Hospital getHospital() {
 		return hospitalId;
 	}
 
-	public void setHospitals(Hospital hospitalId) {
+	public void setHospital(Hospital hospitalId) {
 		this.hospitalId = hospitalId;
 	}
 
@@ -112,6 +112,13 @@ public class DoctorDetails {
 		this.avaliability = avaliability;
 		this.approval = approval;
 		this.hospitalId = hospitalId;
+	}
+
+	@Override
+	public String toString() {
+		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
+				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitalId="
+				+ hospitalId + "]";
 	}
 
 //	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")

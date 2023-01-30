@@ -122,7 +122,6 @@ public class DoctorDetails implements Serializable {
 	public void setHospital(Hospital hospital) {
 		this.hospitalId = hospital;
 	}
-
 	@Override
 	public String toString() {
 		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="

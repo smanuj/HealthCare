@@ -10,4 +10,8 @@ public interface ForgotPass {
 
 	boolean generateOtp(UserDetails user);
 
+	boolean checkpassword(int id, String password);
+
+	void changepassword(int id, String password);
+
 }

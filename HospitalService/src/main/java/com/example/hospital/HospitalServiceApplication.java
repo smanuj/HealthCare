@@ -15,6 +15,7 @@ public class HospitalServiceApplication {
 	}
 	
 	@Bean
+	
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}

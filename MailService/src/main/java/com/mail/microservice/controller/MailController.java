@@ -13,7 +13,6 @@ import com.mail.microservice.entity.PatientDetails;
 import com.mail.microservice.entity.UserDetails;
 import com.mail.microservice.services.ForgotPass;
 import com.mail.microservice.services.MailMessage;
-import com.mail.microservice.services.UserService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -26,15 +25,16 @@ public class MailController {
 	@Autowired
 	ForgotPass forgotPass;
 
-	@Autowired
-	UserService userService;
+	
 
 	@Autowired
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@PostMapping("/reset/forgotPass")
 	public String forgotPass(@RequestBody UserDetails user) {
+		System.out.println(user.getEmail());
 		boolean b = forgotPass.checkMailId(user.getEmail());
+		System.out.println(b);
 		if (b == true) {
 			forgotPass.generateOtp(user);
 			return "sent";
@@ -47,10 +47,10 @@ public class MailController {
 		
 		// retrieving OTP in email field as a string
 		String otp = user.getEmail();
-		boolean b = userService.checkPassword(id, otp);
+		boolean b = forgotPass.checkpassword(id, otp);
 		if (b == true) {
 			String password = bCryptPasswordEncoder.encode(user.getPassword());
-			userService.changePassword(id, password);
+			forgotPass.changepassword(id, password);
 			return "changed";
 		}
 		return "fail";
@@ -60,4 +60,6 @@ public class MailController {
 	public void alertDoctor(@PathVariable("id") int id, @RequestBody PatientDetails pd) {
 		mailMessage.sendAlert(id, pd);
 	}
+	
+//	@PostMapping("/")
 }

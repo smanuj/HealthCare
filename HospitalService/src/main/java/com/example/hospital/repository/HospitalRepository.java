@@ -14,4 +14,8 @@ public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 	List<String> findHospitalNames();
 
 	
+
+	List<Hospital> findByPincode(String pincode);
+	
+
 }

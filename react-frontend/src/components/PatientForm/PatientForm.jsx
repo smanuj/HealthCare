@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './PatientForm.css';
 import axios from 'axios';
 
+
 const PatientForm = () => {
     const [patient, setPatient] = useState('');
     const [aId, setAadharNumber] = useState('');
@@ -26,7 +27,7 @@ const PatientForm = () => {
             ...patient,
             [event.target.name]: event.target.value
         });
-    }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -36,12 +37,14 @@ const PatientForm = () => {
         .catch(error => console.log(error));
     }
 
+
      
 
     return (
         <div className="app">
         <form className="patient-form" onSubmit={handleSubmit}>
             <h2>Patient Registration</h2>
+
             <label>
                 Aadhar number:
                 <input type="text" name="aId" value={patient.aId} onChange={handleChange} required />
@@ -79,9 +82,11 @@ const PatientForm = () => {
             </label>
 
             <button type="submit">Register</button>
+
         </form>
         </div>
     );
+    
 }
 
 export default PatientForm;

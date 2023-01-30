@@ -49,7 +49,7 @@ class Nurse extends React.Component{
     
           
          if(confirmpassword==password) {
-            axios.post("http://localhost:8080/api/savenurse",user).then(response => {
+            axios.post("http://localhost:8002/api/login/savenurse",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("user not saved")
@@ -60,6 +60,7 @@ class Nurse extends React.Component{
                 else{
                   this.setState(this.initiaLSTATE);
                     alert("user saved")
+                    window.location="/";
                 }
               } )
          }
@@ -107,7 +108,7 @@ class Nurse extends React.Component{
                   
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" value={this.state.pnumber} onChange={this.bookChange} required/>
+                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" pattern="(0/91)?[6-9][0-9]{9}" value={this.state.pnumber} onChange={this.bookChange} required/>
                   </div>
                   
                   

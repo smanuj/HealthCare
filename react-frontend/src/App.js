@@ -23,6 +23,9 @@ import Registration from './components/Registration';
 import Nurse from './components/Nurse';
 import PatientForm from "./components/PatientForm/PatientForm";
 import NavBar from "./components/NavBar"
+import UpdateHospital from "./components/UpdateHospital";
+import Doctor from "./components/Doctor";
+import Nurse1 from "./components/Nurse1";
 
 
 
@@ -42,15 +45,18 @@ import NavBar from "./components/NavBar"
         <Route exact path ="/doctorReg" element={< Registration/> } />
         <Route exact path ="/nurseReg" element={< Nurse/> } />
         <Route path="/index" element={<Index/>}/>
-        <Route path="/info" element={<PatientForm/>}/>
+        <Route path="/create" element={<PatientForm/>}/>
         <Route path="/hospital" element={<Hospital/>}/>
         <Route exact path ="/admin/dashboard" element={<Admin/>}></Route>
         <Route exact path ="/admin/addHospital" element={<AddHospital/>}></Route>
         <Route exact path ="/admin/getHospitals" element={<ListHospital/>}></Route>
         <Route exact path ="/admin/approveDoctor" element={<ApproveDoctor/>}></Route>
         <Route exact path ="/admin/approveNurse" element={<ApproveNurse/>}></Route>
+        <Route path='/update/:id' element={<UpdateHospital/>} ></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass" element={<NewPass/>}/>
+        <Route path="/doctor/:id" element={<Doctor/>}/>
+        <Route path="/nurse/:id" element={<Nurse1/>}/>
       </Routes>       
     
     </BrowserRouter>

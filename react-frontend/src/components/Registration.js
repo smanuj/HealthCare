@@ -27,21 +27,22 @@ class Registration extends React.Component{
         password:"",
         confirmpassword:"",
         pnumber:"",
-        hospital:""
+        
 
     };
 
     componentDidMount(){
        
-          axios.get("http://localhost:8080/hospitals").then(Response => (Response.data))
+          axios.get("http://localhost:8002/api/login/hospitals").then(Response => (Response.data))
            .then((data)=>{this.setState({hospitals:data})});
+           
            
          
      
       }
       
     handlesubmit= (event) => {
-      
+      event.preventDefault()
    
         const doctor = {
             name: this.state.name,
@@ -77,30 +78,24 @@ class Registration extends React.Component{
        
       
         
-         if(confirmpassword==password) {
-            axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
+         if(confirmpassword===password) {
+            axios.post("http://localhost:8002/api/login/savedoctor",user).then(response => {
                 if(response.data=="not"){
                     this.setState(this.initiaLSTATE);
                     alert("User with this email already Exists")  ;
-                    
-                  
     
                 }
                 else{
                     alert("user saved")
-                    window.location("/")
+                     window.location="/";
+                   
                 }
               } )
          }
          else{
             alert("Password and ConfirmPassword are not same");
-            window.location("/")
+           
          }
-          
-
-
-        
-        
 
     }
     bookChange = (event) => {
@@ -152,7 +147,7 @@ class Registration extends React.Component{
                  
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" value={this.state.pnumber} onChange={this.bookChange} required/>
+                    <input type="text" placeholder="Phone number" className="name"  name="pnumber" pattern="(0/91)?[6-9][0-9]{9}" value={this.state.pnumber}  onChange={this.bookChange} required/>
                   </div>
                   
                   <br></br>
@@ -185,7 +180,7 @@ class Registration extends React.Component{
                  <div className="login-button">
                  <button  >submit</button><br></br>
                  <br></br>
-                 <button ><Link to={"/"}>Login Page</Link></button>
+                 {/* <button ><Link to={"/"}>Login Page</Link></button> */}
                  </div>
                 </div>
               </div>

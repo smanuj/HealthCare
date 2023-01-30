@@ -10,10 +10,13 @@ import com.patient.microservice.entity.AadharDetails;
 import com.patient.microservice.entity.Comments;
 import com.patient.microservice.entity.DoctorDetails;
 import com.patient.microservice.entity.PatientDetails;
+import com.patient.microservice.entity.UserDetails;
+import com.patient.microservice.facade.MailFacade;
 import com.patient.microservice.repository.AadharRepository;
 import com.patient.microservice.repository.CommentsRepository;
 import com.patient.microservice.repository.DoctorDetailsRepository;
 import com.patient.microservice.repository.PatientDetailsRepository;
+import com.patient.microservice.repository.UserRepo;
 
 
 @Service
@@ -29,6 +32,12 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     
     @Autowired
     private CommentsRepository commentsRepository;
+    
+    @Autowired
+    private MailFacade mailFacade;
+    
+    @Autowired
+    private UserRepo userRepo;
      
     @Override
     public PatientDetails createPatientDetails(PatientDetails patient) {
@@ -48,6 +57,9 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	comm.setDoctorId(d);
     	commentsRepository.save(comm);
     	patient.setCommentId(comm);
+    	UserDetails usr = userRepo.findByDoctorDetails(d);
+    	int userId = usr.getId();
+    	mailFacade.alertDoctor(userId, patient);
         return patientRepository.save(patient);
     }
     

@@ -30,65 +30,15 @@ class ForgotPass extends React.Component{
             const email = {
               email: this.state.email
             }
-        // const doctor = {
-        //     name: this.state.name,
-        //     pnumber: this.state.pnumber,
-        //     specialization: this.state.specialization
-            
-           
-        //   };
-
-        // const user ={
-        //     email:this.state.email,
-        //     password:this.state.password,
-        //     doctordetails:{
-        //         name: this.state.name,
-        //     pnumber: this.state.pnumber,
-        //     specialization: this.state.specialization
-            
-        //     }
-        // }
-        // const confirmpassword= this.state.confirmpassword;
-        // const password = this.state.password;
-        
-        
        axios.post("http://localhost:8008/api/s1/reset/forgotPass",email).then(response => {
                 if(response.data=="sent"){
                     this.setState(this.initiaLSTATE);
-                    alert("OTP sent")
-        ;
-                  
-    
+                    alert("OTP sent");
                 }
                 else{
                     alert("fail")
                 }
               } )
-        //  axios.post("http://localhost:8080/api/save",doctor,email,password).then(response => alert(response.data))
-        
-        //  if(confirmpassword==password) {
-        //     axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
-        //         if(response.data=="not"){
-        //             this.setState(this.initiaLSTATE);
-        //             alert("user not saved")
-        // ;
-                  
-    
-        //         }
-        //         else{
-        //             alert("user saved")
-        //         }
-        //       } )
-        //  }
-        //  else{
-        //     alert("password");
-        //  }
-          
-
-
-        
-        
-
     }
     bookChange = (event) => {
         this.setState({
@@ -96,9 +46,6 @@ class ForgotPass extends React.Component{
         });
       };
     render(){
-        // const { name,pnumber , specialization,avaliability } =
-        // this.state;
-        
         return(
         <Form onSubmit={this.handlesubmit} >
             <div className="main">
