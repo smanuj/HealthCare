@@ -2,18 +2,15 @@ package com.patient.microservice.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.patient.microservice.entity.AadharDetails;
-import com.patient.microservice.entity.Comments;
 import com.patient.microservice.entity.DoctorDetails;
 import com.patient.microservice.entity.PatientDetails;
 import com.patient.microservice.entity.UserDetails;
 import com.patient.microservice.facade.MailFacade;
 import com.patient.microservice.repository.AadharRepository;
-import com.patient.microservice.repository.CommentsRepository;
 import com.patient.microservice.repository.DoctorDetailsRepository;
 import com.patient.microservice.repository.PatientDetailsRepository;
 import com.patient.microservice.repository.UserRepo;
@@ -29,9 +26,6 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     
     @Autowired
     private DoctorDetailsRepository doctorDetailsRepository;
-    
-    @Autowired
-    private CommentsRepository commentsRepository;
     
     @Autowired
     private MailFacade mailFacade;
@@ -52,11 +46,6 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	patient.setDoctorId(d);
 //    	d.setAvaliability(false);
     	doctorDetailsRepository.save(d);
-    	patient.setHospitalId(d.getHospitals());
-    	Comments comm = new Comments();
-    	comm.setDoctorId(d);
-    	commentsRepository.save(comm);
-    	patient.setCommentId(comm);
     	UserDetails usr = userRepo.findByDoctorDetails(d);
     	int userId = usr.getId();
     	mailFacade.alertDoctor(userId, patient);
