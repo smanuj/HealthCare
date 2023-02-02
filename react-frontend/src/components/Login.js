@@ -108,7 +108,7 @@ class Login extends React.Component{
            <h1>Login Page</h1>
            <div>
              <img src={email} alt="email" className="email"/>
-             <input type="text" placeholder="email" className="name" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required value={this.state.email} onChange={this.bookChange}/>
+             <input type="text" placeholder="Email" className="name" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required value={this.state.email} onChange={this.bookChange}/>
            </div>
            <div className="second-input">
              <img src={pass} alt="pass" className="email"/>
@@ -120,8 +120,8 @@ class Login extends React.Component{
            
             <p className="link1">
             <a href="/reset/forgotPass">Forgot password ?</a> <br></br>
-            <Link to="/doctorReg">Sing Up as Doctor</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/nurseReg">Sing Up as Nurse</Link>
+            <a href="/doctorReg">Sign Up as Doctor</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/nurseReg">Sign Up as Nurse</a>
              
             </p>
             

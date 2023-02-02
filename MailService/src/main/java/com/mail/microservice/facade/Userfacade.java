@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.mail.microservice.entity.DoctorDetails;
 import com.mail.microservice.entity.UserDetails;
 
 @Component
@@ -53,5 +54,10 @@ public class Userfacade {
 		return s1;
 		
 	}
+	
+	public UserDetails findByDoctorDetails(DoctorDetails d) {
+		return restTemplate.postForObject(user_URL + "/doctorbyuserdetails",d, UserDetails.class);
+	}
+	
 
 }

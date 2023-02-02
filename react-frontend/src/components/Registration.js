@@ -130,7 +130,7 @@ class Registration extends React.Component{
             <div >
               <div>
                 <div>
-                  <h1>Registartion as Doctor</h1>
+                  <h1>Registration as Doctor</h1>
                   <div>
                     
                     <input type="text" placeholder="name" className="name" pattern="[A-Za-z]{5,10}" name="name" value={this.state.name} onChange={this.bookChange} required/>

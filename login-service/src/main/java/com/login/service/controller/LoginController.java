@@ -253,7 +253,7 @@ public class LoginController {
 		return userService.saveUser(userDetails);
 	}
 	
-	@GetMapping("/doctorbyuserdetails")
+	@PostMapping("/doctorbyuserdetails")
 	public UserDetails  getdoctordetailsbyuser(@RequestBody DoctorDetails doctor) {
 		return userService.getbydoctordetails(doctor);
 	}

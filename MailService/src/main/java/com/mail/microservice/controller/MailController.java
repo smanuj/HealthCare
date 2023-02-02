@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mail.microservice.entity.Comments;
 import com.mail.microservice.entity.PatientDetails;
 import com.mail.microservice.entity.UserDetails;
 import com.mail.microservice.services.ForgotPass;
@@ -100,5 +101,8 @@ public class MailController {
 		return forgotPass.getuserdetailsbyid(id);
 	}
 	
-//	@PostMapping("/")
+	@PostMapping("/sendComments")
+	public void sendComments(Comments comments) {
+		mailMessage.sendComments(comments);
+	}
 }
