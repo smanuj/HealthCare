@@ -79,9 +79,9 @@ public class MailController {
 		mailMessage.notifyRegisteration(user);
 	}
 	
-	@PostMapping("/registersuccessfulfordoctor/{id}")
+	@GetMapping("/registersuccessfulfordoctor/{id}")
 	public void registrationsuccesull(@PathVariable("id") int id) {
-		System.out.println("---------------------------------------");
+		
 		List<UserDetails> user1= forgotPass.getalluser();
 		UserDetails user = null;
 		for (UserDetails u : user1) {
@@ -90,9 +90,60 @@ public class MailController {
 			 user = u;
 			}
 		}
-		System.out.println(user);
+		
 		UserDetails user2 = forgotPass.getuserdetailsbyid(user.getId());
 		mailMessage.registeredSuccessfully(user2);
+		
+	}
+	
+	@GetMapping("/registersuccessfulfornurse/{id}")
+	public void registrationsuccesullnurse(@PathVariable("id") int id) {
+		
+		List<UserDetails> user1= forgotPass.getalluser();
+		UserDetails user = null;
+		for (UserDetails u : user1) {
+			if (u.getNursedetails() != null && u.getNursedetails().getNurseId() == id) {
+
+			 user = u;
+			}
+		}
+		
+		UserDetails user2 = forgotPass.getuserdetailsbyid(user.getId());
+		mailMessage.registeredSuccessfully(user2);
+		
+	}
+	
+	@GetMapping("/registerfailurefordoctor/{id}")
+	public void registrationfailure(@PathVariable("id") int id) {
+		
+		List<UserDetails> user1= forgotPass.getalluser();
+		UserDetails user = null;
+		for (UserDetails u : user1) {
+			if (u.getDoctordetails() != null && u.getDoctordetails().getDoctorId() == id) {
+
+			 user = u;
+			}
+		}
+		
+		UserDetails user2 = forgotPass.getuserdetailsbyid(user.getId());
+		mailMessage.registerationFailure(user2);
+		
+	}
+	
+	@GetMapping("/registerfailurefornurse/{id}")
+	public void registrationfailurenurse(@PathVariable("id") int id) {
+		
+		List<UserDetails> user1= forgotPass.getalluser();
+		UserDetails user = null;
+		for (UserDetails u : user1) {
+			if (u.getNursedetails() != null && u.getNursedetails().getNurseId() == id) {
+
+			 user = u;
+			}
+		}
+		
+		UserDetails user2 = forgotPass.getuserdetailsbyid(user.getId());
+		mailMessage.registerationFailure(user2);
 		
 	}
 	

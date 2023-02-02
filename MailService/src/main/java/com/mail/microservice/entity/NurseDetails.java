@@ -38,13 +38,14 @@ public class NurseDetails {
 		this.pnumber = pnumber;
 	}
 
-	public int getId() {
+	public int getNurseId() {
 		return nurseId;
 	}
 
-	public void setId(int id) {
-		this.nurseId = id;
+	public void setNurseId(int nurseId) {
+		this.nurseId = nurseId;
 	}
+
 
 	public String getName() {
 		return name;

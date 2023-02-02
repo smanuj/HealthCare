@@ -25,7 +25,7 @@ export default class ApproveDoctor extends Component{
             if(Response.data==="Approved"){
                 alert(id);
                 alert("Approved");
-                axios.post("http://localhost:8008/api/s1/registersuccessfulfordoctor/"+id)
+                 axios.get("http://localhost:8008/api/s1/registersuccessfulfordoctor/"+id)
                 window.location.reload();
                 
                 
@@ -40,6 +40,7 @@ export default class ApproveDoctor extends Component{
                     axios.delete("http://localhost:8003/api/v1/admin/doctorDisapproval/"+id).then(Response => {
                             if(Response.data==="Disapproved"){
                                 alert("Disapproved");
+                                 axios.get("http://localhost:8008/api/s1/registerfailurefordoctor/"+id)
                                 window.location.reload();
                                
                             }

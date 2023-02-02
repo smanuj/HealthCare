@@ -54,19 +54,19 @@ public class MailMessageImpl implements MailMessage {
 	public void registeredSuccessfully(UserDetails user) {
 		logger.debug("Successfully registered User with email: " + user.getEmail());
 		String subject = "Congratulations! ";
-		String role = userfacade.getrole(user);
-		String body = "Hello, You have successfully registered as " + role
+		
+		String body = "Hello, You have successfully registered as " 
 				+ " at Health Care App, you can now log in to your account through the website using your registered email id and password. Thank you for choosing us :) -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}
 
 	@Override
 	public void registerationFailure(UserDetails user) {
-		logger.debug("Registering User with email: " + user.getEmail() + " under role: " + userfacade.getrole(user)
+		logger.debug("Registering User with email: " + user.getEmail() + " under role: "
 				+ " has Failed! ");
 		String subject = "Dart Express Logistics ";
 		String body = "Hello, We regret to inform you that your regristration request was not successful for "
-				+ userfacade.getrole(user)
+				
 				+ " . This might have occured due to various reasons. Please contact us for more info. Thank you for understanding, you can try registering again if you think there was a mistake  -admin";
 		sendMail.sendMail(user.getEmail(), subject, body);
 	}

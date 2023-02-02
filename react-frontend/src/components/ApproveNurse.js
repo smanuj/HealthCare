@@ -28,6 +28,7 @@ export default class ApproveNurse extends Component{
              if(Response.data==="Approved"){
              alert(id);
              alert("Approved");
+             axios.get("http://localhost:8008/api/s1/registersuccessfulfornurse/"+id)
              window.location.reload();
                  } 
           
@@ -41,6 +42,7 @@ export default class ApproveNurse extends Component{
                     axios.delete("http://localhost:8003/api/v1/admin/nurseDisapproval/"+id).then(Response => {
                             if(Response.data==="Disapproved"){
                                 alert("Disapproved");
+                                axios.get("http://localhost:8008/api/s1/registerfailurefornurse/"+id)
                                 window.location.reload();
                                
                             }
