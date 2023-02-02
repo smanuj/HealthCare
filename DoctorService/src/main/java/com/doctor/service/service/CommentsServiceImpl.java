@@ -18,16 +18,13 @@ public class CommentsServiceImpl implements CommentsService{
 	@Autowired
 	private CommentsRepository commentsRepository;
 	
-	@Autowired
-	private Mailfacade mailfacade;
-
+	
 	@Override
 	public Comments createComment(Comments comment) {
 		logger.trace("Creating comment for patient: {}", comment.getPatients().getId());
 		logger.debug("Saving comment in database: {}", comment);
 		Comments createdComment = commentsRepository.save(comment);
 		logger.info("Comment for patient {} created successfully", createdComment.getPatients().getId());
-		mailfacade.sendComments(createdComment);
 		return createdComment;
 	}
 

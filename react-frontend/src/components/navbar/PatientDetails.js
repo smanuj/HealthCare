@@ -1,8 +1,8 @@
 import './PatientDetails.css';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import jsPDF from 'jspdf'; 
+import jsPDF from 'jspdf';
 import moment from 'moment';
 
 
@@ -12,9 +12,9 @@ function PatientDetails() {
   const [isCommentAdded, setIsCommentAdded] = useState(false);
   const [comments, setComment] = useState("");
   const [patientComments, setPatientComments] = useState([]);
-  const [isTreatmentComplete,setIsTreatmentComplete]=useState({}); // new state variable to store comments data
-  const age = patients.aId && patients.aId.dob && patients.aId.dob.length>0 ? new Date().getFullYear() - moment(patients.aId.dob, "DD-MM-YYYY").year() : "DOB not provided";
-  
+  const [isTreatmentComplete, setIsTreatmentComplete] = useState({}); // new state variable to store comments data
+  const age = patients.aId && patients.aId.dob && patients.aId.dob.length > 0 ? new Date().getFullYear() - moment(patients.aId.dob, "DD-MM-YYYY").year() : "DOB not provided";
+
 
   useEffect(() => {
     // Fetch patient data from the database using the patient ID
@@ -74,16 +74,16 @@ function PatientDetails() {
   }
   const handleTreatmentComplete = () => {
     axios.put(`http://localhost:8006/api/updatePatientStatus/${patientId}`)
-    .then(response => {
+      .then(response => {
         console.log(response);
         setIsTreatmentComplete(true);
         // code to handle the success response
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         console.log(error);
         // code to handle the error
-    });
-}
+      });
+  }
   const handleDownloadPdf = () => {
     const pdf = new jsPDF();
     pdf.setFontSize(30);
@@ -106,7 +106,7 @@ function PatientDetails() {
       var dob = moment(patients.aId.dob, 'DD-MM-YYYY');
       var age = moment().diff(dob, 'years');
       pdf.text(120, 70, `Patient Age: ${age}`);
-  }
+    }
     pdf.text(120, 80, `Patient Address: ${patients.aId.address}`);
     pdf.text(120, 90, `Patient Pincode: ${patients.pincode}`);
     pdf.setFontSize(30);
@@ -130,23 +130,37 @@ function PatientDetails() {
 
   }
 
+  let doctorId = null;
+
+  if (patients && patients.doctorId) {
+    doctorId = patients.doctorId.doctorId;
+  }
+
 
 
   // Render the patient details
   return (
     <div >
+      <div><Link to={`/doctor/${doctorId}`}>
+        <button>Back</button>
+      </Link></div>
+      <div className="back-button">
+        <Link to="/Login">
+          <button>Logout</button>
+        </Link>
+      </div>
       <h1 className='h1'>Patient Details</h1>
       {patients ? (
         <div class="main-container">
-          
-        <div className='patient-details-container'>
-          <h5>Patient Condition</h5>
-          <div className='patient-detail'>Blood Group: {patients.bloodgroup}</div>
-          <div className='patient-detail'>Pulse Rate: {patients.pulse_rate}</div>
-          <div className='patient-detail'>Oxygen Level: {patients.oxygenlevel}</div>
-          <div className='patient-detail'>Temperature: {patients.temperature}</div>
-          <div className='patient-detail'>Disease: {patients.disease}</div>
-          <div className='patient-detail'>Status: {patients.status ? 'Complete' : 'Incomplete'}</div>
+
+          <div className='patient-details-container'>
+            <h5>Patient Condition</h5>
+            <div className='patient-detail'>Blood Group: {patients.bloodgroup}</div>
+            <div className='patient-detail'>Pulse Rate: {patients.pulse_rate}</div>
+            <div className='patient-detail'>Oxygen Level: {patients.oxygenlevel}</div>
+            <div className='patient-detail'>Temperature: {patients.temperature}</div>
+            <div className='patient-detail'>Disease: {patients.disease}</div>
+            <div className='patient-detail'>Status: {patients.status ? 'Complete' : 'Incomplete'}</div>
           </div>
           {patients.aId ? (
             <div className='aadhar-details-container'>
@@ -168,28 +182,28 @@ function PatientDetails() {
                 <h3 >Comments</h3>
                 <ul className='patient-comments-container ul'>
                   {patientComments.map((comment, index) => (
-                    <li className='patient-comments-container li'key={index}>{comment.comments}</li>
+                    <li className='patient-comments-container li' key={index}>{comment.comments}</li>
                   ))}
                 </ul>
               </div>
             }
           </div>
-          {isTreatmentComplete  ? 
-          <div className={`complete ${isTreatmentComplete ? 'center bold':''}`}>Treatment Completed</div>
+          {isTreatmentComplete ?
+            <div className={`complete ${isTreatmentComplete ? 'center bold' : ''}`}>Treatment Completed</div>
 
 
-          : (
-          <div>
-          <button onClick={() => handleTreatmentComplete()}>Complete Treatment</button>
-          {!isCommentAdded ? (
-            <button id="add-comment-button"onClick={handleOpenComment}>Add Comment</button>
-          ) : (
-            <div>
-              <textarea id="comment-box"value={comments} onChange={e => setComment(e.target.value)}></textarea>
-              <button id="save-button"onClick={handleSaveComment}>Save Comment</button>
-            </div>
-          )}</div> )}
-          <div><button id='downloadpdf'onClick={handleDownloadPdf}>Download PDF</button></div>
+            : (
+              <div>
+                <button onClick={() => handleTreatmentComplete()}>Complete Treatment</button>
+                {!isCommentAdded ? (
+                  <button id="add-comment-button" onClick={handleOpenComment}>Add Comment</button>
+                ) : (
+                  <div>
+                    <textarea id="comment-box" value={comments} onChange={e => setComment(e.target.value)}></textarea>
+                    <button id="save-button" onClick={handleSaveComment}>Save Comment</button>
+                  </div>
+                )}</div>)}
+          <div><button id='downloadpdf' onClick={handleDownloadPdf}>Download PDF</button></div>
         </div>
       ) : (
         <div>Loading...</div>
