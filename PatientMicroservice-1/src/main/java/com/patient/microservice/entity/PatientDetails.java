@@ -40,6 +40,7 @@ public class PatientDetails {
 	@JsonBackReference
 	@OneToMany(mappedBy = "patients")
     private Set<Comments> comments;
+	
 	public int getId() {
 		return id;
 	}
