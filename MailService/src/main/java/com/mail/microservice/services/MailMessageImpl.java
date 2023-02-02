@@ -111,6 +111,7 @@ public class MailMessageImpl implements MailMessage {
 		String subject = "Please read the following information";
 		String nurseName = comments.getPatients().getNurseId().getName();
 		String body = "Hello "+nurseName+", \n Please read the attached comments from the doctor: \n"+comments.getComments();
+		System.out.println("tested sucess");
 		String nurseMail="";
 		sendMail.sendMail(nurseMail, subject, body);
 	}
