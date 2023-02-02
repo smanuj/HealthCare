@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mail.microservice.entity.Comments;
+import com.mail.microservice.entity.NurseDetails;
 import com.mail.microservice.entity.PatientDetails;
 import com.mail.microservice.entity.UserDetails;
 import com.mail.microservice.facade.Userfacade;
@@ -112,7 +113,8 @@ public class MailMessageImpl implements MailMessage {
 		String nurseName = comments.getPatients().getNurseId().getName();
 		String body = "Hello "+nurseName+", \n Please read the attached comments from the doctor: \n"+comments.getComments();
 		System.out.println("tested sucess");
-		String nurseMail="";
+		UserDetails usr = userfacade.findByNurseDetails(comments.getPatients().getNurseId());
+		String nurseMail=usr.getEmail();
 		sendMail.sendMail(nurseMail, subject, body);
 	}
 
