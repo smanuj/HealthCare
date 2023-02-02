@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.mail.microservice.entity.NurseDetails;
 import com.mail.microservice.entity.UserDetails;
 import com.mail.microservice.facade.Userfacade;
 
@@ -91,6 +92,11 @@ public class ForgotPassImpl implements ForgotPass {
 	@Override
 	public List<UserDetails> getalluser() {
 		return userfacade.getuser();
+	}
+	
+	@Override
+	public UserDetails getuserbynurse(NurseDetails nurse) {
+		return userfacade.findByNurseDetails(nurse);
 	}
 	
 //	bCryptPasswordEncoder.matches(password, u.getPassword())

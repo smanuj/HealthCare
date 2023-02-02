@@ -75,5 +75,7 @@ public class NurseServiceImpl implements NurseService {
 		logger.info("Fetching nurse detail by id");
 		return nurseRepository.findById(id);
 	}
+	
+	
 
 }

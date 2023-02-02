@@ -63,5 +63,6 @@ public class Userfacade {
 		return restTemplate.postForObject(user_URL + "/userdetailsbynurse",n, UserDetails.class);
 	}
 	
+	
 
 }

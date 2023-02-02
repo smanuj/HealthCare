@@ -147,6 +147,8 @@ public class LoginController {
 		logger.info("Fecthing user details by id");
 		return userService.findById(id);
 	}
+	
+	
 
 	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable("id") int userId) {
