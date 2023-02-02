@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.doctor.service.entity.Comments;
 import com.doctor.service.entity.PatientDetails;
+import com.doctor.service.facade.Mailfacade;
 import com.doctor.service.repository.CommentsRepository;
 @Service
 public class CommentsServiceImpl implements CommentsService{
@@ -16,6 +17,9 @@ public class CommentsServiceImpl implements CommentsService{
 	
 	@Autowired
 	private CommentsRepository commentsRepository;
+	
+	@Autowired
+	private Mailfacade mailfacade;
 
 	@Override
 	public Comments createComment(Comments comment) {
@@ -23,6 +27,7 @@ public class CommentsServiceImpl implements CommentsService{
 		logger.debug("Saving comment in database: {}", comment);
 		Comments createdComment = commentsRepository.save(comment);
 		logger.info("Comment for patient {} created successfully", createdComment.getPatients().getId());
+		mailfacade.sendComments(createdComment);
 		return createdComment;
 	}
 

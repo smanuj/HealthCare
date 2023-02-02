@@ -153,7 +153,7 @@ public class MailController {
 	}
 	
 	@PostMapping("/sendComments")
-	public void sendComments(Comments comments) {
+	public void sendComments(@RequestBody Comments comments) {
 		mailMessage.sendComments(comments);
 	}
 }

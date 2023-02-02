@@ -15,6 +15,8 @@ public interface PatientDetailsService {
 
 	void treatmentComplete(PatientDetails pd);
 
+	PatientDetails getPatientDetailsById(int id);
+
 
 
 	

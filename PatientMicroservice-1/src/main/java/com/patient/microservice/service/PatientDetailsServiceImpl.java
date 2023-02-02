@@ -75,6 +75,11 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	pd.setStatus(true);
     	patientRepository.save(pd);
     }
+    
+    @Override
+	public PatientDetails getPatientDetailsById(int id) {
+		return patientRepository.findById(id).get();
+	}
 	
 }
 
