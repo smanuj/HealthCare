@@ -296,5 +296,10 @@ public class UserServiceImpl implements UserService {
 	public UserDetails getbydoctordetails(DoctorDetails doctor) {
 		return userRepository.findByDoctorDetails(doctor);
 	}
+	
+	@Override
+	public UserDetails getbyNursedetails(NurseDetails nursedetails) {
+		return userRepository.findByNurseDetails(nursedetails);
+	}
 
 }

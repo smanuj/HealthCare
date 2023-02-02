@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.login.service.entity.DoctorDetails;
 import com.login.service.entity.Hospital;
+import com.login.service.entity.NurseDetails;
 import com.login.service.entity.UserDetails;
 
 public interface UserService {
@@ -40,5 +41,7 @@ public interface UserService {
 	int nurselogin(String email);
 
 	UserDetails getbydoctordetails(DoctorDetails doctor);
+
+	UserDetails getbyNursedetails(NurseDetails nursedetails);
 
 }
