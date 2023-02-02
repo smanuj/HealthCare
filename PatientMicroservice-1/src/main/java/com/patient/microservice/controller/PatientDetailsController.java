@@ -62,7 +62,7 @@ public class PatientDetailsController {
     	return commentsService.getCommentsForDoctorIdandNurseId(doctorId, nurseId);
     }
     
-    @PostMapping("/patientDetails/{id}")
+    @GetMapping("/patientDetails/{id}")
     public PatientDetails getPDById(@PathVariable("id") int id) {
     	return patientDetailsService.getPatientDetailsById(id);
     }

@@ -14,7 +14,7 @@ public class Mailfacade {
 	private static final String mail_URL = "http://localhost:8008/api/s1";
 	
 	public String sendComments(Comments comments) {
-		restTemplate.postForEntity(mail_URL+"/sendComments", comments, Comments.class);
+		restTemplate.postForObject(mail_URL+"/sendComments", comments, Comments.class);
 		String str="Comments sended Successfully";
 		return str;
 	}

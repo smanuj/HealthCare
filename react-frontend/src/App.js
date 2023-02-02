@@ -61,6 +61,7 @@ import DoctorDashboard from './components/navbar/DoctorDashboard'
         <Route path="/nurse/:id" element={<Nurse1/>}/>
         <Route path='/doctor/:id' element={<DoctorDashboard/>} />
         <Route path='/patientDetails/:patientId' element={<PatientDetails/>} />
+        <Route path='/Login' element={<Login/>} />
       </Routes>       
     
     </BrowserRouter>
