@@ -17,6 +17,7 @@ import com.patient.microservice.entity.Comments;
 import com.patient.microservice.entity.DoctorDetails;
 import com.patient.microservice.entity.Hospital;
 import com.patient.microservice.entity.PatientDetails;
+import com.patient.microservice.facade.HospitalFacade;
 import com.patient.microservice.service.CommentsService;
 import com.patient.microservice.service.DoctorDetailsService;
 import com.patient.microservice.service.HospitalService;
@@ -29,7 +30,7 @@ public class PatientDetailsController {
 	@Autowired
 	private PatientDetailsService patientDetailsService;
 	@Autowired
-	private HospitalService hospitalService;
+	private HospitalFacade hospitalFacade;
 	@Autowired
 	private DoctorDetailsService doctorDetailsService;
 	@Autowired
@@ -47,7 +48,7 @@ public class PatientDetailsController {
 
 	@GetMapping("/hospitals/pincode/{pincode}")
 	public List<Hospital> getHospitalsByPincode(@PathVariable String pincode) {
-		return hospitalService.getHospitalsByPincode(pincode);
+		return hospitalFacade.findByPincode(pincode);
 	}
 
 	@PostMapping("/doctors/{specialization}")
@@ -56,13 +57,32 @@ public class PatientDetailsController {
 	         }
 	
     @GetMapping("/comments/doctor/{doctorId}/nurse/{nurseId}")
-    public List<Comments> getComments(@PathVariable int doctorId , @PathVariable int nurseId)
+    public List<Comments> getComments(@PathVariable("doctorId") int doctorId , @PathVariable("nurseId") int nurseId)
     {
     	return commentsService.getCommentsForDoctorIdandNurseId(doctorId, nurseId);
     }
     
+    @PostMapping("/patientDetails/{id}")
+    public PatientDetails getPDById(@PathVariable("id") int id) {
+    	return patientDetailsService.getPatientDetailsById(id);
+    }
+    
    
   }
+
+//@GetMapping("/hospitals/pincode/{pincode}")
+//public List<Hospital> findByPincode(@PathVariable String pincode) {
+//	logger.info("Fetching all hospitals by pincode");
+//	return hospitalService.getHospitalsByPincode(pincode);
+//}
+
+
+//@GetMapping("/hospitals")
+//public List<Hospital> getAllHospitals() {
+//	logger.info("Fetching all hospital details");
+//	return hospitalService.findAll();
+//}
+
 
 //@RestController
 //@RequestMapping("/patient")
