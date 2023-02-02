@@ -17,8 +17,6 @@ public class Hospital {
 	private String location;
 	private String pincode;
 	private boolean bedAvailabilty;
-//	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-//	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
 
 	public Hospital() {
 		super();
@@ -82,4 +80,15 @@ public class Hospital {
 		this.bedAvailabilty = bedAvailabilty;
 	}
 
+	@Override
+	public String toString() {
+		return "Hospital [hospitalId=" + hospitalId + ", name=" + name + ", location=" + location + ", pincode="
+				+ pincode + ", bedAvailabilty=" + bedAvailabilty + "]";
+	}
+	
+	
+
+
 }
+
+

@@ -3,15 +3,15 @@ import './PatientForm.css';
 import axios from 'axios';
 
 
-const PatientForm = () => {
-    const [patient, setPatient] = useState('');
-    const [aId, setAadharNumber] = useState('');
-    const [bg, setBloodGroup] = useState('');
-    const [pr, setPulseRate] = useState('');
-    const [oxy, setOxygenLevel] = useState('');
-    const [temp, setBodyTemperature] = useState('');
-    const [disease, setDisease] = useState('');
-    const [pincode, setPincode] = useState('');
+class PatientForm extends React.Component{ 
+    // const [patient, setPatient] = useState('');
+    // const [aId, setAadharNumber] = useState('');
+    // const [bg, setBloodGroup] = useState('');
+    // const [pr, setPulseRate] = useState('');
+    // const [oxy, setOxygenLevel] = useState('');
+    // const [temp, setBodyTemperature] = useState('');
+    // const [disease, setDisease] = useState('');
+    // const [pincode, setPincode] = useState('');
 
     //     aId: '',
     //     bg: '',
@@ -22,14 +22,36 @@ const PatientForm = () => {
     //     pincode:''
     // });
 
-    const handleChange = (event) => {
+
+    constructor(props){
+        super(props);
+        this.state= this.initiaLSTATE;
+        this.state={
+          
+        };
+    }
+
+
+    initiaLSTATE={
+        aId:"",
+        bg:"",
+        pr:"",
+        oxy:"",
+        temp:"",
+        disease:"",
+        pincode:"",
+        
+
+    };
+
+    handleChange = (event) => {
         setPatient({
             ...patient,
             [event.target.name]: event.target.value
         });
     };
 
-    const handleSubmit = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         const patientData = { aId, bg, pr, oxy, temp, disease, pincode };
         axios.post('http://localhost:8009/api/patients/create', patientData)
@@ -39,7 +61,7 @@ const PatientForm = () => {
 
 
      
-
+    render(){
     return (
         <div className="app">
         <form className="patient-form" onSubmit={handleSubmit}>
@@ -86,6 +108,7 @@ const PatientForm = () => {
         </form>
         </div>
     );
+    }
     
 }
 

@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class UserDetails {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int userId;
@@ -30,6 +30,18 @@ public class UserDetails {
 
 	public void setNursedetails(NurseDetails nursedetails) {
 		this.nurseDetails = nursedetails;
+	}
+	
+	
+
+	public UserDetails(int userId, String email, String password, DoctorDetails doctorDetails,
+			NurseDetails nurseDetails) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.doctorDetails = doctorDetails;
+		this.nurseDetails = nurseDetails;
 	}
 
 	public UserDetails(String email, String password, NurseDetails nursedetails) {
@@ -101,5 +113,12 @@ public class UserDetails {
 		return "UserDetails [userId=" + userId + ", email=" + email + ", password=" + password + ", doctorDetails="
 				+ doctorDetails + ", nurseDetails=" + nurseDetails + "]";
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }
