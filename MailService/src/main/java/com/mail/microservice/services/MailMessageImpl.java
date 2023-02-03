@@ -109,14 +109,20 @@ public class MailMessageImpl implements MailMessage {
 	
 	@Override
 	public void sendComments(Comments comments) {
+		int n=comments.getPatients().getNurseId().getNurseId();
+		NurseDetails nurse=comments.getPatients().getNurseId();
 		String subject = "Please read the following information";
 		String nurseName = comments.getPatients().getNurseId().getName();
 		String body = "Hello "+nurseName+", \n Please read the attached comments from the doctor: \n"+comments.getComments();
 		System.out.println("tested sucess");
-		System.out.println(comments.getPatients().getNurseId());
-		UserDetails usr = userfacade.findByNurseDetails(comments.getPatients().getNurseId());
-		String nurseMail=usr.getEmail();
-		sendMail.sendMail(nurseMail, subject, body);
+		System.out.println(nurse);
+		System.out.println(n);
+		
+//		UserDetails usr = userfacade.findByNurseDetails(nurse);
+//		String nurseMail=usr.getEmail();
+//		System.out.println("Test mmimpl "+nurseMail);
+//		sendMail.sendMail(nurseMail, subject, body);
+		
 	}
 
 }

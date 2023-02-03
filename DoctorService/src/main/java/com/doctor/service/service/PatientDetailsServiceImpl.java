@@ -53,7 +53,7 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
 	    PatientDetails patient = patientRepository.findById(patientId).get();
 	    patient.setStatus(true);
 	    patientRepository.save(patient);
-	    int id=patient.getNurseId().getId();
+	    int id=patient.getNurseId(). getNurseId();
 	    NurseDetails nurse = nurseDetailsRepository.findBynurseId(id).get();
 	    nurse.setAvaliability(true);
 	    nurseDetailsRepository.save(nurse);
