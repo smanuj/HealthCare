@@ -59,6 +59,8 @@ public class DoctorController {
 		comments.setPatients(comments.getPatients());
 		Comments savedComments = commentsService.createComment(comments);
 		LOGGER.info("Successfully saved comments for patient id: {}", comments.getPatients().getId());
+		NurseDetails nurse=savedComments.getPatients().getNurseId();
+		System.out.println(nurse);
 		mailfacade.sendComments(savedComments);
 		return savedComments;
 	}

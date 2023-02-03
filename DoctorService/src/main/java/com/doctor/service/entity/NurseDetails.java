@@ -20,61 +20,134 @@ public class NurseDetails {
 	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
 	private UserDetails userdetails;
 
-	public NurseDetails() {
-		super();
-	}
+	
 
-	public NurseDetails(String name, String pnumber) {
-		super();
-		this.name = name;
-		this.pnumber = pnumber;
-	}
-
-	public NurseDetails(int id, String name, String pnumber) {
-		super();
-		this.nurseId = id;
-		this.name = name;
-		this.pnumber = pnumber;
-	}
-
-	public int getId() {
+	public int getNurseId() {
 		return nurseId;
 	}
 
-	public void setId(int id) {
-		this.nurseId = id;
+
+
+	public void setNurseId(int nurseId) {
+		this.nurseId = nurseId;
 	}
+
+
 
 	public String getName() {
 		return name;
 	}
 
+
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
 
 	public String getPnumber() {
 		return pnumber;
 	}
 
+
+
 	public void setPnumber(String pnumber) {
 		this.pnumber = pnumber;
 	}
+
+
 
 	public boolean isAvaliability() {
 		return avaliability;
 	}
 
+
+
 	public void setAvaliability(boolean avaliability) {
 		this.avaliability = avaliability;
 	}
+
+
 
 	public boolean isApproval() {
 		return approval;
 	}
 
+
+
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
+
+
+
+	public UserDetails getUserdetails() {
+		return userdetails;
+	}
+
+
+
+	public void setUserdetails(UserDetails userdetails) {
+		this.userdetails = userdetails;
+	}
+	
+	
+
+
+
+	public NurseDetails() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+
+
+	public NurseDetails(int nurseId, String name, String pnumber, boolean avaliability, boolean approval,
+			UserDetails userdetails) {
+		super();
+		this.nurseId = nurseId;
+		this.name = name;
+		this.pnumber = pnumber;
+		this.avaliability = avaliability;
+		this.approval = approval;
+		this.userdetails = userdetails;
+	}
+	
+	
+
+
+
+	public NurseDetails(String name, String pnumber, boolean avaliability, boolean approval, UserDetails userdetails) {
+		super();
+		this.name = name;
+		this.pnumber = pnumber;
+		this.avaliability = avaliability;
+		this.approval = approval;
+		this.userdetails = userdetails;
+	}
+	 
+	
+
+
+	public NurseDetails(String name, String pnumber, boolean avaliability, boolean approval) {
+		super();
+		this.name = name;
+		this.pnumber = pnumber;
+		this.avaliability = avaliability;
+		this.approval = approval;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "NurseDetails [nurseId=" + nurseId + ", name=" + name + ", pnumber=" + pnumber + ", avaliability="
+				+ avaliability + ", approval=" + approval + ", userdetails=" + userdetails + "]";
+	}
+	
+	
 
 }
