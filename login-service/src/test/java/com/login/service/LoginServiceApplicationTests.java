@@ -1,26 +1,26 @@
 package com.login.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import com.login.service.entity.DoctorDetails;
-import com.login.service.entity.Hospital;
-import com.login.service.entity.NurseDetails;
-import com.login.service.entity.UserDetails;
-import com.login.service.service.DoctorService;
-import com.login.service.service.UserService;
-
-@SpringBootTest
-class LoginServiceApplicationTests {
-
-	@Autowired
-	private UserService userService;
-
-	@Autowired
-	private DoctorService doctorService;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//import com.login.service.entity.DoctorDetails;
+//import com.login.service.entity.Hospital;
+//import com.login.service.entity.NurseDetails;
+//import com.login.service.entity.UserDetails;
+//import com.login.service.service.DoctorService;
+//import com.login.service.service.UserService;
+//
+//@SpringBootTest
+//class LoginServiceApplicationTests {
+//
+//	@Autowired
+//	private UserService userService;
+//
+//	@Autowired
+//	private DoctorService doctorService;
 
 //	@Test
 //	void createDoctor() throws Exception {
@@ -64,4 +64,4 @@ class LoginServiceApplicationTests {
 //
 //	}
 
-}
+//}
