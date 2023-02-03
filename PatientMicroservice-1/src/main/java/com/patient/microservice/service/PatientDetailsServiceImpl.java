@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.patient.microservice.entity.AadharDetails;
-import com.patient.microservice.entity.DoctorDetails;
-import com.patient.microservice.entity.NurseDetails;
 import com.patient.microservice.entity.PatientDetails;
-import com.patient.microservice.entity.UserDetails;
 import com.patient.microservice.facade.MailFacade;
 import com.patient.microservice.repository.AadharRepository;
 import com.patient.microservice.repository.DoctorDetailsRepository;
@@ -31,8 +28,6 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     @Autowired
     private MailFacade mailFacade;
     
-    @Autowired
-    private UserRepo userRepo;
      
     @Override
     public PatientDetails createPatientDetails(PatientDetails patient) {
@@ -40,8 +35,6 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	AadharDetails a = aadharRepository.findByAadharNo(aadharNo);
     	patient.setaId(a);
     	patient.setStatus(false);
-    	int nid = patient.getNurseId().getNurseId();
-    
 //    	String spec = patient.getDisease();
 //    	System.out.println(spec);
 //    	DoctorDetails d = doctorDetailsRepository.findBySpecializationAndAvaliabilityTrue(spec);
@@ -76,4 +69,3 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
 }
 
 	
-
