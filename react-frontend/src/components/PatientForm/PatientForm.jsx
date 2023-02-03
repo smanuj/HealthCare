@@ -88,23 +88,38 @@ class PatientForm extends React.Component{
 
             <label>
                 Aadhar number:
-                <input type="number" name="aId" value={this.state.aId} onChange={this.handleChange} required />
+                <input type="number" placeholder="Enter the Aadhar number" name="aId" value={this.state.aId} onChange={this.handleChange} required />
             </label>
-            <label>
+            {/* <label>
                 Blood Group:
                 <input type="text" name="bloodgroup" value={this.state.bloodgroup} onChange={this.handleChange} required />
-            </label>
+            </label> */}
             <label>
                 Pulse Rate:
-                <input type="text" name="pulse_rate" value={this.state.pulse_rate} onChange={this.handleChange} required />
+            <input type="text" placeholder="Enter the pulse rate" name="pulse_rate" value={this.state.pulse_rate}  pattern="([1-9]|[1-9][0-9]|1[0-9]{2}|200)" onChange={this.handleChange} required />
             </label>
             <label>
                 Oxygen Level:
-                <input type="text" name="oxygenlevel" value={this.state.oxygenlevel} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter the oxygen level" name="oxygenlevel" value={this.state.oxygenlevel} pattern="(5[0-9]|[6-9][0-9]|100)" onChange={this.handleChange} required />
             </label>
             <label>
                 Body Temperature:
-                <input type="text" name="temperature" value={this.state.temperature} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter in fahrenheit" name="temperature" value={this.state.temperature} pattern="(7[5-9]|[89][0-9]|10[0-9]|11[0-5])" onChange={this.handleChange} required />
+            </label>
+          
+            <label>
+                Blood Group:
+                <select name="bloodgroup" value={this.state.bloodgroup} onChange={this.handleChange} required>
+                    <option value="" disabled selected>Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
             </label>
             <label>
                 Disease:
@@ -119,7 +134,7 @@ class PatientForm extends React.Component{
             </label>
             <label>
                 Pincode :
-                <input type="text" name="pincode" value={this.state.pincode} onChange={this.handleChange} required />
+                <input type="text" placeholder="Enter the pincode" name="pincode" value={this.state.pincode} onChange={this.handleChange} required />
             </label>
 
             <button type="submit">Register</button>

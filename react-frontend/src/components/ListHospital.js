@@ -50,6 +50,7 @@ export default class ListHospital extends Component{
                  <br></br>
                  <div className = "row">
                 <table className = "table table-striped table-bordered"> 
+               
 
 <thead>
     <tr>
