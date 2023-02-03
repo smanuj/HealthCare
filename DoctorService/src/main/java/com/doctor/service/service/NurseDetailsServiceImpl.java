@@ -11,8 +11,8 @@ public class NurseDetailsServiceImpl implements NurseDetailsService {
 	@Autowired
 	private NurseDetailsRepository nurseDetailsRepository;
 	
-	public NurseDetails getNurseById(int id) {
-		return nurseDetailsRepository.findById(id).get();
+	public NurseDetails getNurseById(int nurseId) {
+		return nurseDetailsRepository.findById(nurseId).get();
 	}
 
 }
