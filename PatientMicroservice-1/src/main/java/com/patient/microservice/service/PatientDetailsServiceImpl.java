@@ -13,6 +13,7 @@ import com.patient.microservice.facade.LoginFacade;
 import com.patient.microservice.facade.MailFacade;
 import com.patient.microservice.repository.AadharRepository;
 import com.patient.microservice.repository.DoctorDetailsRepository;
+import com.patient.microservice.repository.NurseRepository;
 import com.patient.microservice.repository.PatientDetailsRepository;
 import com.patient.microservice.repository.UserRepo;
 
@@ -29,6 +30,9 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     private DoctorDetailsRepository doctorDetailsRepository;
     
     @Autowired
+    private NurseRepository nurseRepository;
+    
+    @Autowired
     private MailFacade mailFacade;
     
     @Autowired
@@ -43,6 +47,8 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	patient.setStatus(false);
     	int nid= patient.getNurseId().getNurseId();
     	NurseDetails nurse = loginFacade.genursebyid(nid);
+    	nurse.setAvaliability(false);
+    	nurseRepository.save(nurse);
     	patient.setNurseId(nurse);
     	String spec = patient.getDisease();
     	System.out.println(spec);
