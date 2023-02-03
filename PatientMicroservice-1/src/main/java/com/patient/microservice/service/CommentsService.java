@@ -7,5 +7,5 @@ import com.patient.microservice.entity.Comments;
 
 public interface CommentsService {
 
-         List<Comments> getCommentsForDoctorIdandNurseId(int doctorId, int nurseId);
+//         List<Comments> getCommentsForDoctorIdandNurseId(int doctorId, int nurseId);
 }

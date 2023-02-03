@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.mail.microservice.entity.DoctorDetails;
+import com.mail.microservice.entity.NurseDetails;
 import com.mail.microservice.entity.UserDetails;
 
 @Component
@@ -48,7 +50,19 @@ public class Userfacade {
 	}
 
 	public String getrole(UserDetails userDetails) {
-		return restTemplate.getForObject(user_URL + "/getrole", null, userDetails);
+		String s1= restTemplate.getForObject(user_URL + "/getrole/"+userDetails,String.class);
+		System.out.println(s1);
+		return s1;
 	}
+	
+	public UserDetails findByDoctorDetails(DoctorDetails d) {
+		return restTemplate.postForObject(user_URL + "/doctorbyuserdetails",d, UserDetails.class);
+	}
+	
+	public UserDetails findByNurseDetails(NurseDetails n) {
+		return restTemplate.postForObject(user_URL + "/userdetailsbynurse",n, UserDetails.class);
+	}
+	
+	
 
 }

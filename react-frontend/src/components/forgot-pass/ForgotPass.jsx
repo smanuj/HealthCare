@@ -7,7 +7,6 @@ import { Alert, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Dropdown,DropdownButton } from "react-bootstrap";
 
-
 import axios from "axios";
 class ForgotPass extends React.Component{
 
@@ -26,18 +25,20 @@ class ForgotPass extends React.Component{
 
     };
     handlesubmit= (event) => {
-       
+      event.preventDefault()
             const user = {
               email: this.state.email
             }
-       axios.post("http://localhost:8008/api/s1/reset/forgotPass",user).then(response => {
-                if(response.data=="sent"){
+            
+       axios.post("http://localhost:8008/api/s1/reset/forgotPass",user).then(Response => {
+                if(Response.data=="sent"){
                     this.setState(this.initiaLSTATE);
                     alert("OTP sent");
-              //       axios.get("http://localhost:8008/api/s1/getid/"+user.email).then(Response => {const id = Response.data ;
-              // window.location="/reset/newPass/"+id})
+                    axios.get("http://localhost:8008/api/s1/getid/"+user.email).then(Response => {const id = Response.data ;
+              window.location="/reset/newPass/"+id})
                 }
                 else{
+                  this.setState(this.initiaLSTATE);
                     alert("fail")
                 }
               } )

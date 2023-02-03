@@ -8,7 +8,7 @@ import com.patient.microservice.entity.Comments;
 @Repository
 public interface CommentsRepository extends JpaRepository<Comments, Integer> {
 
-     List<Comments> findByDoctorIdAndNurseId(int doctorId, int nurseId);
+//     List<Comments> findByDoctorIdAndNurseId(int doctorId, int nurseId);
 	
     }
 

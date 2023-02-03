@@ -1,5 +1,8 @@
 package com.mail.microservice.services;
 
+import java.util.List;
+
+import com.mail.microservice.entity.NurseDetails;
 import com.mail.microservice.entity.UserDetails;
 
 public interface ForgotPass {
@@ -15,5 +18,11 @@ public interface ForgotPass {
 	void changepassword(int id, String password);
 
 	int getidbyemail(String email);
+
+	UserDetails getuserdetailsbyid(int id);
+
+	List<UserDetails> getalluser();
+
+	UserDetails getuserbynurse(NurseDetails nurse);
 
 }

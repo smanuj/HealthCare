@@ -1,5 +1,6 @@
 package com.mail.microservice.services;
 
+import com.mail.microservice.entity.Comments;
 import com.mail.microservice.entity.PatientDetails;
 import com.mail.microservice.entity.UserDetails;
 
@@ -16,5 +17,7 @@ public interface MailMessage {
 	void successfulPasswordChange(UserDetails user);
 
 	void notifyRegisteration(UserDetails user);
+
+	void sendComments(Comments comments);
 
 }

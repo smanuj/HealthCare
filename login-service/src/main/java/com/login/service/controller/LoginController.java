@@ -147,6 +147,8 @@ public class LoginController {
 		logger.info("Fecthing user details by id");
 		return userService.findById(id);
 	}
+	
+	
 
 	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable("id") int userId) {
@@ -225,10 +227,12 @@ public class LoginController {
 
 	}
 
-	@GetMapping("/getrole")
-	public String getRole(UserDetails user) {
+	@GetMapping("/getrole/{user}")
+	public String getRole(@PathVariable("user")UserDetails user) {
 		logger.info("Getting role of the user");
-		return userService.getRole(user);
+		String s1= userService.getRole(user);
+		System.out.println(s1);
+		return s1;
 	}
 
 	@GetMapping("/{id}/{password}")
@@ -251,9 +255,16 @@ public class LoginController {
 		return userService.saveUser(userDetails);
 	}
 	
-	@GetMapping("/doctorbyuserdetails")
+	@PostMapping("/userdetailsbydoctor")
 	public UserDetails  getdoctordetailsbyuser(@RequestBody DoctorDetails doctor) {
 		return userService.getbydoctordetails(doctor);
 	}
+	
+	@PostMapping("/userdetailsbynurse")
+	public UserDetails  getnursedetailsbyuser(@RequestBody NurseDetails nurse) {
+		return userService.getbyNursedetails(nurse);
+	}
+	
+	
 
 }

@@ -1,7 +1,7 @@
 package com.mail.microservice.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,12 +38,14 @@ public class NurseDetails {
 		this.pnumber = pnumber;
 	}
 
-	public int getId() {
+	
+
+	public int getNurseId() {
 		return nurseId;
 	}
 
-	public void setId(int id) {
-		this.nurseId = id;
+	public void setNurseId(int nurseId) {
+		this.nurseId = nurseId;
 	}
 
 	public String getName() {
@@ -77,5 +79,14 @@ public class NurseDetails {
 	public void setApproval(boolean approval) {
 		this.approval = approval;
 	}
+
+	@Override
+	public String toString() {
+		return "NurseDetails [nurseId=" + nurseId + ", name=" + name + ", pnumber=" + pnumber + ", avaliability="
+				+ avaliability + ", approval=" + approval + ", userdetails=" + userdetails + "]";
+	}
+	
+	
+	
 
 }

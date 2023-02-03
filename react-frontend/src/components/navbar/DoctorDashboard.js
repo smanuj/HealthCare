@@ -35,6 +35,11 @@ function DoctorDashboard() {
 
   return (
     <div className="container">
+      <div className="back-button">
+    <Link to="/Login">
+      <button>Logout</button>
+    </Link>
+  </div>
       <h1>Hello Dr. {doctor.name}</h1>
       <h1>Patient List</h1>
       <table>

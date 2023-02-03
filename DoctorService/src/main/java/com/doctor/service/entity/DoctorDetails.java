@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class DoctorDetails {
@@ -25,9 +26,9 @@ public class DoctorDetails {
 	private String specialization;
 	private boolean avaliability;
 	private boolean approval;
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
-	private Set<Hospital> hospitals;
+	@OneToOne(targetEntity = Hospital.class)
+	@JoinColumn(name = "hospitalId", referencedColumnName = "hospitalId")
+	private Hospital hospitalId;
 
 	public int getDoctorId() {
 		return doctorId;
@@ -77,12 +78,12 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Set<Hospital> getHospitals() {
-		return hospitals;
+	public Hospital getHospital() {
+		return hospitalId;
 	}
 
-	public void setHospitals(Set<Hospital> hospitals) {
-		this.hospitals = hospitals;
+	public void setHospital(Hospital hospitalId) {
+		this.hospitalId = hospitalId;
 	}
 
 	public DoctorDetails() {
@@ -91,7 +92,7 @@ public class DoctorDetails {
 	}
 
 	public DoctorDetails(int doctorId, String name, String pnumber, String specialization, boolean avaliability,
-			boolean approval, Set<Hospital> hospitals) {
+			boolean approval, Hospital hospitalId) {
 		super();
 		this.doctorId = doctorId;
 		this.name = name;
@@ -99,33 +100,28 @@ public class DoctorDetails {
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitals = hospitals;
+		this.hospitalId = hospitalId;
 	}
 
 	public DoctorDetails(String name, String pnumber, String specialization, boolean avaliability, boolean approval,
-			Set<Hospital> hospitals) {
+			Hospital hospitalId) {
 		super();
 		this.name = name;
 		this.pnumber = pnumber;
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitals = hospitals;
+		this.hospitalId = hospitalId;
 	}
 
-	public DoctorDetails(int doctorId, String name, String pnumber, String specialization, boolean avaliability,
-			boolean approval) {
-		super();
-		this.doctorId = doctorId;
-		this.name = name;
-		this.pnumber = pnumber;
-		this.specialization = specialization;
-		this.avaliability = avaliability;
-		this.approval = approval;
+	@Override
+	public String toString() {
+		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
+				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitalId="
+				+ hospitalId + "]";
 	}
-	
-	
 
-
+//	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")
+//	private user_details userdetails;
 
 }

@@ -26,7 +26,7 @@ li {
 }
 
 button {
-  background-color: #4CAF50; /* Green */
+  background-color: #47d44c; /* Green */
   color: white;
   padding: 12px 20px;
   border: none;
@@ -36,4 +36,16 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+.back-button {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 105px;
+  height: 60px;
+}
+
+.back-button button {
+  width: 100%;
+  height: 100%;
 }

@@ -60,7 +60,8 @@ class Nurse extends React.Component{
                 else{
                   this.setState(this.initiaLSTATE);
                     alert("user saved")
-                    window.location="/";
+                    axios.post("http://localhost:8008/api/s1/notifyregistration",user)
+                     window.location="/";
                 }
               } )
          }
@@ -84,10 +85,10 @@ class Nurse extends React.Component{
         return(
         <Form onSubmit={this.handlesubmit} >
             <div className="main">
-            <div >
+            <div>
               <div>
                 <div>
-                  <h1>Registartion as Nurse</h1>
+                  <h1>Registration as Nurse</h1>
                   <div>
                     
                     <input type="text" placeholder="name" className="name" pattern="[A-Za-z]{5,10}" name="name" value={this.state.name} onChange={this.bookChange} required/>

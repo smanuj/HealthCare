@@ -1,5 +1,6 @@
 package com.mail.microservice.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -9,14 +10,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 
 @Entity
-public class DoctorDetails {
-
+public class DoctorDetails implements Serializable {
+	
 	@Id
 	@Column(name = "doctorId")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -26,6 +27,10 @@ public class DoctorDetails {
 	private String specialization;
 	private boolean avaliability;
 	private boolean approval;
+//	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+//	@JoinTable(name = "doctorHospitalMap", joinColumns = @JoinColumn(name = "doctorId"), inverseJoinColumns = @JoinColumn(name = "hospitalId"))
+//	private Set<Hospital> hospitals;
+	
 	@OneToOne(targetEntity = Hospital.class)
 	@JoinColumn(name = "hospitalId", referencedColumnName = "hospitalId")
 	private Hospital hospitalId;
@@ -78,21 +83,17 @@ public class DoctorDetails {
 		this.approval = approval;
 	}
 
-	public Hospital getHospital() {
-		return hospitalId;
-	}
 
-	public void setHospital(Hospital hospitalId) {
-		this.hospitalId = hospitalId;
-	}
 
 	public DoctorDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public DoctorDetails(int doctorId, String name, String pnumber, String specialization, boolean avaliability,
-			boolean approval, Hospital hospitalId) {
+			boolean approval) {
 		super();
 		this.doctorId = doctorId;
 		this.name = name;
@@ -100,28 +101,40 @@ public class DoctorDetails {
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitalId = hospitalId;
+		
 	}
 
-	public DoctorDetails(String name, String pnumber, String specialization, boolean avaliability, boolean approval,
-			Hospital hospitalId) {
+	public DoctorDetails(String name, String pnumber, String specialization, boolean avaliability, boolean approval
+			) {
 		super();
 		this.name = name;
 		this.pnumber = pnumber;
 		this.specialization = specialization;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.hospitalId = hospitalId;
+		
 	}
 
+	public Hospital getHospital() {
+		return hospitalId;
+	}
+
+	public void setHospital(Hospital hospital) {
+		this.hospitalId = hospital;
+	}
 	@Override
 	public String toString() {
 		return "DoctorDetails [doctorId=" + doctorId + ", name=" + name + ", pnumber=" + pnumber + ", specialization="
-				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospitalId="
+				+ specialization + ", avaliability=" + avaliability + ", approval=" + approval + ", hospital="
 				+ hospitalId + "]";
 	}
 
-//	@OneToOne(targetEntity=user_details.class,cascade={CascadeType.MERGE,CascadeType.PERSIST},mappedBy="doctordetails")
-//	private user_details userdetails;
+	
+	
+	
+	
+	
+	
+	
 
 }

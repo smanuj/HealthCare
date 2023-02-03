@@ -18,6 +18,8 @@ import com.doctor.service.entity.Comments;
 import com.doctor.service.entity.DoctorDetails;
 import com.doctor.service.entity.NurseDetails;
 import com.doctor.service.entity.PatientDetails;
+import com.doctor.service.facade.Mailfacade;
+import com.doctor.service.facade.Patientfacade;
 import com.doctor.service.service.CommentsService;
 import com.doctor.service.service.DoctorDetailsService;
 import com.doctor.service.service.NurseDetailsService;
@@ -41,6 +43,15 @@ public class DoctorController {
 	@Autowired
 	private NurseDetailsService nurseDetailsService;
 	
+	@Autowired
+	private Patientfacade patientfacade;
+	
+	@Autowired
+	private Mailfacade mailfacade;
+
+	
+	
+	
 	@PostMapping("api/savecomments")
 	public Comments saveComments(@RequestBody Comments comments){
 		LOGGER.debug("Saving comments for patient id: {}", comments.getPatients().getId());
@@ -48,6 +59,7 @@ public class DoctorController {
 		comments.setPatients(comments.getPatients());
 		Comments savedComments = commentsService.createComment(comments);
 		LOGGER.info("Successfully saved comments for patient id: {}", comments.getPatients().getId());
+		mailfacade.sendComments(savedComments);
 		return savedComments;
 	}
 	
@@ -84,9 +96,9 @@ public class DoctorController {
 	}
 	
 	@GetMapping("api/patientdetails/{id}")
-	public PatientDetails getPatientList(@PathVariable ("id") int id){
+	public PatientDetails getPatientDetails(@PathVariable ("id") int id){
 	LOGGER.debug("Getting patient details by id: {}", id);
-	PatientDetails patientDetails = patientDetailsService.getPatientDetailsById(id);
+	PatientDetails patientDetails =patientfacade.getPatientDetailsById(id);
 	LOGGER.info("Successfully retrieved patient details for id: {}", id);
 	return patientDetails;
 	}

@@ -26,6 +26,8 @@ import NavBar from "./components/NavBar"
 import UpdateHospital from "./components/UpdateHospital";
 import Doctor from "./components/Doctor";
 import Nurse1 from "./components/Nurse1";
+import PatientDetails from './components/navbar/PatientDetails'
+import DoctorDashboard from './components/navbar/DoctorDashboard'
 
 
 
@@ -55,8 +57,11 @@ import Nurse1 from "./components/Nurse1";
         <Route path='/update/:id' element={<UpdateHospital/>} ></Route>
         <Route path="/reset/forgotPass" element={<ForgotPass/>}/>
         <Route path="/reset/newPass/:id" element={<NewPass/>}/>
-        <Route path="/doctor/:id" element={<Doctor/>}/>
+        {/* <Route path="/doctor/:id" element={<Doctor/>}/> */}
         <Route path="/nurse/:id" element={<Nurse1/>}/>
+        <Route path='/doctor/:id' element={<DoctorDashboard/>} />
+        <Route path='/patientDetails/:patientId' element={<PatientDetails/>} />
+        <Route path='/Login' element={<Login/>} />
       </Routes>       
     
     </BrowserRouter>

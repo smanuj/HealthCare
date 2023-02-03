@@ -6,10 +6,17 @@ import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Dropdown,DropdownButton } from "react-bootstrap";
+import { useParams } from "react-router";
 
 
 import axios from "axios";
+
+function withParams(Component) {
+  return props => <Component {...props} params={useParams()} />;
+ }
 class NewPass extends React.Component{
+
+  
 
     constructor(props){
         super(props);
@@ -29,15 +36,9 @@ class NewPass extends React.Component{
     };
     handlesubmit= (event) => {
        
-
-        // const doctor = {
-        //     name: this.state.name,
-        //     pnumber: this.state.pnumber,
-        //     specialization: this.state.specialization
-            
-           
-        //   };
-
+      event.preventDefault()
+       
+        let {id}= this.props.params;
         const user ={
             email:this.state.otp,
             password:this.state.pass
@@ -51,21 +52,24 @@ class NewPass extends React.Component{
         
         
        
-        //  axios.post("http://localhost:8081/api/save",doctor,email,password).then(response => alert(response.data))
+       
         
          if(confirmpassword==password) {
-            axios.post("http://localhost:8080/api/savedoctor",user).then(response => {
-                if(response.data=="not"){
+            axios.post("http://localhost:8008/api/s1/reset/newPass/"+id,user).then(response => {
+                if(response.data=="fail"){
                     this.setState(this.initiaLSTATE);
-                    alert("user not saved");
+                    alert("Password not updated");
                 }
                 else{
-                    alert("user saved")
+                  this.setState(this.initiaLSTATE);
+                    alert("Password Updated Successfully")
+                    window.location="/";
                 }
               } )
          }
          else{
-            alert("password");
+          this.setState(this.initiaLSTATE);
+            alert("password and confirm password are not same");
          }
           
 
@@ -96,11 +100,11 @@ class NewPass extends React.Component{
                   </div>
                   <div className="second-input">
                   
-                    <input type="text" placeholder="New Password" className="name" value={this.state.pass}  name="pass" onChange={this.bookChange} required/>
+                    <input type="password" placeholder="New Password" className="name" value={this.state.pass}  name="pass" onChange={this.bookChange} required/>
                   </div>
                   <div className="second-input">
                   
-                    <input type="text" placeholder="Confirm Password" className="name" value={this.state.confpass}  name="confpass" onChange={this.bookChange} required/>
+                    <input type="password" placeholder="Confirm Password" className="name" value={this.state.confpass}  name="confpass" onChange={this.bookChange} required/>
                   </div>
                   <br></br>
                  <div className="login-button">
@@ -119,4 +123,4 @@ class NewPass extends React.Component{
     }
 }
 
-export default NewPass;
+export default withParams(NewPass);
