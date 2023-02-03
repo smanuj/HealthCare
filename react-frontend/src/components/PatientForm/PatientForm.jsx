@@ -43,11 +43,12 @@ class PatientForm extends React.Component{
       };
 
     handleSubmit = (event) => {
-      
-        let {id}= this.props.params;
+        event.preventDefault()
+        
         alert(this.state.aId)
 
-       
+        let {id}= this.props.params;
+        alert(id)
    
         const patient ={
             aId:{
@@ -62,7 +63,7 @@ class PatientForm extends React.Component{
             disease:this.state.disease,
             pincode:this.state.pincode,
             nurseId:{
-                nurseId:4
+                nurseId:id
 
             }
         }
@@ -141,4 +142,4 @@ class PatientForm extends React.Component{
     
 }
 
-export default PatientForm;
+export default withParams(PatientForm);
