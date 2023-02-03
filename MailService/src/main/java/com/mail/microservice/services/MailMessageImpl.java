@@ -113,6 +113,7 @@ public class MailMessageImpl implements MailMessage {
 		String nurseName = comments.getPatients().getNurseId().getName();
 		String body = "Hello "+nurseName+", \n Please read the attached comments from the doctor: \n"+comments.getComments();
 		System.out.println("tested sucess");
+		System.out.println(comments.getPatients().getNurseId());
 		UserDetails usr = userfacade.findByNurseDetails(comments.getPatients().getNurseId());
 		String nurseMail=usr.getEmail();
 		sendMail.sendMail(nurseMail, subject, body);

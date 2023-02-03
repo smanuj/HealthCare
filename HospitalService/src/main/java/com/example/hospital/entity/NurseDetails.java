@@ -18,9 +18,9 @@ public class NurseDetails {
 	private String pnumber;
 	private boolean avaliability;
 	private boolean approval;
-	@OneToOne(targetEntity = UserDetails.class)
-	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
-	private UserDetails userdetails;
+//	@OneToOne(targetEntity = UserDetails.class)
+//	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
+//	private UserDetails userdetails;
 
 	public NurseDetails() {
 		super();
