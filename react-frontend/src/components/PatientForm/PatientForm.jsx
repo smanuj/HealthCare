@@ -69,6 +69,7 @@ class PatientForm extends React.Component{
         }
 
         axios.post('http://localhost:8009/api/patients/create',patient).then(Response => alert(Response.data))
+        window.location="/nurse/"+id
     }
 
 
