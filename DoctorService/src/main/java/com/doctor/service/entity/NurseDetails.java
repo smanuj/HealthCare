@@ -82,15 +82,7 @@ public class NurseDetails {
 
 
 
-	public UserDetails getUserdetails() {
-		return userdetails;
-	}
-
-
-
-	public void setUserdetails(UserDetails userdetails) {
-		this.userdetails = userdetails;
-	}
+	
 	
 	
 
@@ -113,7 +105,6 @@ public class NurseDetails {
 		this.pnumber = pnumber;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.userdetails = userdetails;
 	}
 	
 	
@@ -126,7 +117,6 @@ public class NurseDetails {
 		this.pnumber = pnumber;
 		this.avaliability = avaliability;
 		this.approval = approval;
-		this.userdetails = userdetails;
 	}
 	 
 	
@@ -145,7 +135,7 @@ public class NurseDetails {
 	@Override
 	public String toString() {
 		return "NurseDetails [nurseId=" + nurseId + ", name=" + name + ", pnumber=" + pnumber + ", avaliability="
-				+ avaliability + ", approval=" + approval + ", userdetails=" + userdetails + "]";
+				+ avaliability + ", approval=" + approval + "]";
 	}
 	
 	

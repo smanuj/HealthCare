@@ -2,27 +2,16 @@ import React, { useState } from 'react';
 import './PatientForm.css';
 import axios from 'axios';
 import { Alert, Form } from "react-bootstrap";
+import { useParams } from "react-router";
+
+
+function withParams(Component) {
+    return props => <Component {...props} params={useParams()} />;
+   }
 
 
 class PatientForm extends React.Component{ 
-    // const [patient, setPatient] = useState('');
-    // const [aId, setAadharNumber] = useState('');
-    // const [bg, setBloodGroup] = useState('');
-    // const [pr, setPulseRate] = useState('');
-    // const [oxy, setOxygenLevel] = useState('');
-    // const [temp, setBodyTemperature] = useState('');
-    // const [disease, setDisease] = useState('');
-    // const [pincode, setPincode] = useState('');
-
-    //     aId: '',
-    //     bg: '',
-    //     pr: '',
-    //     oxy:'',
-    //     temp:'',
-    //     disease:'',
-    //     pincode:''
-    // });
-
+   
 
     constructor(props){
         super(props);
@@ -55,16 +44,15 @@ class PatientForm extends React.Component{
 
     handleSubmit = (event) => {
       
-        // const patientData = { aId, bg, pr, oxy, temp, disease, pincode };
-        // axios.post('http://localhost:8009/api/patients/create', patientData)
-        // .then(response => console.log(response))
-        // .catch(error => console.log(error));
+        let {id}= this.props.params;
         alert(this.state.aId)
+
+       
    
         const patient ={
             aId:{
 
-                "aadharNo": this.state.aId
+                aadharNo: this.state.aId
 
             },
             bloodgroup:this.state.bloodgroup,
@@ -72,7 +60,11 @@ class PatientForm extends React.Component{
             oxygenlevel:this.state.oxygenlevel,
             temperature:this.state.temperature,
             disease:this.state.disease,
-            pincode:this.state.pincode
+            pincode:this.state.pincode,
+            nurseId:{
+                nurseId:4
+
+            }
         }
 
         axios.post('http://localhost:8009/api/patients/create',patient).then(Response => alert(Response.data))
