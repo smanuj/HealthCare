@@ -1,10 +1,7 @@
 package com.patient.microservice.facade;
 
-<<<<<<< HEAD
-public class HospitalFacade {
 
-}
-=======
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,10 +16,9 @@ import com.patient.microservice.entity.Hospital;
 
 
 @Component
-
 public class HospitalFacade {
-	@Autowired
 	
+	@Autowired
 	RestTemplate restTemplate;
 	private static final String Login_URL="http://localhost:8003/api/v1";
 	
@@ -42,4 +38,4 @@ public class HospitalFacade {
 //
 //	
 //}
->>>>>>> 50d9f15fa893355b69001ad1154bbe448350af0c
+

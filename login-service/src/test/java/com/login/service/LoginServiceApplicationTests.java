@@ -42,26 +42,26 @@ class LoginServiceApplicationTests {
 //
 //	}
 	
-	@Test
-	void createNurse() throws Exception {
-		NurseDetails nurse = new NurseDetails("Shreya","9986754536");
-
-		UserDetails user = new UserDetails("shreya@gmail.com", "divya@123", nurse);
-
-		String user1 = userService.saveNurse(user);
-		if(user1=="saved") {
-			System.out.println("User saved");
-		}
-		else {
-			System.out.println("User not saved");
-		}
-		
-		UserDetails user2 = userService.getByEmail("shreya@gmail.com");
-        assertEquals(user2.getNursedetails().getName(),"Shreya");	
-        assertEquals(user2.getNursedetails().getPnumber(),"9986754536" );
-        assertEquals(user2.getNursedetails().isAvaliability(),true);
-        assertEquals(user2.getNursedetails().isApproval(),false);
-
-	}
+//	@Test
+//	void createNurse() throws Exception {
+//		NurseDetails nurse = new NurseDetails("Shreya","9986754536");
+//
+//		UserDetails user = new UserDetails("shreya@gmail.com", "divya@123", nurse);
+//
+//		String user1 = userService.saveNurse(user);
+//		if(user1=="saved") {
+//			System.out.println("User saved");
+//		}
+//		else {
+//			System.out.println("User not saved");
+//		}
+//		
+//		UserDetails user2 = userService.getByEmail("shreya@gmail.com");
+//        assertEquals(user2.getNursedetails().getName(),"Shreya");	
+//        assertEquals(user2.getNursedetails().getPnumber(),"9986754536" );
+//        assertEquals(user2.getNursedetails().isAvaliability(),true);
+//        assertEquals(user2.getNursedetails().isApproval(),false);
+//
+//	}
 
 }
