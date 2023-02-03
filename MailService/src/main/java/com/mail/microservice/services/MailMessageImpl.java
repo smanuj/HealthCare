@@ -118,10 +118,10 @@ public class MailMessageImpl implements MailMessage {
 		System.out.println(nurse);
 		System.out.println(n);
 		
-//		UserDetails usr = userfacade.findByNurseDetails(nurse);
-//		String nurseMail=usr.getEmail();
-//		System.out.println("Test mmimpl "+nurseMail);
-//		sendMail.sendMail(nurseMail, subject, body);
+		UserDetails usr = userfacade.findByNurseDetails(nurse);
+		String nurseMail=usr.getEmail();
+		System.out.println("Test mmimpl "+nurseMail);
+		sendMail.sendMail(nurseMail, subject, body);
 		
 	}
 

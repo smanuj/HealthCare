@@ -120,7 +120,7 @@ function PatientDetails() {
     pdf.setFontSize(30);
     pdf.text(120, 120, "Nurse Details");
     pdf.setFontSize(15);
-    pdf.text(120, 130, `Nurse ID: ${patients.nurseId.id}`);
+    pdf.text(120, 130, `Nurse ID: ${patients.nurseId.nurseId}`);
     pdf.text(120, 140, `Nurse Name: ${patients.nurseId.name}`);
     pdf.text(120, 150, `Nurse Mobile: ${patients.nurseId.pnumber}`);
 
