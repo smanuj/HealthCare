@@ -14,11 +14,11 @@ public class CommentsServiceImpl implements CommentsService  {
 	@Autowired
 	private CommentsRepository commentsRepository;
 	
-     @Override
-	public List<Comments> getCommentsForDoctorIdandNurseId(int doctorId, int nurseId) {
-	
-		  return commentsRepository.findByDoctorIdAndNurseId(doctorId, nurseId);
-	}
+//     @Override
+//	public List<Comments> getCommentsForDoctorIdandNurseId(int doctorId, int nurseId) {
+//	
+//		  return commentsRepository.findByDoctorIdAndNurseId(doctorId, nurseId);
+//	}
 
 
 

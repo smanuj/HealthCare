@@ -38,6 +38,7 @@ public class PatientDetailsController {
 
 	@PostMapping("/create")
 	public PatientDetails createPatientDetails(@RequestBody PatientDetails patient) {
+		System.out.println("===========================");
 		return patientDetailsService.createPatientDetails(patient);
 	}
 
@@ -56,11 +57,11 @@ public class PatientDetailsController {
 	    	return doctorDetailsService.getDoctorSpec(specialization);
 	         }
 	
-    @GetMapping("/comments/doctor/{doctorId}/nurse/{nurseId}")
-    public List<Comments> getComments(@PathVariable("doctorId") int doctorId , @PathVariable("nurseId") int nurseId)
-    {
-    	return commentsService.getCommentsForDoctorIdandNurseId(doctorId, nurseId);
-    }
+//    @GetMapping("/comments/doctor/{doctorId}/nurse/{nurseId}")
+//    public List<Comments> getComments(@PathVariable("doctorId") int doctorId , @PathVariable("nurseId") int nurseId)
+//    {
+//    	return commentsService.getCommentsForDoctorIdandNurseId(doctorId, nurseId);
+//    }
     
     @GetMapping("/patientDetails/{id}")
     public PatientDetails getPDById(@PathVariable("id") int id) {

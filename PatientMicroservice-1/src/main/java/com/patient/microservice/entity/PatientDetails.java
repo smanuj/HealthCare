@@ -163,6 +163,20 @@ public class PatientDetails {
 		this.nurseId = nurseId;
 		this.doctorId = doctorId;
 	}
+	public PatientDetails(AadharDetails aId, String bloodgroup, String pulse_rate, String oxygenlevel,
+			String temperature, String disease, String pincode, boolean status) {
+		super();
+		this.aId = aId;
+		this.bloodgroup = bloodgroup;
+		this.pulse_rate = pulse_rate;
+		this.oxygenlevel = oxygenlevel;
+		this.temperature = temperature;
+		this.disease = disease;
+		this.pincode = pincode;
+		this.status = status;
+	}
+	
+	
 	
 	
 	

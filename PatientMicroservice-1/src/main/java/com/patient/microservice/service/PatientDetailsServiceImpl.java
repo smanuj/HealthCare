@@ -39,16 +39,16 @@ public class PatientDetailsServiceImpl implements PatientDetailsService {
     	AadharDetails a = aadharRepository.findByAadharNo(aadharNo);
     	patient.setaId(a);
     	patient.setStatus(false);
-    	String spec = patient.getDisease();
-    	System.out.println(spec);
-    	DoctorDetails d = doctorDetailsRepository.findBySpecializationAndAvaliabilityTrue(spec);
-    	System.out.println("d is : "+d);
-    	patient.setDoctorId(d);
-//    	d.setAvaliability(false);
-    	doctorDetailsRepository.save(d);
-    	UserDetails usr = userRepo.findByDoctorDetails(d);
-    	int userId = usr.getId();
-    	mailFacade.alertDoctor(userId, patient);
+//    	String spec = patient.getDisease();
+//    	System.out.println(spec);
+//    	DoctorDetails d = doctorDetailsRepository.findBySpecializationAndAvaliabilityTrue(spec);
+//    	System.out.println("d is : "+d);
+//    	patient.setDoctorId(d);
+////    	d.setAvaliability(false);
+//    	doctorDetailsRepository.save(d);
+//    	UserDetails usr = userRepo.findByDoctorDetails(d);
+//    	int userId = usr.getId();
+//    	mailFacade.alertDoctor(userId, patient);
         return patientRepository.save(patient);
     }
     
