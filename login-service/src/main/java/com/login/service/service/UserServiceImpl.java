@@ -299,7 +299,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserDetails getbyNursedetails(NurseDetails nursedetails) {
-		return userRepository.findByNurseDetails(nursedetails);
+		UserDetails usr =userRepository.findByNurseDetails(nursedetails);
+		System.out.println("usr= "+usr);
+		return usr;
 	}
 
 }

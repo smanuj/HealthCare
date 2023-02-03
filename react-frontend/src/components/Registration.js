@@ -159,12 +159,12 @@ class Registration extends React.Component{
                 <option value="" disabled selected>Select Your Specialization</option>
                     <option value="Cardiology">Cardiology</option>
                     <option value="Dermatology">Dermatology</option>
-                    <option value="Ayurvedic physician">Dentists</option>
+                    <option value="Dentist">Dentists</option>
                     <option value="General Surgery">General Surgery</option>
-                    <option value="Ayurvedic physician">Gynecologists</option>
+                    <option value="Gyno">Gynecologists</option>
                     <option value="Neurosurgery">Neurosurgery</option>
                     <option value="Ayurvedic physician">Ayurvedic physician</option>
-                    
+                    <option value="Orthopedician">Orthopedician</option>
                     
                     
                   </select>

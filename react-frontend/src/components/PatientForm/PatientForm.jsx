@@ -125,11 +125,14 @@ class PatientForm extends React.Component{
                 Disease:
                 <select name="disease" value={this.state.disease} onChange={this.handleChange} required>
                     <option value="" disabled selected>Select Medical Condition</option>
-                    <option value="gPhy">General medical issue</option>
-                    <option value="heart">Heart issue</option>
-                    <option value="skin">Skin issue</option>
-                    <option value="ortho">Fracture</option>
-                    <option value="pulmo">Breathing problem</option>
+                    <option value="General Surgery">General medical issue</option>
+                    <option value="Cardiology">Heart issue</option>
+                    <option value="Dermatology">Skin issue</option>
+                    <option value="Orthopedician">Fracture</option>
+                    <option value="Neurosurgery">Neuro Issue</option>
+                    <option value="Ayurvedic physician">Physician (Ayur)</option>
+                    <option value="Gyno">Gynecologists</option>
+                    <option value="Dentist">Dentists</option>
                 </select>
             </label>
             <label>

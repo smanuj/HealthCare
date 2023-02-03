@@ -17,9 +17,9 @@ public class NurseDetails {
 	private String pnumber;
 	private boolean avaliability;
 	private boolean approval;
-	@OneToOne(targetEntity = UserDetails.class)
-	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
-	private UserDetails userdetails;
+//	@OneToOne(targetEntity = UserDetails.class)
+//	@JoinColumn(name = "nurseId", referencedColumnName = "nurseId")
+//	private UserDetails userdetails;
 
 	public NurseDetails() {
 		super();
@@ -83,7 +83,7 @@ public class NurseDetails {
 	@Override
 	public String toString() {
 		return "NurseDetails [nurseId=" + nurseId + ", name=" + name + ", pnumber=" + pnumber + ", avaliability="
-				+ avaliability + ", approval=" + approval + ", userdetails=" + userdetails + "]";
+				+ avaliability + ", approval=" + approval + ", userdetails=" +  "]";
 	}
 	
 	

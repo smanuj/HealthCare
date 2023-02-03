@@ -9,6 +9,6 @@ import com.doctor.service.entity.NurseDetails;
 @Repository
 public interface NurseDetailsRepository extends JpaRepository<NurseDetails, Integer>{
 
-	Optional<NurseDetails> findBynurseId(int id);
+	Optional<NurseDetails> findBynurseId(int nurseId);
 
 }
